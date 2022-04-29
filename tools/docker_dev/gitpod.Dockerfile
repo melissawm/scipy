@@ -1,5 +1,14 @@
+# Dockerfile for SciPy - gitpod-base development
+# Usage: 
+# -------
+# 
+# To make a local build of the container, from the root directory:
+# docker build  --rm -f "./tools/docker_dev/gitpod.Dockerfile" -t <build-tag> "."    
+# 
 # Doing a local shallow clone - keeps the container secure
 # and much slimmer than using COPY directly or cloning a remote
+# To use the Meson container you'll need to use
+# --build-arg BASE_CONTAINER="scipy/scipy-meson:latest"
 ARG BASE_CONTAINER=scipy/scipy-dev:latest
 FROM ${BASE_CONTAINER} as clone
 

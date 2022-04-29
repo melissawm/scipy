@@ -6,8 +6,8 @@
 # Usage: 
 # -------
 # 
-# To make a local build of the container, from the 'docker_dev' directory:
-# docker build  --rm -f "Dockerfile.meson" -t <build-tag> "."    
+# To make a local build of the container, from the root directory:
+# docker build  --rm -f "./tools/docker_dev/meson.Dockerfile" -t <build-tag> "."  
 # 
 # To use the container use the following command. It assumes that you are in
 # the root folder of the scipy git repository, making it available as
@@ -151,9 +151,9 @@ RUN wget --quiet "https://github.com/conda-forge/miniforge/releases/download/${m
 # ---- Create conda environment ----
 # Install SciPy dependencies - since using miniforge no need to add 
 # conda-forge channel
-COPY environment.yml /tmp/environment.yml
+COPY environment_meson.yml /tmp/environment_meson.yml
 
-RUN conda env create -f /tmp/environment.yml && \
+RUN conda env create -f /tmp/environment_meson.yml && \
     conda activate ${CONDA_ENV} && \
     # needed for docs rendering later on
     python -m pip install --no-cache-dir sphinx-autobuild && \
