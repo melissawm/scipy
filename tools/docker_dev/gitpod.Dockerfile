@@ -8,11 +8,16 @@ FROM ${BASE_CONTAINER} as clone
 COPY --chown=gitpod . /tmp/scipy_repo
 RUN git clone --depth 1 file:////tmp/scipy_repo /tmp/scipy
 
+# -----------------------------------------------------------------------------
 # Using the Scipy-dev Docker image as a base
 # This way, we ensure we have all the needed compilers and dependencies
-# while reducing the build time
+# while reducing the build time - making this a  build ARG so we can reuse for other images
 ARG BASE_CONTAINER=scipy/scipy-dev:latest
 FROM ${BASE_CONTAINER} as build
+
+# Build argument - can pass Meson arguments during the build:
+# --env BUILD_ARG="python dev.py --build-only -j2"
+ENV BUILD_ARG="python setup.py build_ext --inplace"
 
 # -----------------------------------------------------------------------------
 USER root
@@ -35,14 +40,15 @@ COPY --from=clone --chown=gitpod /tmp/scipy ${WORKSPACE}
 
 WORKDIR ${WORKSPACE}
 
-# Build scipy to populate the cache used by ccache
+# Build SciPy to populate the cache used by ccache
 # Must re-activate conda to ensure the ccache flags are picked up
-RUN git submodule update --init --depth=1 -- scipy/_lib/boost
-RUN git submodule update --init --depth=1 -- scipy/sparse/linalg/_propack/PROPACK
-RUN git submodule update --init --depth=1 -- scipy/_lib/unuran
-RUN git submodule update --init --depth=1 -- scipy/_lib/highs
+RUN git submodule update --init --depth=1 -- scipy/_lib/boost &&\ 
+    git submodule update --init --depth=1 -- scipy/sparse/linalg/_propack/PROPACK && \
+    git submodule update --init --depth=1 -- scipy/_lib/unuran && \
+    git submodule update --init --depth=1 -- scipy/_lib/highs
+
 RUN conda activate ${CONDA_ENV} && \
-    python setup.py build_ext --inplace && \
+    ${BUILD_ARG} && \
     ccache -s
 
 # Gitpod will load the repository into /workspace/scipy. We remove the

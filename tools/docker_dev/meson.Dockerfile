@@ -7,7 +7,7 @@
 # -------
 # 
 # To make a local build of the container, from the 'docker_dev' directory:
-# docker build  --rm -f "Dockerfile" -t <build-tag> "."    
+# docker build  --rm -f "Dockerfile.meson" -t <build-tag> "."    
 # 
 # To use the container use the following command. It assumes that you are in
 # the root folder of the scipy git repository, making it available as
@@ -17,13 +17,13 @@
 #
 # docker run --rm -it -v $(pwd):/home/scipy scipy:<image-tag>
 # 
-# By default the container will activate the conda environment scipy-dev
+# By default the container will activate the conda environment scipy-meson
 # which contains all the dependencies needed for SciPy development
 # 
-# To build Scipy run: python setup.py build_ext --inplace
-# Followed by conda develop . if you need to build the docs
+# To build Scipy run: python dev.py --build-only -j2 
+# For the all-in-one (configure,build,test SciPy and docs) use: python dev.py
 #
-# To run the tests use: python runtests.py
+# To run the tests use: python dev.py -n 
 # 
 # This image is based on: Ubuntu 20.04 (focal)
 # https://hub.docker.com/_/ubuntu/?tab=tags&name=focal
@@ -70,7 +70,7 @@ ENV CONDA_DIR=/opt/conda \
 
 ENV CONDA_VERSION="${conda_version}" \
     MINIFORGE_VERSION="${miniforge_version}" \
-    CONDA_ENV=scipy-dev \
+    CONDA_ENV=scipy-meson \
     PATH=${CONDA_DIR}/bin:$PATH 
 
 # -----------------------------------------------------------------------------
