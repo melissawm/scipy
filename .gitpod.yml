@@ -6,7 +6,8 @@
 # work, else it fails with a very cryptic message
 # -------------------------------------------------------------------------
 
-image: scipy/scipy-gitpod:latest
+# TODO:revert to base after testing
+image: scipy/scipy-gitpod:latest-test
 tasks:
   - name: Prepare development
     init: |
@@ -37,7 +38,6 @@ vscode:
     - ms-python.python
     - yzhang.markdown-all-in-one
     - bungcip.better-toml
-    - mhutchie.git-graph
 
 # --------------------------------------------------------
 # using prebuilds for the container - note: atm this only
