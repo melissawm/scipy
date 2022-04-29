@@ -6,8 +6,7 @@
 # work, else it fails with a very cryptic message
 # -------------------------------------------------------------------------
 
-# TODO:revert to base after testing
-image: scipy/scipy-gitpod:latest-test
+image: scipy/scipy-gitpod:latest
 tasks:
   - name: Prepare development
     init: |
