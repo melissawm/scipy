@@ -1,5 +1,7 @@
 # 
 # Dockerfile for Scipy development 
+# Meson build system - https://scipy.github.io/devdocs/dev/contributor/meson.html#full-details-and-explanation
+# https://scipy.github.io/devdocs/dev/contributor/conda_guide.html#conda-guide
 # 
 # Usage: 
 # -------
