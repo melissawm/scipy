@@ -61,7 +61,9 @@ RUN git submodule update --init --depth=1 -- scipy/_lib/boost &&\
 
 RUN conda activate ${CONDA_ENV} && \
     ${BUILD_ARG} && \
-    ccache -s
+    ccache -s && \ 
+    # needed for rst preview in gitpod
+    python3 -m pip install docutils
 
 # Gitpod will load the repository into /workspace/scipy. We remove the
 # directoy from the image to prevent conflicts
