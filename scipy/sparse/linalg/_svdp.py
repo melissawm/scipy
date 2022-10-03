@@ -74,6 +74,7 @@ class _AProd:
     @property
     def dtype(self):
         try:
+            print(f"{self.A.dtype=}")
             return self.A.dtype
         except AttributeError:
             return self.A.matvec(np.zeros(self.A.shape[1])).dtype
@@ -188,7 +189,9 @@ def _svdp(A, k, which='LM', irl_mode=True, kmax=None,
     if not irl_mode and which == 'SM':
         raise ValueError("`which`='SM' requires irl_mode=True")
 
+    print("HERE")
     aprod = _AProd(A)
+    print("DONE")
     typ = aprod.dtype.char
 
     try:

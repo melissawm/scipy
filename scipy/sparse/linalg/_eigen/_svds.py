@@ -251,6 +251,10 @@ def svds(A, k=6, ncv=None, tol=0, which='LM', v0=None,
     True
 
     """
+    msg = ("ENTERING SVDS")
+
+    warnings.warn(msg)
+
     args = _iv(A, k, ncv, tol, which, v0, maxiter, return_singular_vectors,
                solver, random_state)
     (A, k, ncv, tol, which, v0, maxiter,
@@ -310,10 +314,11 @@ def svds(A, k=6, ncv=None, tol=0, which='LM', v0=None,
         jobu = return_singular_vectors in {True, 'u'}
         jobv = return_singular_vectors in {True, 'vh'}
         irl_mode = (which == 'SM')
+        print("CALLING _SVDP")
         res = _svdp(A, k=k, tol=tol**2, which=which, maxiter=None,
                     compute_u=jobu, compute_v=jobv, irl_mode=irl_mode,
                     kmax=maxiter, v0=v0, random_state=random_state)
-
+        print("LEAVING _SVDP")
         u, s, vh, _ = res  # but we'll ignore bnd, the last output
 
         # PROPACK order appears to be largest first. `svds` output order is not

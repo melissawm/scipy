@@ -794,7 +794,8 @@ class SVDSCommonTests:
             if not has_propack:
                 pytest.skip("PROPACK not enabled")
             elif dtype == np.float32:
-                pytest.skip("Test failures in CI, see gh-17004")
+                pass
+                #pytest.skip("Test failures in CI, see gh-17004")
             elif dtype == complex:
                 # https://github.com/scipy/scipy/issues/11406
                 pytest.skip("PROPACK unsupported for complex dtype")
