@@ -502,3 +502,7 @@ class LegacyDirective(Directive):
 
 def setup(app):
     app.add_directive("legacy", LegacyDirective)
+
+html_sidebars = {
+    'api/index': ['sidebar-nav-bs.html']
+}
