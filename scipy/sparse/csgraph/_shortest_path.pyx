@@ -144,11 +144,11 @@ def shortest_path(csgraph, method='auto',
     ... ]
     >>> graph = csr_matrix(graph)
     >>> print(graph)
-      (0, 1)	1
-      (0, 2)	2
-      (1, 3)	1
-      (2, 0)	2
-      (2, 3)	3
+      (0, 1)   1
+      (0, 2)   2
+      (1, 3)   1
+      (2, 0)   2
+      (2, 3)   3
 
     >>> dist_matrix, predecessors = shortest_path(csgraph=graph, directed=False, indices=0, return_predecessors=True)
     >>> dist_matrix
@@ -289,11 +289,11 @@ def floyd_warshall(csgraph, directed=True,
     ... ]
     >>> graph = csr_matrix(graph)
     >>> print(graph)
-      (0, 1)	1
-      (0, 2)	2
-      (1, 3)	1
-      (2, 0)	2
-      (2, 3)	3
+      (0, 1)   1
+      (0, 2)   2
+      (1, 3)   1
+      (2, 0)   2
+      (2, 3)   3
 
 
     >>> dist_matrix, predecessors = floyd_warshall(csgraph=graph, directed=False, return_predecessors=True)
@@ -514,10 +514,10 @@ def dijkstra(csgraph, directed=True, indices=None,
     ... ]
     >>> graph = csr_matrix(graph)
     >>> print(graph)
-      (0, 1)	1
-      (0, 2)	2
-      (1, 3)	1
-      (2, 3)	3
+      (0, 1)   1
+      (0, 2)   2
+      (1, 3)   1
+      (2, 3)   3
 
     >>> dist_matrix, predecessors = dijkstra(csgraph=graph, directed=False, indices=0, return_predecessors=True)
     >>> dist_matrix
@@ -999,11 +999,11 @@ def bellman_ford(csgraph, directed=True, indices=None,
     ... ]
     >>> graph = csr_matrix(graph)
     >>> print(graph)
-      (0, 1)	1
-      (0, 2)	2
-      (1, 3)	1
-      (2, 0)	2
-      (2, 3)	3
+      (0, 1)   1
+      (0, 2)   2
+      (1, 3)   1
+      (2, 0)   2
+      (2, 3)   3
 
     >>> dist_matrix, predecessors = bellman_ford(csgraph=graph, directed=False, indices=0, return_predecessors=True)
     >>> dist_matrix
@@ -1236,11 +1236,11 @@ def johnson(csgraph, directed=True, indices=None,
     ... ]
     >>> graph = csr_matrix(graph)
     >>> print(graph)
-      (0, 1)	1
-      (0, 2)	2
-      (1, 3)	1
-      (2, 0)	2
-      (2, 3)	3
+      (0, 1)   1
+      (0, 2)   2
+      (1, 3)   1
+      (2, 0)   2
+      (2, 3)   3
 
     >>> dist_matrix, predecessors = johnson(csgraph=graph, directed=False, indices=0, return_predecessors=True)
     >>> dist_matrix

@@ -356,7 +356,7 @@ class _spbase:
         _, format_name = _formats[self.format]
         sparse_cls = 'array' if isinstance(self, sparray) else 'matrix'
         return f"<%dx%d sparse {sparse_cls} of type '%s'\n" \
-               "\twith %d stored elements in %s format>" % \
+               " with %d stored elements in %s format>" % \
                (self.shape + (self.dtype.type, self.nnz, format_name))
 
     def __str__(self):
@@ -367,7 +367,7 @@ class _spbase:
         # helper function, outputs "(i,j)  v"
         def tostr(row, col, data):
             triples = zip(list(zip(row, col)), data)
-            return '\n'.join([('  %s\t%s' % t) for t in triples])
+            return '\n'.join([('  %s   %s' % t) for t in triples])
 
         if self.nnz > maxprint:
             half = maxprint // 2
