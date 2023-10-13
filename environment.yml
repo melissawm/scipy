@@ -13,7 +13,7 @@ dependencies:
   - meson
   - meson-python
   - ninja
-  - numpy
+  - numpy<2.0
   - openblas
   - pkg-config
   - libblas=*=*openblas  # helps avoid pulling in MKL
