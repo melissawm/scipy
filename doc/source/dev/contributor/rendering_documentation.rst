@@ -358,13 +358,14 @@ following output:
 
 
 We strongly recommend that you also add a custom message, such as a new API to
-replace the old one. This message will be appended to the default message::
+replace the old one::
 
    .. legacy::
 
       New code should use :mod:`scipy.fft`.
 
-will create the following output:
+This message will be appended to the default message, and will create the
+following output:
 
 .. legacy::
 
