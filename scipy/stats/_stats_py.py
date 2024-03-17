@@ -6773,7 +6773,7 @@ class TtestResult(TtestResultBase):
 
     Methods
     -------
-    confidence_interval
+    confidence_interval(confidence_level=0.95)
         Computes a confidence interval around the population statistic
         for the given confidence level.
         The confidence interval is returned in a ``namedtuple`` with
@@ -7286,8 +7286,8 @@ def ttest_ind(a, b, axis=0, equal_var=True, nan_policy='propagate',
 
         .. versionadded:: 1.7.0
 
-    random_state : {None, int, `numpy.random.Generator`,
-            `numpy.random.RandomState`}, optional
+    random_state : {None, int, `numpy.random.Generator`, \
+                   `numpy.random.RandomState`}, optional
 
         If `seed` is None (or `np.random`), the `numpy.random.RandomState`
         singleton is used.
@@ -7413,7 +7413,7 @@ def ttest_ind(a, b, axis=0, equal_var=True, nan_policy='propagate',
 
     .. [2] https://en.wikipedia.org/wiki/Welch%27s_t-test
 
-    .. [3] B. Efron and T. Hastie. Computer Age Statistical Inference. (2016).
+    .. [3] B\. Efron and T. Hastie. Computer Age Statistical Inference. (2016).
 
     .. [4] Yuen, Karen K. "The Two-Sample Trimmed t for Unequal Population
            Variances." Biometrika, vol. 61, no. 1, 1974, pp. 165-170. JSTOR,
@@ -7424,14 +7424,78 @@ def ttest_ind(a, b, axis=0, equal_var=True, nan_policy='propagate',
            no. 2, 1973, pp. 369-374. JSTOR, www.jstor.org/stable/2334550.
            Accessed 30 Mar. 2021.
 
+    .. [6] Lamb, Tracey J., Graham, Andrea L., and Petrie, Aviva. "t Testing the
+           Immune System." Immunity, Volume 28, Issue 3, 2008, pp. 288-292,
+           ISSN 1074-7613, https://doi.org/10.1016/j.immuni.2008.02.003.
+
     Examples
     --------
+
     >>> import numpy as np
     >>> from scipy import stats
-    >>> rng = np.random.default_rng()
+
+    **Example 1**
+
+    In [6]_, the authors describe an application of the independent two-sample
+    t-test to an in vivo experiment designed to assess whether a particular
+    experimental infection upregulates interleukin-10 (IL-10) production in
+    CD4+ T cells in mice. The test is conducted to test the null hypothesis that
+    the true group-mean MFI for IL-10 from CD4+ T cells in mice with and without
+    infection is equal (i.e., on average, there is no upregulation of IL-10 in
+    CD4+ T cells in response to infection).
+
+    In the first experiment, 10 mice are randomly assigned to receive the
+    experimental infection, and 10 other mice will receive a different (control)
+    injection. Seven days after infection, the CD4+ T cells in the spleen are
+    analysed for IL-10 expression by flow cytometry. Each animal's spleen is
+    processed separately and the measurement of interest is the CD4+ T cell
+    IL-10 Median Fluorescence Intensity (MFI) for each mouse.
+
+    The results in IL-10 MFIs from CD4+ T cells for infected and control animals
+    are:
+
+    >>> mfi_infected = np.array([112, 100, 65, 59, 70, 72, 60, 91, 85, 71])
+    >>> mfi_control = np.array([70, 58, 69, 62, 64, 55, 73, 66, 71, 72])
+    >>> stats.ttest_ind(mfi_infected, mfi_control)
+    TtestResult(statistic=2.0968052252346943, pvalue=0.05040480247085519, df=18.0)
+
+    A second experiment, with the same setup as the first, is conducted with a
+    different type of experimental infection. The results in IL-10 MFIs from
+    CD4+ T cells for infected and control animals are:
+
+    >>> mfi_infected2 = np.array([112, 133, 71, 55, 150, 62, 68, 106, 65, 63])
+    >>> mfi_control2 = np.array([76, 100, 61, 62, 44, 67, 45, 50, 68, 55])
+    >>> stats.ttest_ind(mfi_infected2, mfi_control2)
+    TtestResult(statistic=2.148632831778857, pvalue=0.04551973643696, df=18.0)
+
+    These resulsts suggest that the first infection does not influence IL-10
+    production in CD4+ T cells, while the second infection does. Note that the
+    p-values are close to the 0.05 threshold, so the conclusion is not definitive.
+
+    If we want more information from the test, we can inspect the full
+    :class:`~._result_classes.TtestResult` object:
+
+    >>> res = stats.ttest_ind(mfi_infected2, mfi_control2)
+    >>> res.confidence_interval()
+    ConfidenceInterval(low=0.5706732785558337, high=50.829326721444176)
+
+    The confidence interval suggests that the true difference in population means
+    is likely to be between 0.57 and 50.83.
+
+    In this case, we are assuming that the variances of the two groups are equal.
+    In fact, we can verify this using `levene`:
+
+    >>> stats.levene(mfi_infected2, mfi_naive2)
+    LeveneResult(statistic=2.129473371020529, pvalue=0.16172199417264216)
+
+    A p-value of 0.16 suggests that we cannot reject the null hypothesis that
+    the variances of the two groups are equal.
+
+    **Example 2**
 
     Test with sample with identical means:
 
+    >>> rng = np.random.default_rng()
     >>> rvs1 = stats.norm.rvs(loc=5, scale=10, size=500, random_state=rng)
     >>> rvs2 = stats.norm.rvs(loc=5, scale=10, size=500, random_state=rng)
     >>> stats.ttest_ind(rvs1, rvs2)
@@ -7455,6 +7519,8 @@ def ttest_ind(a, b, axis=0, equal_var=True, nan_policy='propagate',
     Ttest_indResult(statistic=-1.9481646859513422, pvalue=0.05186270935842703)
     >>> stats.ttest_ind(rvs1, rvs4, equal_var=False)
     Ttest_indResult(statistic=-1.3146566100751664, pvalue=0.1913495266513811)
+
+    **Example 3**
 
     T-test with different means, variance, and n:
 
