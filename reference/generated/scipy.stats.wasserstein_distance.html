@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.stats.wasserstein_distance &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.stats.wasserstein_distance &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,37 +29,41 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="../../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.stats.wasserstein_distance';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="scipy.stats.energy_distance" href="scipy.stats.energy_distance.html" />
+    <link rel="next" title="scipy.stats.wasserstein_distance_nd" href="scipy.stats.wasserstein_distance_nd.html" />
     <link rel="prev" title="scipy.stats.gzscore" href="scipy.stats.gzscore.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -134,35 +138,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -223,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -347,6 +353,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -493,26 +523,30 @@ document.write(`
 <h1>scipy.stats.wasserstein_distance<a class="headerlink" href="#scipy-stats-wasserstein-distance" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="scipy.stats.wasserstein_distance">
-<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">wasserstein_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_stats_py.py#L10188-L10262"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.wasserstein_distance" title="Link to this definition">#</a></dt>
-<dd><p>Compute the first Wasserstein distance between two 1D distributions.</p>
-<p>This distance is also known as the earth mover’s distance, since it can be
-seen as the minimum amount of “work” required to transform <span class="math notranslate nohighlight">\(u\)</span> into
-<span class="math notranslate nohighlight">\(v\)</span>, where “work” is measured as the amount of distribution weight
-that must be moved, multiplied by the distance it has to be moved.</p>
+<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">wasserstein_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_stats_py.py#L9980-L10069"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.wasserstein_distance" title="Link to this definition">#</a></dt>
+<dd><p>Compute the Wasserstein-1 distance between two 1D discrete distributions.</p>
+<p>The Wasserstein distance, also called the Earth mover’s distance or the
+optimal transport distance, is a similarity metric between two probability
+distributions <a class="reference internal" href="#rbc4e517f9be6-1" id="id1">[1]</a>. In the discrete case, the Wasserstein distance can be
+understood as the cost of an optimal transport plan to convert one
+distribution into the other. The cost is calculated as the product of the
+amount of probability mass being moved and the distance it is being moved.
+A brief and intuitive introduction can be found at <a class="reference internal" href="#rbc4e517f9be6-2" id="id2">[2]</a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 1.0.0.</span></p>
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>u_values, v_values</strong><span class="classifier">array_like</span></dt><dd><p>Values observed in the (empirical) distribution.</p>
+<dt><strong>u_values</strong><span class="classifier">1d array_like</span></dt><dd><p>A sample from a probability distribution or the support (set of all
+possible values) of a probability distribution. Each element is an
+observation or possible value.</p>
 </dd>
-<dt><strong>u_weights, v_weights</strong><span class="classifier">array_like, optional</span></dt><dd><p>Weight for each value. If unspecified, each value is assigned the same
-weight.
-<em class="xref py py-obj">u_weights</em> (resp. <em class="xref py py-obj">v_weights</em>) must have the same length as
-<em class="xref py py-obj">u_values</em> (resp. <em class="xref py py-obj">v_values</em>). If the weight sum differs from 1, it
-must still be positive and finite so that the weights can be normalized
-to sum to 1.</p>
+<dt><strong>v_values</strong><span class="classifier">1d array_like</span></dt><dd><p>A sample from or the support of a second distribution.</p>
+</dd>
+<dt><strong>u_weights, v_weights</strong><span class="classifier">1d array_like, optional</span></dt><dd><p>Weights or counts corresponding with the sample or probability masses
+corresponding with the support values. Sum of elements must be positive
+and finite. If unspecified, each value is assigned the same weight.</p>
 </dd>
 </dl>
 </dd>
@@ -523,20 +557,29 @@ to sum to 1.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="scipy.stats.wasserstein_distance_nd.html#scipy.stats.wasserstein_distance_nd" title="scipy.stats.wasserstein_distance_nd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wasserstein_distance_nd</span></code></a></dt><dd><p>Compute the Wasserstein-1 distance between two N-D discrete distributions.</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">Notes</p>
-<p>The first Wasserstein distance between the distributions <span class="math notranslate nohighlight">\(u\)</span> and
-<span class="math notranslate nohighlight">\(v\)</span> is:</p>
+<p>Given two 1D probability mass functions, <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>, the first
+Wasserstein distance between the distributions is:</p>
 <div class="math notranslate nohighlight">
 \[l_1 (u, v) = \inf_{\pi \in \Gamma (u, v)} \int_{\mathbb{R} \times
 \mathbb{R}} |x-y| \mathrm{d} \pi (x, y)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma (u, v)\)</span> is the set of (probability) distributions on
 <span class="math notranslate nohighlight">\(\mathbb{R} \times \mathbb{R}\)</span> whose marginals are <span class="math notranslate nohighlight">\(u\)</span> and
-<span class="math notranslate nohighlight">\(v\)</span> on the first and second factors respectively.</p>
+<span class="math notranslate nohighlight">\(v\)</span> on the first and second factors respectively. For a given value
+<span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(u(x)\)</span> gives the probabilty of <span class="math notranslate nohighlight">\(u\)</span> at position
+<span class="math notranslate nohighlight">\(x\)</span>, and the same for <span class="math notranslate nohighlight">\(v(x)\)</span>.</p>
 <p>If <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V\)</span> are the respective CDFs of <span class="math notranslate nohighlight">\(u\)</span> and
 <span class="math notranslate nohighlight">\(v\)</span>, this distance also equals to:</p>
 <div class="math notranslate nohighlight">
 \[l_1(u, v) = \int_{-\infty}^{+\infty} |U-V|\]</div>
-<p>See <a class="reference internal" href="#rbc4e517f9be6-2" id="id1">[2]</a> for a proof of the equivalence of both definitions.</p>
+<p>See <a class="reference internal" href="#rbc4e517f9be6-3" id="id3">[3]</a> for a proof of the equivalence of both definitions.</p>
 <p>The input distributions can be empirical, therefore coming from samples
 whose values are effectively inputs of the function, or they can be seen as
 generalized functions, in which case they are weighted sums of Dirac delta
@@ -544,16 +587,23 @@ functions located at the specified values.</p>
 <p class="rubric">References</p>
 <div role="list" class="citation-list">
 <div class="citation" id="rbc4e517f9be6-1" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>“Wasserstein metric”, <a class="reference external" href="https://en.wikipedia.org/wiki/Wasserstein_metric">https://en.wikipedia.org/wiki/Wasserstein_metric</a></p>
 </div>
 <div class="citation" id="rbc4e517f9be6-2" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">2</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Lili Weng, “What is Wasserstein distance?”, Lil’log,
+<a class="reference external" href="https://lilianweng.github.io/posts/2017-08-20-gan/#what-is-wasserstein-distance">https://lilianweng.github.io/posts/2017-08-20-gan/#what-is-wasserstein-distance</a>.</p>
+</div>
+<div class="citation" id="rbc4e517f9be6-3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>Ramdas, Garcia, Cuturi “On Wasserstein Two Sample Testing and Related
 Families of Nonparametric Tests” (2015). <a class="reference external" href="https://arxiv.org/abs/1509.02237">arXiv:1509.02237</a>.</p>
 </div>
 </div>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="0c675568-add6-4c79-9ab9-7b1420319687">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('0c675568-add6-4c79-9ab9-7b1420319687','364f4c40-cf01-4681-8748-c66808efb49f','c0e76304-600c-4098-8767-26d09d2adc46','../../lite/tree/../notebooks/?path=ade7effb_8383_456b_8a2e_99e1af3c8118.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">wasserstein_distance</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">wasserstein_distance</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 <span class="go">5.0</span>
@@ -564,7 +614,9 @@ Families of Nonparametric Tests” (2015). <a class="reference external" href="h
 <span class="go">4.0781331438047861</span>
 </pre></div>
 </div>
-</dd></dl>
+</div>
+</div>
+<div id="c0e76304-600c-4098-8767-26d09d2adc46" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('0c675568-add6-4c79-9ab9-7b1420319687','c0e76304-600c-4098-8767-26d09d2adc46')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('0c675568-add6-4c79-9ab9-7b1420319687','c0e76304-600c-4098-8767-26d09d2adc46')">Open In Tab</button></div><div id="364f4c40-cf01-4681-8748-c66808efb49f" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
@@ -588,11 +640,11 @@ Families of Nonparametric Tests” (2015). <a class="reference external" href="h
       </div>
     </a>
     <a class="right-next"
-       href="scipy.stats.energy_distance.html"
+       href="scipy.stats.wasserstein_distance_nd.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">scipy.stats.energy_distance</p>
+        <p class="prev-next-title">scipy.stats.wasserstein_distance_nd</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -652,7 +704,7 @@ Families of Nonparametric Tests” (2015). <a class="reference external" href="h
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

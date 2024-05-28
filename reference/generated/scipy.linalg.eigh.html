@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.linalg.eigh &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.linalg.eigh &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,27 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.linalg.eigh';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -58,7 +62,7 @@
     <link rel="prev" title="scipy.linalg.eigvals" href="scipy.linalg.eigvals.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -492,7 +522,7 @@ document.write(`
 <h1>scipy.linalg.eigh<a class="headerlink" href="#scipy-linalg-eigh" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="scipy.linalg.eigh">
-<span class="sig-prename descclassname"><span class="pre">scipy.linalg.</span></span><span class="sig-name descname"><span class="pre">eigh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigvals_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_a=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_b=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">turbo=&lt;object</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigvals=&lt;object</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_finite=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_by_index=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_by_value=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">driver=None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/linalg/_decomp.py#L271-L619"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.linalg.eigh" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">scipy.linalg.</span></span><span class="sig-name descname"><span class="pre">eigh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigvals_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_finite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_by_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_by_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">driver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/linalg/_decomp.py#L283-L618"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.linalg.eigh" title="Link to this definition">#</a></dt>
 <dd><p>Solve a standard or generalized eigenvalue problem for a complex
 Hermitian or real symmetric matrix.</p>
 <p>Find eigenvalues array <code class="docutils literal notranslate"><span class="pre">w</span></code> and optionally eigenvectors array <code class="docutils literal notranslate"><span class="pre">v</span></code> of
@@ -558,18 +588,6 @@ is False.</p>
 Disabling may give a performance gain, but may result in problems
 (crashes, non-termination) if the inputs do contain infinities or NaNs.</p>
 </dd>
-<dt><strong>turbo</strong><span class="classifier">bool, optional, deprecated</span></dt><dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 1.5.0: </span><a class="reference internal" href="#scipy.linalg.eigh" title="scipy.linalg.eigh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eigh</span></code></a> keyword argument <em class="xref py py-obj">turbo</em> is deprecated in favour of
-<code class="docutils literal notranslate"><span class="pre">driver=gvd</span></code> keyword instead and will be removed in SciPy
-1.14.0.</p>
-</div>
-</dd>
-<dt><strong>eigvals</strong><span class="classifier">tuple (lo, hi), optional, deprecated</span></dt><dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 1.5.0: </span><a class="reference internal" href="#scipy.linalg.eigh" title="scipy.linalg.eigh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eigh</span></code></a> keyword argument <a class="reference internal" href="scipy.linalg.eigvals.html#scipy.linalg.eigvals" title="scipy.linalg.eigvals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eigvals</span></code></a> is deprecated in favour of
-<em class="xref py py-obj">subset_by_index</em> keyword instead and will be removed in SciPy
-1.14.0.</p>
-</div>
-</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -621,6 +639,11 @@ occasions that <code class="docutils literal notranslate"><span class="pre">&lt;
 memory usage. <code class="docutils literal notranslate"><span class="pre">&lt;sy/he&gt;evx</span></code>, while still being faster than <code class="docutils literal notranslate"><span class="pre">&lt;sy/he&gt;ev</span></code>,
 often performs worse than the rest except when very few eigenvalues are
 requested for large arrays though there is still no performance guarantee.</p>
+<p>Note that the underlying LAPACK algorithms are different depending on whether
+<em class="xref py py-obj">eigvals_only</em> is True or False — thus the eigenvalues may differ
+depending on whether eigenvectors are requested or not. The difference is
+generally of the order of machine epsilon times the largest eigenvalue,
+so is likely only visible for zero or nearly zero eigenvalues.</p>
 <p>For the generalized problem, normalization with respect to the given
 type argument:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> <span class="mi">1</span> <span class="ow">and</span> <span class="mi">3</span> <span class="p">:</span>      <span class="n">v</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">a</span> <span class="o">@</span> <span class="n">v</span> <span class="o">=</span> <span class="n">w</span>
@@ -631,6 +654,8 @@ type argument:</p>
 </pre></div>
 </div>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="bbb1d5fc-2bd4-4316-abad-d268d0a103d6">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('bbb1d5fc-2bd4-4316-abad-d268d0a103d6','66fd6713-28fd-4d41-9b49-bb0589bb681f','201ccd46-daed-4605-9c63-e98180872e7c','../../lite/tree/../notebooks/?path=7c9b4f49_b4dc_4d08_af1e_b2adbceaf663.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">eigh</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
@@ -661,7 +686,9 @@ type argument:</p>
 <span class="go">(5, 1)</span>
 </pre></div>
 </div>
-</dd></dl>
+</div>
+</div>
+<div id="201ccd46-daed-4605-9c63-e98180872e7c" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('bbb1d5fc-2bd4-4316-abad-d268d0a103d6','201ccd46-daed-4605-9c63-e98180872e7c')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('bbb1d5fc-2bd4-4316-abad-d268d0a103d6','201ccd46-daed-4605-9c63-e98180872e7c')">Open In Tab</button></div><div id="66fd6713-28fd-4d41-9b49-bb0589bb681f" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
@@ -749,7 +776,7 @@ type argument:</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.interpolate.interp2d &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.interpolate.interp2d &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,36 +29,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.interpolate.interp2d';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="scipy.interpolate.interp2d.__call__" href="scipy.interpolate.interp2d.__call__.html" />
+    <link rel="next" title="scipy.interpolate.interpn" href="scipy.interpolate.interpn.html" />
     <link rel="prev" title="scipy.interpolate.Rbf.__call__" href="scipy.interpolate.Rbf.__call__.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -492,129 +522,17 @@ document.write(`
 <h1>scipy.interpolate.interp2d<a class="headerlink" href="#scipy-interpolate-interp2d" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="scipy.interpolate.interp2d">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scipy.interpolate.</span></span><span class="sig-name descname"><span class="pre">interp2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/interpolate/_interpolate.py#L110-L361"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.interpolate.interp2d" title="Link to this definition">#</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 1.10.0: </span><a class="reference internal" href="#scipy.interpolate.interp2d" title="scipy.interpolate.interp2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp2d</span></code></a> is deprecated in SciPy 1.10 and will be removed in SciPy
-1.14.0.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scipy.interpolate.</span></span><span class="sig-name descname"><span class="pre">interp2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/interpolate/_interpolate.py#L108-L129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.interpolate.interp2d" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 1.14.0: </span><a class="reference internal" href="#scipy.interpolate.interp2d" title="scipy.interpolate.interp2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp2d</span></code></a> has been removed in SciPy 1.14.0.</p>
 <p>For legacy code, nearly bug-for-bug compatible replacements are
 <a class="reference internal" href="scipy.interpolate.RectBivariateSpline.html#scipy.interpolate.RectBivariateSpline" title="scipy.interpolate.RectBivariateSpline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RectBivariateSpline</span></code></a> on regular grids, and <a class="reference internal" href="scipy.interpolate.bisplrep.html#scipy.interpolate.bisplrep" title="scipy.interpolate.bisplrep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bisplrep</span></code></a>/<a class="reference internal" href="scipy.interpolate.bisplev.html#scipy.interpolate.bisplev" title="scipy.interpolate.bisplev"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bisplev</span></code></a> for
 scattered 2D data.</p>
 <p>In new code, for regular grids use <a class="reference internal" href="scipy.interpolate.RegularGridInterpolator.html#scipy.interpolate.RegularGridInterpolator" title="scipy.interpolate.RegularGridInterpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegularGridInterpolator</span></code></a> instead.
 For scattered data, prefer <a class="reference internal" href="scipy.interpolate.LinearNDInterpolator.html#scipy.interpolate.LinearNDInterpolator" title="scipy.interpolate.LinearNDInterpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinearNDInterpolator</span></code></a> or
 <a class="reference internal" href="scipy.interpolate.CloughTocher2DInterpolator.html#scipy.interpolate.CloughTocher2DInterpolator" title="scipy.interpolate.CloughTocher2DInterpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CloughTocher2DInterpolator</span></code></a>.</p>
-<p>For more details see
-<a class="reference external" href="https://scipy.github.io/devdocs/notebooks/interp_transition_guide.html">https://scipy.github.io/devdocs/notebooks/interp_transition_guide.html</a></p>
+<p>For more details see <a class="reference internal" href="../../tutorial/interpolate/interp_transition_guide.html#interp-transition-guide"><span class="std std-ref">Interpolate transition guide</span></a>.</p>
 </div>
-<p>Interpolate over a 2-D grid.</p>
-<p><em class="xref py py-obj">x</em>, <em class="xref py py-obj">y</em> and <em class="xref py py-obj">z</em> are arrays of values used to approximate some function
-f: <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">f(x,</span> <span class="pre">y)</span></code> which returns a scalar value <em class="xref py py-obj">z</em>. This class returns a
-function whose call method uses spline interpolation to find the value
-of new points.</p>
-<p>If <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em> represent a regular grid, consider using
-<a class="reference internal" href="scipy.interpolate.RectBivariateSpline.html#scipy.interpolate.RectBivariateSpline" title="scipy.interpolate.RectBivariateSpline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RectBivariateSpline</span></code></a>.</p>
-<p>If <em class="xref py py-obj">z</em> is a vector value, consider using <a class="reference internal" href="scipy.interpolate.interpn.html#scipy.interpolate.interpn" title="scipy.interpolate.interpn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpn</span></code></a>.</p>
-<p>Note that calling <a class="reference internal" href="#scipy.interpolate.interp2d" title="scipy.interpolate.interp2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp2d</span></code></a> with NaNs present in input values, or with
-decreasing values in <em class="xref py py-obj">x</em> an <em class="xref py py-obj">y</em> results in undefined behaviour.</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
-<dt><strong>x, y</strong><span class="classifier">array_like</span></dt><dd><p>Arrays defining the data point coordinates.
-The data point coordinates need to be sorted by increasing order.</p>
-<p>If the points lie on a regular grid, <em class="xref py py-obj">x</em> can specify the column
-coordinates and <em class="xref py py-obj">y</em> the row coordinates, for example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">];</span>  <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
-</pre></div>
-</div>
-<p>Otherwise, <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em> must specify the full coordinates for each
-point, for example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">];</span>  <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>If <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em> are multidimensional, they are flattened before use.</p>
-</dd>
-<dt><strong>z</strong><span class="classifier">array_like</span></dt><dd><p>The values of the function to interpolate at the data points. If
-<em class="xref py py-obj">z</em> is a multidimensional array, it is flattened before use assuming
-Fortran-ordering (order=’F’).  The length of a flattened <em class="xref py py-obj">z</em> array
-is either len(<em class="xref py py-obj">x</em>)*len(<em class="xref py py-obj">y</em>) if <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em> specify the column and
-row coordinates or <code class="docutils literal notranslate"><span class="pre">len(z)</span> <span class="pre">==</span> <span class="pre">len(x)</span> <span class="pre">==</span> <span class="pre">len(y)</span></code> if <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em>
-specify coordinates for each point.</p>
-</dd>
-<dt><strong>kind</strong><span class="classifier">{‘linear’, ‘cubic’, ‘quintic’}, optional</span></dt><dd><p>The kind of spline interpolation to use. Default is ‘linear’.</p>
-</dd>
-<dt><strong>copy</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, the class makes internal copies of x, y and z.
-If False, references may be used. The default is to copy.</p>
-</dd>
-<dt><strong>bounds_error</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, when interpolated values are requested outside of the
-domain of the input data (x,y), a ValueError is raised.
-If False, then <em class="xref py py-obj">fill_value</em> is used.</p>
-</dd>
-<dt><strong>fill_value</strong><span class="classifier">number, optional</span></dt><dd><p>If provided, the value to use for points outside of the
-interpolation domain. If omitted (None), values outside
-the domain are extrapolated via nearest-neighbor extrapolation.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference internal" href="scipy.interpolate.RectBivariateSpline.html#scipy.interpolate.RectBivariateSpline" title="scipy.interpolate.RectBivariateSpline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RectBivariateSpline</span></code></a></dt><dd><p>Much faster 2-D interpolation if your input data is on a grid</p>
-</dd>
-<dt><a class="reference internal" href="scipy.interpolate.bisplrep.html#scipy.interpolate.bisplrep" title="scipy.interpolate.bisplrep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bisplrep</span></code></a>, <a class="reference internal" href="scipy.interpolate.bisplev.html#scipy.interpolate.bisplev" title="scipy.interpolate.bisplev"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bisplev</span></code></a></dt><dd><p>Spline interpolation based on FITPACK</p>
-</dd>
-<dt><a class="reference internal" href="scipy.interpolate.BivariateSpline.html#scipy.interpolate.BivariateSpline" title="scipy.interpolate.BivariateSpline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BivariateSpline</span></code></a></dt><dd><p>a more recent wrapper of the FITPACK routines</p>
-</dd>
-<dt><a class="reference internal" href="scipy.interpolate.interp1d.html#scipy.interpolate.interp1d" title="scipy.interpolate.interp1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp1d</span></code></a></dt><dd><p>1-D version of this function</p>
-</dd>
-<dt><a class="reference internal" href="scipy.interpolate.RegularGridInterpolator.html#scipy.interpolate.RegularGridInterpolator" title="scipy.interpolate.RegularGridInterpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegularGridInterpolator</span></code></a></dt><dd><p>interpolation on a regular or rectilinear grid in arbitrary dimensions.</p>
-</dd>
-<dt><a class="reference internal" href="scipy.interpolate.interpn.html#scipy.interpolate.interpn" title="scipy.interpolate.interpn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpn</span></code></a></dt><dd><p>Multidimensional interpolation on regular grids (wraps <a class="reference internal" href="scipy.interpolate.RegularGridInterpolator.html#scipy.interpolate.RegularGridInterpolator" title="scipy.interpolate.RegularGridInterpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegularGridInterpolator</span></code></a> and <a class="reference internal" href="scipy.interpolate.RectBivariateSpline.html#scipy.interpolate.RectBivariateSpline" title="scipy.interpolate.RectBivariateSpline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RectBivariateSpline</span></code></a>).</p>
-</dd>
-</dl>
-</div>
-<p class="rubric">Notes</p>
-<p>The minimum number of data points required along the interpolation
-axis is <code class="docutils literal notranslate"><span class="pre">(k+1)**2</span></code>, with k=1 for linear, k=3 for cubic and k=5 for
-quintic interpolation.</p>
-<p>The interpolator is constructed by <a class="reference internal" href="scipy.interpolate.bisplrep.html#scipy.interpolate.bisplrep" title="scipy.interpolate.bisplrep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bisplrep</span></code></a>, with a smoothing factor
-of 0. If more control over smoothing is needed, <a class="reference internal" href="scipy.interpolate.bisplrep.html#scipy.interpolate.bisplrep" title="scipy.interpolate.bisplrep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bisplrep</span></code></a> should be
-used directly.</p>
-<p>The coordinates of the data points to interpolate <em class="xref py py-obj">xnew</em> and <em class="xref py py-obj">ynew</em>
-have to be sorted by ascending order.
-<a class="reference internal" href="#scipy.interpolate.interp2d" title="scipy.interpolate.interp2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp2d</span></code></a> is legacy and is not
-recommended for use in new code. New code should use
-<a class="reference internal" href="scipy.interpolate.RegularGridInterpolator.html#scipy.interpolate.RegularGridInterpolator" title="scipy.interpolate.RegularGridInterpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegularGridInterpolator</span></code></a> instead.</p>
-<p class="rubric">Examples</p>
-<p>Construct a 2-D grid and interpolate on it:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.01</span><span class="p">,</span> <span class="mf">5.01</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.01</span><span class="p">,</span> <span class="mf">5.01</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">yy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Now use the obtained interpolation function and plot the result:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">xnew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.01</span><span class="p">,</span> <span class="mf">5.01</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ynew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.01</span><span class="p">,</span> <span class="mf">5.01</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">znew</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xnew</span><span class="p">,</span> <span class="n">ynew</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">,</span> <span class="n">xnew</span><span class="p">,</span> <span class="n">znew</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<figure class="align-default">
-<img alt="../../_images/scipy-interpolate-interp2d-1.png" class="plot-directive" src="../../_images/scipy-interpolate-interp2d-1.png" />
-</figure>
-<p class="rubric">Methods</p>
-<table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="scipy.interpolate.interp2d.__call__.html#scipy.interpolate.interp2d.__call__" title="scipy.interpolate.interp2d.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(x, y[, dx, dy, assume_sorted])</p></td>
-<td><p>Interpolate the function.</p></td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </section>
@@ -639,11 +557,11 @@ recommended for use in new code. New code should use
       </div>
     </a>
     <a class="right-next"
-       href="scipy.interpolate.interp2d.__call__.html"
+       href="scipy.interpolate.interpn.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">scipy.interpolate.interp2d.__call__</p>
+        <p class="prev-next-title">scipy.interpolate.interpn</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -703,7 +621,7 @@ recommended for use in new code. New code should use
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

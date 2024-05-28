@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.optimize.minimize &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.optimize.minimize &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,27 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.optimize.minimize';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -58,7 +62,7 @@
     <link rel="prev" title="minimize_scalar(method=’golden’)" href="../optimize.minimize_scalar-golden.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -492,7 +522,7 @@ document.write(`
 <h1>scipy.optimize.minimize<a class="headerlink" href="#scipy-optimize-minimize" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="scipy.optimize.minimize">
-<span class="sig-prename descclassname"><span class="pre">scipy.optimize.</span></span><span class="sig-name descname"><span class="pre">minimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hessp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/optimize/_minimize.py#L51-L754"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.optimize.minimize" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">scipy.optimize.</span></span><span class="sig-name descname"><span class="pre">minimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hessp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/optimize/_minimize.py#L53-L775"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.optimize.minimize" title="Link to this definition">#</a></dt>
 <dd><p>Minimization of scalar function of one or more variables.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -522,6 +552,7 @@ derivatives (<em class="xref py py-obj">fun</em>, <em class="xref py py-obj">jac
 <li><p>‘L-BFGS-B’    <a class="reference internal" href="../optimize.minimize-lbfgsb.html#optimize-minimize-lbfgsb"><span class="std std-ref">(see here)</span></a></p></li>
 <li><p>‘TNC’         <a class="reference internal" href="../optimize.minimize-tnc.html#optimize-minimize-tnc"><span class="std std-ref">(see here)</span></a></p></li>
 <li><p>‘COBYLA’      <a class="reference internal" href="../optimize.minimize-cobyla.html#optimize-minimize-cobyla"><span class="std std-ref">(see here)</span></a></p></li>
+<li><p>‘COBYQA’      <a class="reference internal" href="../optimize.minimize-cobyqa.html#optimize-minimize-cobyqa"><span class="std std-ref">(see here)</span></a></p></li>
 <li><p>‘SLSQP’       <a class="reference internal" href="../optimize.minimize-slsqp.html#optimize-minimize-slsqp"><span class="std std-ref">(see here)</span></a></p></li>
 <li><p>‘trust-constr’<a class="reference internal" href="../optimize.minimize-trustconstr.html#optimize-minimize-trustconstr"><span class="std std-ref">(see here)</span></a></p></li>
 <li><p>‘dogleg’      <a class="reference internal" href="../optimize.minimize-dogleg.html#optimize-minimize-dogleg"><span class="std std-ref">(see here)</span></a></p></li>
@@ -591,8 +622,8 @@ dimension (n,) and <code class="docutils literal notranslate"><span class="pre">
 parameters.</p>
 </dd>
 <dt><strong>bounds</strong><span class="classifier">sequence or <a class="reference internal" href="scipy.optimize.Bounds.html#scipy.optimize.Bounds" title="scipy.optimize.Bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bounds</span></code></a>, optional</span></dt><dd><p>Bounds on variables for Nelder-Mead, L-BFGS-B, TNC, SLSQP, Powell,
-trust-constr, and COBYLA methods. There are two ways to specify the
-bounds:</p>
+trust-constr, COBYLA, and COBYQA methods. There are two ways to specify
+the bounds:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Instance of <a class="reference internal" href="scipy.optimize.Bounds.html#scipy.optimize.Bounds" title="scipy.optimize.Bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bounds</span></code></a> class.</p></li>
@@ -601,9 +632,9 @@ is used to specify no bound.</p></li>
 </ol>
 </div></blockquote>
 </dd>
-<dt><strong>constraints</strong><span class="classifier">{Constraint, dict} or List of {Constraint, dict}, optional</span></dt><dd><p>Constraints definition. Only for COBYLA, SLSQP and trust-constr.</p>
-<p>Constraints for ‘trust-constr’ are defined as a single object or a
-list of objects specifying constraints to the optimization problem.
+<dt><strong>constraints</strong><span class="classifier">{Constraint, dict} or List of {Constraint, dict}, optional</span></dt><dd><p>Constraints definition. Only for COBYLA, COBYQA, SLSQP and trust-constr.</p>
+<p>Constraints for ‘trust-constr’ and ‘cobyqa’ are defined as a single object
+or a list of objects specifying constraints to the optimization problem.
 Available constraints are:</p>
 <blockquote>
 <div><ul class="simple">
@@ -773,11 +804,17 @@ approximations to the objective function and each constraint. The
 method wraps a FORTRAN implementation of the algorithm. The
 constraints functions ‘fun’ may return either a single number
 or an array or list of numbers.</p>
+<p>Method <a class="reference internal" href="../optimize.minimize-cobyqa.html#optimize-minimize-cobyqa"><span class="std std-ref">COBYQA</span></a> uses the Constrained
+Optimization BY Quadratic Approximations (COBYQA) method <a class="reference internal" href="#rdd2e1855725e-18" id="id20">[18]</a>. The
+algorithm is a derivative-free trust-region SQP method based on quadratic
+approximations to the objective function and each nonlinear constraint. The
+bounds are treated as unrelaxable constraints, in the sense that the
+algorithm always respects them throughout the optimization process.</p>
 <p>Method <a class="reference internal" href="../optimize.minimize-slsqp.html#optimize-minimize-slsqp"><span class="std std-ref">SLSQP</span></a> uses Sequential
 Least SQuares Programming to minimize a function of several
 variables with any combination of bounds, equality and inequality
 constraints. The method wraps the SLSQP Optimization subroutine
-originally implemented by Dieter Kraft <a class="reference internal" href="#rdd2e1855725e-12" id="id20">[12]</a>. Note that the
+originally implemented by Dieter Kraft <a class="reference internal" href="#rdd2e1855725e-12" id="id21">[12]</a>. Note that the
 wrapper handles infinite values in bounds by converting them into
 large floating values.</p>
 <p>Method <a class="reference internal" href="../optimize.minimize-trustconstr.html#optimize-minimize-trustconstr"><span class="std std-ref">trust-constr</span></a> is a
@@ -786,9 +823,9 @@ between two implementations depending on the problem definition.
 It is the most versatile constrained minimization algorithm
 implemented in SciPy and the most appropriate for large-scale problems.
 For equality constrained problems it is an implementation of Byrd-Omojokun
-Trust-Region SQP method described in <a class="reference internal" href="#rdd2e1855725e-17" id="id21">[17]</a> and in <a class="reference internal" href="#rdd2e1855725e-5" id="id22">[5]</a>, p. 549. When
+Trust-Region SQP method described in <a class="reference internal" href="#rdd2e1855725e-17" id="id22">[17]</a> and in <a class="reference internal" href="#rdd2e1855725e-5" id="id23">[5]</a>, p. 549. When
 inequality constraints are imposed as well, it switches to the trust-region
-interior point method described in <a class="reference internal" href="#rdd2e1855725e-16" id="id23">[16]</a>. This interior point algorithm,
+interior point method described in <a class="reference internal" href="#rdd2e1855725e-16" id="id24">[16]</a>. This interior point algorithm,
 in turn, solves inequality constraints by introducing slack variables
 and solving a sequence of equality-constrained barrier problems
 for progressively smaller values of the barrier parameter.
@@ -903,7 +940,7 @@ Numerical Recipes (any edition), Cambridge University Press.</p>
 </div>
 <div class="citation" id="rdd2e1855725e-5" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id15">6</a>,<a role="doc-backlink" href="#id22">7</a>,<a role="doc-backlink" href="#id41">8</a>)</span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id15">6</a>,<a role="doc-backlink" href="#id23">7</a>,<a role="doc-backlink" href="#id43">8</a>)</span>
 <p>Nocedal, J, and S J Wright. 2006. Numerical Optimization.
 Springer New York.</p>
 </div>
@@ -944,7 +981,7 @@ derivatives. 2007.Cambridge University Technical Report DAMTP
 2007/NA03</p>
 </div>
 <div class="citation" id="rdd2e1855725e-12" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">12</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">12</a><span class="fn-bracket">]</span></span>
 <p>Kraft, D. A software package for sequential quadratic
 programming. 1988. Tech. Rep. DFVLR-FB 88-28, DLR German Aerospace
 Center – Institute for Flight Mechanics, Koln, Germany.</p>
@@ -967,19 +1004,28 @@ Trust-Region Subproblem using the Lanczos Method”,
 SIAM J. Optim., 9(2), 504–525, (1999).</p>
 </div>
 <div class="citation" id="rdd2e1855725e-16" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">16</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">16</a><span class="fn-bracket">]</span></span>
 <p>Byrd, Richard H., Mary E. Hribar, and Jorge Nocedal. 1999.
 An interior point algorithm for large-scale nonlinear  programming.
 SIAM Journal on Optimization 9.4: 877-900.</p>
 </div>
 <div class="citation" id="rdd2e1855725e-17" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">17</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">17</a><span class="fn-bracket">]</span></span>
 <p>Lalee, Marucha, Jorge Nocedal, and Todd Plantega. 1998. On the
 implementation of an algorithm for large-scale equality constrained
 optimization. SIAM Journal on Optimization 8.3: 682-706.</p>
 </div>
+<div class="citation" id="rdd2e1855725e-18" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">18</a><span class="fn-bracket">]</span></span>
+<p>Ragonneau, T. M. <em>Model-Based Derivative-Free Optimization Methods
+and Software</em>. PhD thesis, Department of Applied Mathematics, The Hong
+Kong Polytechnic University, Hong Kong, China, 2022. URL:
+<a class="reference external" href="https://theses.lib.polyu.edu.hk/handle/200/12294">https://theses.lib.polyu.edu.hk/handle/200/12294</a>.</p>
+</div>
 </div>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="cd7f9f9e-610c-4e40-86d7-5ab56ac62c51">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('cd7f9f9e-610c-4e40-86d7-5ab56ac62c51','7b9644dc-6906-41d7-946b-d7aea76e5ffb','940272cd-4d7f-4e8a-a3ac-fa7206431041','../../lite/tree/../notebooks/?path=14feabe9_ea33_42fe_9d93_58adedad95f9.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <p>Let us consider the problem of minimizing the Rosenbrock function. This
 function (and its respective derivatives) is implemented in <a class="reference internal" href="scipy.optimize.rosen.html#scipy.optimize.rosen" title="scipy.optimize.rosen"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rosen</span></code></a>
 (resp. <a class="reference internal" href="scipy.optimize.rosen_der.html#scipy.optimize.rosen_der" title="scipy.optimize.rosen_der"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rosen_der</span></code></a>, <a class="reference internal" href="scipy.optimize.rosen_hess.html#scipy.optimize.rosen_hess" title="scipy.optimize.rosen_hess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rosen_hess</span></code></a>) in the <a class="reference internal" href="../optimize.html#module-scipy.optimize" title="scipy.optimize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.optimize</span></code></a>.</p>
@@ -1017,7 +1063,7 @@ options:</p>
 </pre></div>
 </div>
 <p>Next, consider a minimization problem with several constraints (namely
-Example 16.4 from <a class="reference internal" href="#rdd2e1855725e-5" id="id41">[5]</a>). The objective function is:</p>
+Example 16.4 from <a class="reference internal" href="#rdd2e1855725e-5" id="id43">[5]</a>). The objective function is:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
@@ -1037,7 +1083,9 @@ Example 16.4 from <a class="reference internal" href="#rdd2e1855725e-5" id="id41
 </pre></div>
 </div>
 <p>It should converge to the theoretical solution (1.4 ,1.7).</p>
-</dd></dl>
+</div>
+</div>
+<div id="940272cd-4d7f-4e8a-a3ac-fa7206431041" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('cd7f9f9e-610c-4e40-86d7-5ab56ac62c51','940272cd-4d7f-4e8a-a3ac-fa7206431041')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('cd7f9f9e-610c-4e40-86d7-5ab56ac62c51','940272cd-4d7f-4e8a-a3ac-fa7206431041')">Open In Tab</button></div><div id="7b9644dc-6906-41d7-946b-d7aea76e5ffb" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
@@ -1125,7 +1173,7 @@ Example 16.4 from <a class="reference internal" href="#rdd2e1855725e-5" id="id41
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.stats.kstat &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.stats.kstat &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,28 +29,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="../../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.stats.kstat';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -59,7 +63,7 @@
     <link rel="prev" title="scipy.stats.skew" href="scipy.stats.skew.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -134,35 +138,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -223,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -347,6 +353,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -493,14 +523,14 @@ document.write(`
 <h1>scipy.stats.kstat<a class="headerlink" href="#scipy-stats-kstat" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="scipy.stats.kstat">
-<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">kstat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'propagate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_morestats.py#L219-L315"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.kstat" title="Link to this definition">#</a></dt>
-<dd><p>Return the nth k-statistic (1&lt;=n&lt;=4 so far).</p>
-<p>The nth k-statistic k_n is the unique symmetric unbiased estimator of the
-nth cumulant kappa_n.</p>
+<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">kstat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'propagate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_morestats.py#L219-L325"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.kstat" title="Link to this definition">#</a></dt>
+<dd><p>Return the <em class="xref py py-obj">n</em> th k-statistic ( <code class="docutils literal notranslate"><span class="pre">1&lt;=n&lt;=4</span></code> so far).</p>
+<p>The <em class="xref py py-obj">n</em> th k-statistic <code class="docutils literal notranslate"><span class="pre">k_n</span></code> is the unique symmetric unbiased estimator of the
+<em class="xref py py-obj">n</em> th cumulant <span class="math notranslate nohighlight">\(\kappa_n\)</span> <a class="reference internal" href="#r20ede52c59ed-1" id="id1">[1]</a> <a class="reference internal" href="#r20ede52c59ed-2" id="id2">[2]</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>data</strong><span class="classifier">array_like</span></dt><dd><p>Input array. Note that n-D input gets flattened.</p>
+<dt><strong>data</strong><span class="classifier">array_like</span></dt><dd><p>Input array.</p>
 </dd>
 <dt><strong>n</strong><span class="classifier">int, {1, 2, 3, 4}, optional</span></dt><dd><p>Default is equal to 2.</p>
 </dd>
@@ -529,7 +559,7 @@ the result will broadcast correctly against the input array.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>kstat</strong><span class="classifier">float</span></dt><dd><p>The nth k-statistic.</p>
+<dt><strong>kstat</strong><span class="classifier">float</span></dt><dd><p>The <em class="xref py py-obj">n</em> th k-statistic.</p>
 </dd>
 </dl>
 </dd>
@@ -544,14 +574,17 @@ the result will broadcast correctly against the input array.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>For a sample size n, the first few k-statistics are given by:</p>
+<p>For a sample size <span class="math notranslate nohighlight">\(n\)</span>, the first few k-statistics are given by</p>
 <div class="math notranslate nohighlight">
-\[k_{1} = \mu
-k_{2} = \frac{n}{n-1} m_{2}
-k_{3} = \frac{ n^{2} } {(n-1) (n-2)} m_{3}
-k_{4} = \frac{ n^{2} [(n + 1)m_{4} - 3(n - 1) m^2_{2}]} {(n-1) (n-2) (n-3)}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the sample mean, <span class="math notranslate nohighlight">\(m_2\)</span> is the sample
-variance, and <span class="math notranslate nohighlight">\(m_i\)</span> is the i-th sample central moment.</p>
+\[\begin{split}k_1 &amp;= \frac{S_1}{n}, \\
+k_2 &amp;= \frac{nS_2 - S_1^2}{n(n-1)}, \\
+k_3 &amp;= \frac{2S_1^3 - 3nS_1S_2 + n^2S_3}{n(n-1)(n-2)}, \\
+k_4 &amp;= \frac{-6S_1^4 + 12nS_1^2S_2 - 3n(n-1)S_2^2 - 4n(n+1)S_1S_3
++ n^2(n+1)S_4}{n (n-1)(n-2)(n-3)},\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[S_r \equiv \sum_{i=1}^n X_i^r,\]</div>
+<p>and <span class="math notranslate nohighlight">\(X_i\)</span> is the <span class="math notranslate nohighlight">\(i\)</span> th data point.</p>
 <p>Beginning in SciPy 1.9, <code class="docutils literal notranslate"><span class="pre">np.matrix</span></code> inputs (not recommended for new
 code) are converted to <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> before the calculation is performed. In
 this case, the output will be a scalar or <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> of appropriate shape
@@ -559,30 +592,42 @@ rather than a 2D <code class="docutils literal notranslate"><span class="pre">np
 arrays are ignored, the output will be a scalar or <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> rather than a
 masked array with <code class="docutils literal notranslate"><span class="pre">mask=False</span></code>.</p>
 <p class="rubric">References</p>
+<div role="list" class="citation-list">
+<div class="citation" id="r20ede52c59ed-1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="http://mathworld.wolfram.com/k-Statistic.html">http://mathworld.wolfram.com/k-Statistic.html</a></p>
+</div>
+<div class="citation" id="r20ede52c59ed-2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="http://mathworld.wolfram.com/Cumulant.html">http://mathworld.wolfram.com/Cumulant.html</a></p>
+</div>
+</div>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="d61fa4c6-ef08-4b3c-b763-fbcc6c7b43bb">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('d61fa4c6-ef08-4b3c-b763-fbcc6c7b43bb','d94940da-e86f-466c-971b-1b2174d161d2','eaa02f65-2389-4ead-a3ef-67edb2f90649','../../lite/tree/../notebooks/?path=49a98a0f_b769_4859_ab28_5ba819c7b8f1.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">default_rng</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rng</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>As sample size increases, n-th moment and n-th k-statistic converge to the
+<p>As sample size increases, <em class="xref py py-obj">n</em>-th moment and <em class="xref py py-obj">n</em>-th k-statistic converge to the
 same number (although they aren’t identical). In the case of the normal
 distribution, they converge to zero.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]:</span>
-<span class="gp">... </span>    <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="n">m</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">moment</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstat</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.3g</span><span class="s2"> </span><span class="si">%.3g</span><span class="s2"> </span><span class="si">%.3g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="n">k</span><span class="p">))</span>
-<span class="go">-0.631 -0.651 0.0194  # random</span>
-<span class="go">0.0282 0.0283 -8.49e-05</span>
-<span class="go">-0.0454 -0.0454 1.36e-05</span>
-<span class="go">7.53e-05 7.53e-05 -2.26e-09</span>
-<span class="go">0.00166 0.00166 -4.99e-09</span>
-<span class="go">-2.88e-06 -2.88e-06 8.63e-13</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">=}</span><span class="s2">: </span><span class="si">{</span><span class="n">m</span><span class="si">=:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">k</span><span class="si">=:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="n">k</span><span class="p">)</span><span class="si">=:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">i=2: m=-0.631, k=-0.651, (m-k)=0.0194  # random</span>
+<span class="go">i=3: m=0.0282, k=0.0283, (m-k)=-8.49e-05</span>
+<span class="go">i=4: m=-0.0454, k=-0.0454, (m-k)=1.36e-05</span>
+<span class="go">i=6: m=7.53e-05, k=7.53e-05, (m-k)=-2.26e-09</span>
+<span class="go">i=7: m=0.00166, k=0.00166, (m-k)=-4.99e-09</span>
+<span class="go">i=8: m=-2.88e-06 k=-2.88e-06, (m-k)=8.63e-13</span>
 </pre></div>
 </div>
-</dd></dl>
+</div>
+</div>
+<div id="eaa02f65-2389-4ead-a3ef-67edb2f90649" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('d61fa4c6-ef08-4b3c-b763-fbcc6c7b43bb','eaa02f65-2389-4ead-a3ef-67edb2f90649')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('d61fa4c6-ef08-4b3c-b763-fbcc6c7b43bb','eaa02f65-2389-4ead-a3ef-67edb2f90649')">Open In Tab</button></div><div id="d94940da-e86f-466c-971b-1b2174d161d2" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
@@ -670,7 +715,7 @@ distribution, they converge to zero.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

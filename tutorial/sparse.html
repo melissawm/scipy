@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Sparse Arrays (scipy.sparse) &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>Sparse Arrays (scipy.sparse) &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,27 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/sparse';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,7 +62,7 @@
     <link rel="prev" title="Linear Algebra (scipy.linalg)" href="linalg.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -348,6 +354,30 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
 
 <script>
 document.write(`
@@ -424,10 +454,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="ndimage.html">Multidimensional image processing (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="io.html">File IO (<code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Executable tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/interp_transition_guide.html">Interpolate transition guide</a></li>
-</ul>
 
   </div>
 </nav></div>
@@ -495,19 +521,19 @@ document.write(`
 <h2>Getting started with sparse arrays<a class="headerlink" href="#getting-started-with-sparse-arrays" title="Link to this heading">#</a></h2>
 <p>Sparse arrays are a special kind of array where only a few locations in the array have data. This allows for <em>compressed</em> representations of the data to be used, where only the locations where data exists are recorded. There are many different sparse array formats, each of which makes a different tradeoff between compression and functionality. To start, let’s build a very simple sparse array, the Coordinate (COO) array (<a class="reference internal" href="../reference/generated/scipy.sparse.coo_array.html#scipy.sparse.coo_array" title="scipy.sparse.coo_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">coo_array</span></code></a>) and compare it to a dense array:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dense</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dense</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sparse</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">coo_array</span><span class="p">(</span><span class="n">dense</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dense</span>
 <span class="go">array([[1, 0, 0, 2],</span>
 <span class="go">    [0, 4, 1, 0],</span>
 <span class="go">    [0, 0, 5, 0]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sparse</span>
-<span class="go">&lt;3x4 sparse array of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;</span>
-<span class="go">      with 5 stored elements in COOrdinate format&gt;</span>
+<span class="go">&lt;COOrdinate sparse array of dtype &#39;int64&#39;</span>
+<span class="go">     with 5 stored elements and shape (3, 4)&gt;</span>
 </pre></div>
 </div>
-<p>Note that in our dense array, we have five nonzero values. For example, <code class="docutils literal notranslate"><span class="pre">2</span></code> is at location <code class="docutils literal notranslate"><span class="pre">0,3</span></code>, and <code class="docutils literal notranslate"><span class="pre">4</span></code> is at location <code class="docutils literal notranslate"><span class="pre">1,1</span></code>. All of the other values are zero. The sparse array records these five values <em>explicitly</em> (see the <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">stored</span> <span class="pre">elements</span> <span class="pre">in</span> <span class="pre">COOrdinate</span> <span class="pre">format</span></code>), and then represents all of the remaining zeros as <em>implicit</em> values.</p>
+<p>Note that in our dense array, we have five nonzero values. For example, <code class="docutils literal notranslate"><span class="pre">2</span></code> is at location <code class="docutils literal notranslate"><span class="pre">0,3</span></code>, and <code class="docutils literal notranslate"><span class="pre">4</span></code> is at location <code class="docutils literal notranslate"><span class="pre">1,1</span></code>. All of the other values are zero. The sparse array records these five values <em>explicitly</em> (see the <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">stored</span> <span class="pre">elements</span> <span class="pre">and</span> <span class="pre">shape</span> <span class="pre">(3,</span> <span class="pre">4)</span></code>), and then represents all of the remaining zeros as <em>implicit</em> values.</p>
 <p>Most sparse array methods work in a similar fashion to dense array methods:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sparse</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="go">5</span>
@@ -553,8 +579,8 @@ document.write(`
 </div>
 <p>Sometimes, <a class="reference internal" href="../reference/sparse.html#module-scipy.sparse" title="scipy.sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse</span></code></a> will return a different sparse matrix format than the input sparse matrix format. For example, the dot product of two sparse arrays in COO format will be a CSR format array:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sparse</span> <span class="o">@</span> <span class="n">sparse</span><span class="o">.</span><span class="n">T</span>
-<span class="go">&lt;3x3 sparse array of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;</span>
-<span class="go">     with 5 stored elements in Compressed Sparse Row format&gt;</span>
+<span class="go">&lt;Compressed Sparse Row sparse array of dtype &#39;int64&#39;</span>
+<span class="go">     with 5 stored elements and shape (3, 3)&gt;</span>
 </pre></div>
 </div>
 <p>This change occurs because <a class="reference internal" href="../reference/sparse.html#module-scipy.sparse" title="scipy.sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse</span></code></a> will change the format of input sparse arrays in order to use the most efficient computational method.</p>
@@ -569,7 +595,7 @@ document.write(`
 <li><p>List of Lists (LIL) arrays <a class="reference internal" href="../reference/generated/scipy.sparse.lil_array.html#scipy.sparse.lil_array" title="scipy.sparse.lil_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.sparse.lil_array</span></code></a>, which are useful for fast construction and modification of sparse arrays.</p></li>
 </ul>
 <p>More information on the strengths and weaknesses of each of the sparse array formats can be found in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/sparse.html#sparse-array-classes">their documentation</a>.</p>
-<p>All formats of <a class="reference internal" href="../reference/sparse.html#module-scipy.sparse" title="scipy.sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse</span></code></a> arrays can be constructed directly from a <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.0.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>. However, some sparse formats can be constructed in different ways, too. Each sparse array format has different strengths, and these strengths are documented in each class. For example, one of the most common methods for constructing sparse arrays is to build a sparse array from the individual <code class="docutils literal notranslate"><span class="pre">row</span></code>, <code class="docutils literal notranslate"><span class="pre">column</span></code>, and <code class="docutils literal notranslate"><span class="pre">data</span></code> values. For our array from before:</p>
+<p>All formats of <a class="reference internal" href="../reference/sparse.html#module-scipy.sparse" title="scipy.sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse</span></code></a> arrays can be constructed directly from a <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>. However, some sparse formats can be constructed in different ways, too. Each sparse array format has different strengths, and these strengths are documented in each class. For example, one of the most common methods for constructing sparse arrays is to build a sparse array from the individual <code class="docutils literal notranslate"><span class="pre">row</span></code>, <code class="docutils literal notranslate"><span class="pre">column</span></code>, and <code class="docutils literal notranslate"><span class="pre">data</span></code> values. For our array from before:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dense</span>
 <span class="go">array([[1, 0, 0, 2],</span>
 <span class="go">    [0, 4, 1, 0],</span>
@@ -585,8 +611,8 @@ document.write(`
 <p>Using these, we can now define a sparse array without building a dense array first:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">csr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_array</span><span class="p">((</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">csr</span>
-<span class="go">&lt;3x4 sparse array of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;</span>
-<span class="go">     with 5 stored elements in Compressed Sparse Row format&gt;</span>
+<span class="go">&lt;Compressed Sparse Row sparse array of dtype &#39;int64&#39;</span>
+<span class="go">     with 5 stored elements and shape (3, 4)&gt;</span>
 </pre></div>
 </div>
 <p>Different classes have different constructors, but the <a class="reference internal" href="../reference/generated/scipy.sparse.csr_array.html#scipy.sparse.csr_array" title="scipy.sparse.csr_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.sparse.csr_array</span></code></a>, <a class="reference internal" href="../reference/generated/scipy.sparse.csc_array.html#scipy.sparse.csc_array" title="scipy.sparse.csc_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.sparse.csc_array</span></code></a>, and <a class="reference internal" href="../reference/generated/scipy.sparse.coo_array.html#scipy.sparse.coo_array" title="scipy.sparse.coo_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.sparse.coo_array</span></code></a> allow for this style of construction.</p>
@@ -603,8 +629,8 @@ document.write(`
 <p>Then, our sparse array will have <em>six</em> stored elements, not five:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">csr</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_array</span><span class="p">((</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">csr</span>
-<span class="go">&lt;3x4 sparse array of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;</span>
-<span class="go">     with 6 stored elements in Compressed Sparse Row format&gt;</span>
+<span class="go">&lt;Compressed Sparse Row sparse array of dtype &#39;int64&#39;</span>
+<span class="go">     with 6 stored elements and shape (3, 4)&gt;</span>
 </pre></div>
 </div>
 <p>The “extra” element is our <em>explicit zero</em>. The two are still identical when converted back into a dense array, because dense arrays represent <em>everything</em> explicitly:</p>
@@ -620,12 +646,12 @@ document.write(`
 </div>
 <p>But, for sparse arithmetic, linear algebra, and graph methods, the value at <code class="docutils literal notranslate"><span class="pre">2,3</span></code> will be considered an <em>explicit zero</em>. To remove this explicit zero, we can use the <code class="docutils literal notranslate"><span class="pre">csr.eliminate_zeros()</span></code> method. This operates on the sparse array <em>in place</em>, and removes any zero-value stored elements:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">csr</span>
-<span class="go">&lt;3x4 sparse array of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;</span>
-<span class="go">     with 6 stored elements in Compressed Sparse Row format&gt;</span>
+<span class="go">&lt;Compressed Sparse Row sparse array of dtype &#39;int64&#39;</span>
+<span class="go">     with 6 stored elements and shape (3, 4)&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">csr</span><span class="o">.</span><span class="n">eliminate_zeros</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">csr</span>
-<span class="go">&lt;3x4 sparse array of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;</span>
-<span class="go">     with 5 stored elements in Compressed Sparse Row format&gt;</span>
+<span class="go">&lt;Compressed Sparse Row sparse array of dtype &#39;int64&#39;</span>
+<span class="go">     with 5 stored elements and shape (3, 4)&gt;</span>
 </pre></div>
 </div>
 <p>Before <code class="docutils literal notranslate"><span class="pre">csr.eliminate_zeros()</span></code>, there were six stored elements. After, there are only five stored elements.</p>
@@ -638,8 +664,8 @@ document.write(`
 <p>In this case, we can see that there are <em>two</em> <code class="docutils literal notranslate"><span class="pre">data</span></code> values that correspond to the <code class="docutils literal notranslate"><span class="pre">1,1</span></code> location in our final array. <a class="reference internal" href="../reference/sparse.html#module-scipy.sparse" title="scipy.sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse</span></code></a> will store these values separately:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dupes</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">coo_array</span><span class="p">((</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dupes</span>
-<span class="go">&lt;3x4 sparse array of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;</span>
-<span class="go">     with 6 stored elements in COOrdinate format&gt;</span>
+<span class="go">&lt;COOrdinate sparse array of dtype &#39;int64&#39;</span>
+<span class="go">     with 6 stored elements and shape (3, 4)&gt;</span>
 </pre></div>
 </div>
 <p>Note that there are six stored elements in this sparse array, despite only having five unique locations where data occurs. When these arrays are converted back to dense arrays, the duplicate values are summed. So, at location <code class="docutils literal notranslate"><span class="pre">1,1</span></code>, the dense array will contain the sum of duplicate stored entries, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">3</span></code>:</p>
@@ -652,8 +678,8 @@ document.write(`
 <p>To remove duplicate values within the sparse array itself and thus reduce the number of stored elements, we can use the <code class="docutils literal notranslate"><span class="pre">.sum_duplicates()</span></code> method:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dupes</span><span class="o">.</span><span class="n">sum_duplicates</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dupes</span>
-<span class="go">&lt;3x4 sparse array of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;</span>
-<span class="go">     with 5 stored elements in COOrdinate format&gt;</span>
+<span class="go">&lt;COOrdinate sparse array of dtype &#39;int64&#39;</span>
+<span class="go">     with 5 stored elements and shape (3, 4)&gt;</span>
 </pre></div>
 </div>
 <p>Now there are only five stored elements in our sparse array, and it is identical to the array we have been working with throughout this guide:</p>
@@ -782,7 +808,7 @@ See the docstrings of these classes for details on each canonical representation
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

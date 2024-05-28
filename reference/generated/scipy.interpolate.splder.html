@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.interpolate.splder &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.interpolate.splder &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,28 +29,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="../../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.interpolate.splder';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -59,7 +63,7 @@
     <link rel="prev" title="scipy.interpolate.spalde" href="scipy.interpolate.spalde.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -134,35 +138,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -223,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -347,6 +353,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -493,12 +523,14 @@ document.write(`
 <h1>scipy.interpolate.splder<a class="headerlink" href="#scipy-interpolate-splder" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="scipy.interpolate.splder">
-<span class="sig-prename descclassname"><span class="pre">scipy.interpolate.</span></span><span class="sig-name descname"><span class="pre">splder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tck</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/interpolate/_fitpack_py.py#L665-L719"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.interpolate.splder" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">scipy.interpolate.</span></span><span class="sig-name descname"><span class="pre">splder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tck</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/interpolate/_fitpack_py.py#L728-L787"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.interpolate.splder" title="Link to this definition">#</a></dt>
 <dd><p>Compute the spline representation of the derivative of a given spline</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>tck</strong><span class="classifier">BSpline instance or a tuple of (t, c, k)</span></dt><dd><p>Spline whose derivative to compute</p>
+<dt><strong>tck</strong><span class="classifier">BSpline instance or tuple</span></dt><dd><p>BSpline instance or a tuple (t,c,k) containing the vector of knots,
+the B-spline coefficients, and the degree of the spline whose 
+derivative to compute</p>
 </dd>
 <dt><strong>n</strong><span class="classifier">int, optional</span></dt><dd><p>Order of derivative to evaluate. Default: 1</p>
 </dd>
@@ -508,7 +540,7 @@ document.write(`
 <dd class="field-even"><dl class="simple">
 <dt><a class="reference internal" href="scipy.interpolate.BSpline.html#scipy.interpolate.BSpline" title="scipy.interpolate.BSpline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BSpline</span></code></a> instance or tuple</dt><dd><p>Spline of order k2=k-n representing the derivative
 of the input spline.
-A tuple is returned iff the input argument <em class="xref py py-obj">tck</em> is a tuple, otherwise
+A tuple is returned if the input argument <em class="xref py py-obj">tck</em> is a tuple, otherwise
 a BSpline object is constructed and returned.</p>
 </dd>
 </dl>
@@ -523,9 +555,11 @@ a BSpline object is constructed and returned.</p>
 </div>
 <p class="rubric">Notes</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 0.13.0.</span></p>
+<p><span class="versionmodified added">Added in version 0.13.0.</span></p>
 </div>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="b3812374-fbc9-4ed3-9c10-0effc47e8ed0">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('b3812374-fbc9-4ed3-9c10-0effc47e8ed0','1b47e79b-eb19-4897-b2b8-07472eac82b1','424f4464-f1de-457b-b1d6-88ebd4b18c03','../../lite/tree/../notebooks/?path=55d9b734_c78a_4282_b7af_8de36b7b5050.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <p>This can be used for finding maxima of a curve:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">splrep</span><span class="p">,</span> <span class="n">splder</span><span class="p">,</span> <span class="n">sproot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -544,7 +578,11 @@ fit an order 4 spline):</p>
 </div>
 <p>This agrees well with roots <span class="math notranslate nohighlight">\(\pi/2 + n\pi\)</span> of
 <span class="math notranslate nohighlight">\(\cos(x) = \sin'(x)\)</span>.</p>
-</dd></dl>
+<p>A comparison between <a class="reference internal" href="scipy.interpolate.splev.html#scipy.interpolate.splev" title="scipy.interpolate.splev"><code class="xref py py-obj docutils literal notranslate"><span class="pre">splev</span></code></a>, <a class="reference internal" href="#scipy.interpolate.splder" title="scipy.interpolate.splder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">splder</span></code></a> and <a class="reference internal" href="scipy.interpolate.spalde.html#scipy.interpolate.spalde" title="scipy.interpolate.spalde"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spalde</span></code></a> to compute the derivatives of a 
+B-spline can be found in the <a class="reference internal" href="scipy.interpolate.spalde.html#scipy.interpolate.spalde" title="scipy.interpolate.spalde"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spalde</span></code></a> examples section.</p>
+</div>
+</div>
+<div id="424f4464-f1de-457b-b1d6-88ebd4b18c03" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('b3812374-fbc9-4ed3-9c10-0effc47e8ed0','424f4464-f1de-457b-b1d6-88ebd4b18c03')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('b3812374-fbc9-4ed3-9c10-0effc47e8ed0','424f4464-f1de-457b-b1d6-88ebd4b18c03')">Open In Tab</button></div><div id="1b47e79b-eb19-4897-b2b8-07472eac82b1" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
@@ -632,7 +670,7 @@ fit an order 4 spline):</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

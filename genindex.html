@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>Index &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -28,34 +28,38 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/documentation_options.js?v=41e5ba13"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -130,35 +134,13 @@
       
     
     
-    <img src="_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -219,6 +201,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -341,6 +347,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -481,8 +511,6 @@ document.write(`
         <li><a href="reference/generated/scipy.interpolate.CubicSpline.__call__.html#scipy.interpolate.CubicSpline.__call__">(scipy.interpolate.CubicSpline method)</a>
 </li>
         <li><a href="reference/generated/scipy.interpolate.interp1d.__call__.html#scipy.interpolate.interp1d.__call__">(scipy.interpolate.interp1d method)</a>
-</li>
-        <li><a href="reference/generated/scipy.interpolate.interp2d.__call__.html#scipy.interpolate.interp2d.__call__">(scipy.interpolate.interp2d method)</a>
 </li>
         <li><a href="reference/generated/scipy.interpolate.InterpolatedUnivariateSpline.__call__.html#scipy.interpolate.InterpolatedUnivariateSpline.__call__">(scipy.interpolate.InterpolatedUnivariateSpline method)</a>
 </li>
@@ -738,34 +766,6 @@ document.write(`
 </li>
         <li><a href="reference/generated/scipy.signal.StateSpace.A.html#scipy.signal.StateSpace.A">(scipy.signal.StateSpace property)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.bsr_array.A.html#scipy.sparse.bsr_array.A">(scipy.sparse.bsr_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.A.html#scipy.sparse.bsr_matrix.A">(scipy.sparse.bsr_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.A.html#scipy.sparse.coo_array.A">(scipy.sparse.coo_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_matrix.A.html#scipy.sparse.coo_matrix.A">(scipy.sparse.coo_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.A.html#scipy.sparse.csc_array.A">(scipy.sparse.csc_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_matrix.A.html#scipy.sparse.csc_matrix.A">(scipy.sparse.csc_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.A.html#scipy.sparse.csr_array.A">(scipy.sparse.csr_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csr_matrix.A.html#scipy.sparse.csr_matrix.A">(scipy.sparse.csr_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.A.html#scipy.sparse.dia_array.A">(scipy.sparse.dia_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_matrix.A.html#scipy.sparse.dia_matrix.A">(scipy.sparse.dia_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.A.html#scipy.sparse.dok_array.A">(scipy.sparse.dok_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dok_matrix.A.html#scipy.sparse.dok_matrix.A">(scipy.sparse.dok_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_array.A.html#scipy.sparse.lil_array.A">(scipy.sparse.lil_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_matrix.A.html#scipy.sparse.lil_matrix.A">(scipy.sparse.lil_matrix property)</a>
-</li>
       </ul></li>
       <li><a href="reference/generated/scipy.integrate.DOP853.A_EXTRA.html#scipy.integrate.DOP853.A_EXTRA">A_EXTRA (scipy.integrate.DOP853 attribute)</a>
 </li>
@@ -811,6 +811,8 @@ document.write(`
         <li><a href="reference/generated/scipy.odr.OdrStop.html#scipy.odr.OdrStop.add_note">(scipy.odr.OdrStop method)</a>
 </li>
         <li><a href="reference/generated/scipy.odr.OdrWarning.html#scipy.odr.OdrWarning.add_note">(scipy.odr.OdrWarning method)</a>
+</li>
+        <li><a href="reference/generated/scipy.optimize.NoConvergence.html#scipy.optimize.NoConvergence.add_note">(scipy.optimize.NoConvergence method)</a>
 </li>
         <li><a href="reference/generated/scipy.optimize.OptimizeWarning.html#scipy.optimize.OptimizeWarning.add_note">(scipy.optimize.OptimizeWarning method)</a>
 </li>
@@ -1117,32 +1119,18 @@ document.write(`
         <li><a href="reference/generated/scipy.sparse.lil_matrix.asformat.html#scipy.sparse.lil_matrix.asformat">(scipy.sparse.lil_matrix method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/scipy.sparse.bsr_array.asfptype.html#scipy.sparse.bsr_array.asfptype">asfptype() (scipy.sparse.bsr_array method)</a>
+      <li><a href="reference/generated/scipy.sparse.bsr_matrix.asfptype.html#scipy.sparse.bsr_matrix.asfptype">asfptype() (scipy.sparse.bsr_matrix method)</a>
 
       <ul>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.asfptype.html#scipy.sparse.bsr_matrix.asfptype">(scipy.sparse.bsr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.asfptype.html#scipy.sparse.coo_array.asfptype">(scipy.sparse.coo_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.coo_matrix.asfptype.html#scipy.sparse.coo_matrix.asfptype">(scipy.sparse.coo_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.asfptype.html#scipy.sparse.csc_array.asfptype">(scipy.sparse.csc_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.csc_matrix.asfptype.html#scipy.sparse.csc_matrix.asfptype">(scipy.sparse.csc_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.asfptype.html#scipy.sparse.csr_array.asfptype">(scipy.sparse.csr_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.csr_matrix.asfptype.html#scipy.sparse.csr_matrix.asfptype">(scipy.sparse.csr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.asfptype.html#scipy.sparse.dia_array.asfptype">(scipy.sparse.dia_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.dia_matrix.asfptype.html#scipy.sparse.dia_matrix.asfptype">(scipy.sparse.dia_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.asfptype.html#scipy.sparse.dok_array.asfptype">(scipy.sparse.dok_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.dok_matrix.asfptype.html#scipy.sparse.dok_matrix.asfptype">(scipy.sparse.dok_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_array.asfptype.html#scipy.sparse.lil_array.asfptype">(scipy.sparse.lil_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.lil_matrix.asfptype.html#scipy.sparse.lil_matrix.asfptype">(scipy.sparse.lil_matrix method)</a>
 </li>
@@ -2606,7 +2594,11 @@ document.write(`
 </li>
       </ul></li>
       <li><a href="reference/generated/scipy.interpolate.BSpline.design_matrix.html#scipy.interpolate.BSpline.design_matrix">design_matrix() (scipy.interpolate.BSpline class method)</a>
+
+      <ul>
+        <li><a href="reference/generated/scipy.interpolate.NdBSpline.design_matrix.html#scipy.interpolate.NdBSpline.design_matrix">(scipy.interpolate.NdBSpline class method)</a>
 </li>
+      </ul></li>
       <li><a href="reference/generated/scipy.fftpack.convolve.destroy_convolve_cache.html#scipy.fftpack.convolve.destroy_convolve_cache">destroy_convolve_cache() (in module scipy.fftpack.convolve)</a>
 </li>
       <li><a href="reference/generated/scipy.linalg.det.html#scipy.linalg.det">det() (in module scipy.linalg)</a>
@@ -2821,10 +2813,10 @@ document.write(`
 </li>
       <li><a href="reference/generated/scipy.linalg.lapack.dlarfg.html#scipy.linalg.lapack.dlarfg">dlarfg (in module scipy.linalg.lapack)</a>
 </li>
-      <li><a href="reference/generated/scipy.linalg.lapack.dlartg.html#scipy.linalg.lapack.dlartg">dlartg (in module scipy.linalg.lapack)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/scipy.linalg.lapack.dlartg.html#scipy.linalg.lapack.dlartg">dlartg (in module scipy.linalg.lapack)</a>
+</li>
       <li><a href="reference/generated/scipy.linalg.lapack.dlasd4.html#scipy.linalg.lapack.dlasd4">dlasd4 (in module scipy.linalg.lapack)</a>
 </li>
       <li><a href="reference/generated/scipy.linalg.lapack.dlaswp.html#scipy.linalg.lapack.dlaswp">dlaswp (in module scipy.linalg.lapack)</a>
@@ -3926,7 +3918,9 @@ document.write(`
       <ul>
         <li><a href="reference/generated/scipy.optimize.RootResults.fromkeys.html#scipy.optimize.RootResults.fromkeys">(scipy.optimize.RootResults method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.dok_matrix.fromkeys.html#scipy.sparse.dok_matrix.fromkeys">(scipy.sparse.dok_matrix method)</a>
+        <li><a href="reference/generated/scipy.sparse.dok_array.fromkeys.html#scipy.sparse.dok_array.fromkeys">(scipy.sparse.dok_array class method)</a>
+</li>
+        <li><a href="reference/generated/scipy.sparse.dok_matrix.fromkeys.html#scipy.sparse.dok_matrix.fromkeys">(scipy.sparse.dok_matrix class method)</a>
 </li>
       </ul></li>
       <li><a href="reference/generated/scipy.signal.ShortTimeFFT.fs.html#scipy.signal.ShortTimeFFT.fs">fs (scipy.signal.ShortTimeFFT property)</a>
@@ -4143,6 +4137,8 @@ document.write(`
         <li><a href="reference/generated/scipy.interpolate.UnivariateSpline.get_residual.html#scipy.interpolate.UnivariateSpline.get_residual">(scipy.interpolate.UnivariateSpline method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/scipy.integrate.complex_ode.get_return_code.html#scipy.integrate.complex_ode.get_return_code">get_return_code() (scipy.integrate.complex_ode method)</a>
 
       <ul>
@@ -4151,32 +4147,18 @@ document.write(`
       </ul></li>
       <li><a href="reference/generated/scipy.cluster.hierarchy.ClusterNode.get_right.html#scipy.cluster.hierarchy.ClusterNode.get_right">get_right() (scipy.cluster.hierarchy.ClusterNode method)</a>
 </li>
-      <li><a href="reference/generated/scipy.sparse.bsr_array.get_shape.html#scipy.sparse.bsr_array.get_shape">get_shape() (scipy.sparse.bsr_array method)</a>
+      <li><a href="reference/generated/scipy.sparse.bsr_matrix.get_shape.html#scipy.sparse.bsr_matrix.get_shape">get_shape() (scipy.sparse.bsr_matrix method)</a>
 
       <ul>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.get_shape.html#scipy.sparse.bsr_matrix.get_shape">(scipy.sparse.bsr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.get_shape.html#scipy.sparse.coo_array.get_shape">(scipy.sparse.coo_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.coo_matrix.get_shape.html#scipy.sparse.coo_matrix.get_shape">(scipy.sparse.coo_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.get_shape.html#scipy.sparse.csc_array.get_shape">(scipy.sparse.csc_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.csc_matrix.get_shape.html#scipy.sparse.csc_matrix.get_shape">(scipy.sparse.csc_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.get_shape.html#scipy.sparse.csr_array.get_shape">(scipy.sparse.csr_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.csr_matrix.get_shape.html#scipy.sparse.csr_matrix.get_shape">(scipy.sparse.csr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.get_shape.html#scipy.sparse.dia_array.get_shape">(scipy.sparse.dia_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.dia_matrix.get_shape.html#scipy.sparse.dia_matrix.get_shape">(scipy.sparse.dia_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.get_shape.html#scipy.sparse.dok_array.get_shape">(scipy.sparse.dok_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.dok_matrix.get_shape.html#scipy.sparse.dok_matrix.get_shape">(scipy.sparse.dok_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_array.get_shape.html#scipy.sparse.lil_array.get_shape">(scipy.sparse.lil_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.lil_matrix.get_shape.html#scipy.sparse.lil_matrix.get_shape">(scipy.sparse.lil_matrix method)</a>
 </li>
@@ -4189,36 +4171,20 @@ document.write(`
         <li><a href="reference/generated/scipy.signal.windows.get_window.html#scipy.signal.windows.get_window">(in module scipy.signal.windows)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/scipy.fft.get_workers.html#scipy.fft.get_workers">get_workers() (in module scipy.fft)</a>
 </li>
-      <li><a href="reference/generated/scipy.sparse.bsr_array.getcol.html#scipy.sparse.bsr_array.getcol">getcol() (scipy.sparse.bsr_array method)</a>
+      <li><a href="reference/generated/scipy.sparse.bsr_matrix.getcol.html#scipy.sparse.bsr_matrix.getcol">getcol() (scipy.sparse.bsr_matrix method)</a>
 
       <ul>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.getcol.html#scipy.sparse.bsr_matrix.getcol">(scipy.sparse.bsr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.getcol.html#scipy.sparse.coo_array.getcol">(scipy.sparse.coo_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.coo_matrix.getcol.html#scipy.sparse.coo_matrix.getcol">(scipy.sparse.coo_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.getcol.html#scipy.sparse.csc_array.getcol">(scipy.sparse.csc_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.csc_matrix.getcol.html#scipy.sparse.csc_matrix.getcol">(scipy.sparse.csc_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.getcol.html#scipy.sparse.csr_array.getcol">(scipy.sparse.csr_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.csr_matrix.getcol.html#scipy.sparse.csr_matrix.getcol">(scipy.sparse.csr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.getcol.html#scipy.sparse.dia_array.getcol">(scipy.sparse.dia_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.dia_matrix.getcol.html#scipy.sparse.dia_matrix.getcol">(scipy.sparse.dia_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.getcol.html#scipy.sparse.dok_array.getcol">(scipy.sparse.dok_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.dok_matrix.getcol.html#scipy.sparse.dok_matrix.getcol">(scipy.sparse.dok_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_array.getcol.html#scipy.sparse.lil_array.getcol">(scipy.sparse.lil_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.lil_matrix.getcol.html#scipy.sparse.lil_matrix.getcol">(scipy.sparse.lil_matrix method)</a>
 </li>
@@ -4227,156 +4193,88 @@ document.write(`
       </ul></li>
       <li><a href="reference/generated/scipy.special.geterr.html#scipy.special.geterr">geterr() (in module scipy.special)</a>
 </li>
-      <li><a href="reference/generated/scipy.sparse.bsr_array.getformat.html#scipy.sparse.bsr_array.getformat">getformat() (scipy.sparse.bsr_array method)</a>
+      <li><a href="reference/generated/scipy.sparse.bsr_matrix.getformat.html#scipy.sparse.bsr_matrix.getformat">getformat() (scipy.sparse.bsr_matrix method)</a>
 
       <ul>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.getformat.html#scipy.sparse.bsr_matrix.getformat">(scipy.sparse.bsr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.getformat.html#scipy.sparse.coo_array.getformat">(scipy.sparse.coo_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.coo_matrix.getformat.html#scipy.sparse.coo_matrix.getformat">(scipy.sparse.coo_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.getformat.html#scipy.sparse.csc_array.getformat">(scipy.sparse.csc_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.csc_matrix.getformat.html#scipy.sparse.csc_matrix.getformat">(scipy.sparse.csc_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.getformat.html#scipy.sparse.csr_array.getformat">(scipy.sparse.csr_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.csr_matrix.getformat.html#scipy.sparse.csr_matrix.getformat">(scipy.sparse.csr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.getformat.html#scipy.sparse.dia_array.getformat">(scipy.sparse.dia_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.dia_matrix.getformat.html#scipy.sparse.dia_matrix.getformat">(scipy.sparse.dia_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.getformat.html#scipy.sparse.dok_array.getformat">(scipy.sparse.dok_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.dok_matrix.getformat.html#scipy.sparse.dok_matrix.getformat">(scipy.sparse.dok_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_array.getformat.html#scipy.sparse.lil_array.getformat">(scipy.sparse.lil_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.lil_matrix.getformat.html#scipy.sparse.lil_matrix.getformat">(scipy.sparse.lil_matrix method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.spmatrix.getformat.html#scipy.sparse.spmatrix.getformat">(scipy.sparse.spmatrix method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/scipy.sparse.bsr_array.getH.html#scipy.sparse.bsr_array.getH">getH() (scipy.sparse.bsr_array method)</a>
+      <li><a href="reference/generated/scipy.sparse.bsr_matrix.getH.html#scipy.sparse.bsr_matrix.getH">getH() (scipy.sparse.bsr_matrix method)</a>
 
       <ul>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.getH.html#scipy.sparse.bsr_matrix.getH">(scipy.sparse.bsr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.getH.html#scipy.sparse.coo_array.getH">(scipy.sparse.coo_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.coo_matrix.getH.html#scipy.sparse.coo_matrix.getH">(scipy.sparse.coo_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.getH.html#scipy.sparse.csc_array.getH">(scipy.sparse.csc_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.csc_matrix.getH.html#scipy.sparse.csc_matrix.getH">(scipy.sparse.csc_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.getH.html#scipy.sparse.csr_array.getH">(scipy.sparse.csr_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.csr_matrix.getH.html#scipy.sparse.csr_matrix.getH">(scipy.sparse.csr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.getH.html#scipy.sparse.dia_array.getH">(scipy.sparse.dia_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.dia_matrix.getH.html#scipy.sparse.dia_matrix.getH">(scipy.sparse.dia_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.getH.html#scipy.sparse.dok_array.getH">(scipy.sparse.dok_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.dok_matrix.getH.html#scipy.sparse.dok_matrix.getH">(scipy.sparse.dok_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_array.getH.html#scipy.sparse.lil_array.getH">(scipy.sparse.lil_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.lil_matrix.getH.html#scipy.sparse.lil_matrix.getH">(scipy.sparse.lil_matrix method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.spmatrix.getH.html#scipy.sparse.spmatrix.getH">(scipy.sparse.spmatrix method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/scipy.sparse.bsr_array.getmaxprint.html#scipy.sparse.bsr_array.getmaxprint">getmaxprint() (scipy.sparse.bsr_array method)</a>
+      <li><a href="reference/generated/scipy.sparse.bsr_matrix.getmaxprint.html#scipy.sparse.bsr_matrix.getmaxprint">getmaxprint() (scipy.sparse.bsr_matrix method)</a>
 
       <ul>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.getmaxprint.html#scipy.sparse.bsr_matrix.getmaxprint">(scipy.sparse.bsr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.getmaxprint.html#scipy.sparse.coo_array.getmaxprint">(scipy.sparse.coo_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.coo_matrix.getmaxprint.html#scipy.sparse.coo_matrix.getmaxprint">(scipy.sparse.coo_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.getmaxprint.html#scipy.sparse.csc_array.getmaxprint">(scipy.sparse.csc_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.csc_matrix.getmaxprint.html#scipy.sparse.csc_matrix.getmaxprint">(scipy.sparse.csc_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.getmaxprint.html#scipy.sparse.csr_array.getmaxprint">(scipy.sparse.csr_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.csr_matrix.getmaxprint.html#scipy.sparse.csr_matrix.getmaxprint">(scipy.sparse.csr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.getmaxprint.html#scipy.sparse.dia_array.getmaxprint">(scipy.sparse.dia_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.dia_matrix.getmaxprint.html#scipy.sparse.dia_matrix.getmaxprint">(scipy.sparse.dia_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.getmaxprint.html#scipy.sparse.dok_array.getmaxprint">(scipy.sparse.dok_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.dok_matrix.getmaxprint.html#scipy.sparse.dok_matrix.getmaxprint">(scipy.sparse.dok_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_array.getmaxprint.html#scipy.sparse.lil_array.getmaxprint">(scipy.sparse.lil_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.lil_matrix.getmaxprint.html#scipy.sparse.lil_matrix.getmaxprint">(scipy.sparse.lil_matrix method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.spmatrix.getmaxprint.html#scipy.sparse.spmatrix.getmaxprint">(scipy.sparse.spmatrix method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/scipy.sparse.bsr_array.getnnz.html#scipy.sparse.bsr_array.getnnz">getnnz() (scipy.sparse.bsr_array method)</a>
+      <li><a href="reference/generated/scipy.sparse.bsr_matrix.getnnz.html#scipy.sparse.bsr_matrix.getnnz">getnnz() (scipy.sparse.bsr_matrix method)</a>
 
       <ul>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.getnnz.html#scipy.sparse.bsr_matrix.getnnz">(scipy.sparse.bsr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.getnnz.html#scipy.sparse.coo_array.getnnz">(scipy.sparse.coo_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.coo_matrix.getnnz.html#scipy.sparse.coo_matrix.getnnz">(scipy.sparse.coo_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.getnnz.html#scipy.sparse.csc_array.getnnz">(scipy.sparse.csc_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.csc_matrix.getnnz.html#scipy.sparse.csc_matrix.getnnz">(scipy.sparse.csc_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.getnnz.html#scipy.sparse.csr_array.getnnz">(scipy.sparse.csr_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.csr_matrix.getnnz.html#scipy.sparse.csr_matrix.getnnz">(scipy.sparse.csr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.getnnz.html#scipy.sparse.dia_array.getnnz">(scipy.sparse.dia_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.dia_matrix.getnnz.html#scipy.sparse.dia_matrix.getnnz">(scipy.sparse.dia_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.getnnz.html#scipy.sparse.dok_array.getnnz">(scipy.sparse.dok_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.dok_matrix.getnnz.html#scipy.sparse.dok_matrix.getnnz">(scipy.sparse.dok_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_array.getnnz.html#scipy.sparse.lil_array.getnnz">(scipy.sparse.lil_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.lil_matrix.getnnz.html#scipy.sparse.lil_matrix.getnnz">(scipy.sparse.lil_matrix method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.spmatrix.getnnz.html#scipy.sparse.spmatrix.getnnz">(scipy.sparse.spmatrix method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/scipy.sparse.bsr_array.getrow.html#scipy.sparse.bsr_array.getrow">getrow() (scipy.sparse.bsr_array method)</a>
+      <li><a href="reference/generated/scipy.sparse.bsr_matrix.getrow.html#scipy.sparse.bsr_matrix.getrow">getrow() (scipy.sparse.bsr_matrix method)</a>
 
       <ul>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.getrow.html#scipy.sparse.bsr_matrix.getrow">(scipy.sparse.bsr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.getrow.html#scipy.sparse.coo_array.getrow">(scipy.sparse.coo_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.coo_matrix.getrow.html#scipy.sparse.coo_matrix.getrow">(scipy.sparse.coo_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.getrow.html#scipy.sparse.csc_array.getrow">(scipy.sparse.csc_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.csc_matrix.getrow.html#scipy.sparse.csc_matrix.getrow">(scipy.sparse.csc_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.getrow.html#scipy.sparse.csr_array.getrow">(scipy.sparse.csr_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.csr_matrix.getrow.html#scipy.sparse.csr_matrix.getrow">(scipy.sparse.csr_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.getrow.html#scipy.sparse.dia_array.getrow">(scipy.sparse.dia_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.dia_matrix.getrow.html#scipy.sparse.dia_matrix.getrow">(scipy.sparse.dia_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.getrow.html#scipy.sparse.dok_array.getrow">(scipy.sparse.dok_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.dok_matrix.getrow.html#scipy.sparse.dok_matrix.getrow">(scipy.sparse.dok_matrix method)</a>
 </li>
@@ -4440,34 +4338,6 @@ document.write(`
       <li><a href="reference/generated/scipy.optimize.LbfgsInvHessProduct.H.html#scipy.optimize.LbfgsInvHessProduct.H">H (scipy.optimize.LbfgsInvHessProduct property)</a>
 
       <ul>
-        <li><a href="reference/generated/scipy.sparse.bsr_array.H.html#scipy.sparse.bsr_array.H">(scipy.sparse.bsr_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.H.html#scipy.sparse.bsr_matrix.H">(scipy.sparse.bsr_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.H.html#scipy.sparse.coo_array.H">(scipy.sparse.coo_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_matrix.H.html#scipy.sparse.coo_matrix.H">(scipy.sparse.coo_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.H.html#scipy.sparse.csc_array.H">(scipy.sparse.csc_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_matrix.H.html#scipy.sparse.csc_matrix.H">(scipy.sparse.csc_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.H.html#scipy.sparse.csr_array.H">(scipy.sparse.csr_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csr_matrix.H.html#scipy.sparse.csr_matrix.H">(scipy.sparse.csr_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.H.html#scipy.sparse.dia_array.H">(scipy.sparse.dia_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_matrix.H.html#scipy.sparse.dia_matrix.H">(scipy.sparse.dia_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.H.html#scipy.sparse.dok_array.H">(scipy.sparse.dok_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dok_matrix.H.html#scipy.sparse.dok_matrix.H">(scipy.sparse.dok_matrix property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_array.H.html#scipy.sparse.lil_array.H">(scipy.sparse.lil_array property)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_matrix.H.html#scipy.sparse.lil_matrix.H">(scipy.sparse.lil_matrix property)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.linalg.LaplacianNd.H.html#scipy.sparse.linalg.LaplacianNd.H">(scipy.sparse.linalg.LaplacianNd property)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.linalg.LinearOperator.H.html#scipy.sparse.linalg.LinearOperator.H">(scipy.sparse.linalg.LinearOperator property)</a>
@@ -4525,8 +4395,6 @@ document.write(`
         <li><a href="reference/generated/scipy.sparse.csr_matrix.has_canonical_format.html#scipy.sparse.csr_matrix.has_canonical_format">(scipy.sparse.csr_matrix property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/scipy.sparse.bsr_array.has_sorted_indices.html#scipy.sparse.bsr_array.has_sorted_indices">has_sorted_indices (scipy.sparse.bsr_array property)</a>
 
       <ul>
@@ -4541,6 +4409,8 @@ document.write(`
         <li><a href="reference/generated/scipy.sparse.csr_matrix.has_sorted_indices.html#scipy.sparse.csr_matrix.has_sorted_indices">(scipy.sparse.csr_matrix property)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/scipy.stats.sampling.TransformedDensityRejection.hat_area.html#scipy.stats.sampling.TransformedDensityRejection.hat_area">hat_area (scipy.stats.sampling.TransformedDensityRejection attribute)</a>
 </li>
       <li><a href="reference/generated/scipy.io.hb_read.html#scipy.io.hb_read">hb_read() (in module scipy.io)</a>
@@ -4769,6 +4639,8 @@ document.write(`
       </ul></li>
       <li><a href="reference/generated/scipy.interpolate.insert.html#scipy.interpolate.insert">insert() (in module scipy.interpolate)</a>
 </li>
+      <li><a href="reference/generated/scipy.interpolate.BSpline.insert_knot.html#scipy.interpolate.BSpline.insert_knot">insert_knot() (scipy.interpolate.BSpline method)</a>
+</li>
       <li><a href="reference/generated/scipy.stats.qmc.Halton.integers.html#scipy.stats.qmc.Halton.integers">integers() (scipy.stats.qmc.Halton method)</a>
 
       <ul>
@@ -4904,6 +4776,8 @@ document.write(`
       <li><a href="reference/generated/scipy.fft.irfft2.html#scipy.fft.irfft2">irfft2() (in module scipy.fft)</a>
 </li>
       <li><a href="reference/generated/scipy.fft.irfftn.html#scipy.fft.irfftn">irfftn() (in module scipy.fft)</a>
+</li>
+      <li><a href="reference/generated/scipy.stats.irwinhall.html#scipy.stats.irwinhall">irwinhall (in module scipy.stats)</a>
 </li>
       <li><a href="reference/generated/scipy.cluster.hierarchy.is_isomorphic.html#scipy.cluster.hierarchy.is_isomorphic">is_isomorphic() (in module scipy.cluster.hierarchy)</a>
 </li>
@@ -5360,6 +5234,8 @@ document.write(`
       <li><a href="reference/generated/scipy.stats.Covariance.log_pdet.html#scipy.stats.Covariance.log_pdet">log_pdet (scipy.stats.Covariance property)</a>
 </li>
       <li><a href="reference/generated/scipy.special.log_softmax.html#scipy.special.log_softmax">log_softmax() (in module scipy.special)</a>
+</li>
+      <li><a href="reference/generated/scipy.special.log_wright_bessel.html#scipy.special.log_wright_bessel">log_wright_bessel (in module scipy.special)</a>
 </li>
       <li><a href="reference/generated/scipy.stats.rv_continuous.logcdf.html#scipy.stats.rv_continuous.logcdf">logcdf() (scipy.stats.rv_continuous method)</a>
 
@@ -6248,6 +6124,8 @@ document.write(`
         <li><a href="reference/generated/scipy.sparse.linalg.SuperLU.nnz.html#scipy.sparse.linalg.SuperLU.nnz">(scipy.sparse.linalg.SuperLU attribute)</a>
 </li>
       </ul></li>
+      <li><a href="reference/generated/scipy.optimize.NoConvergence.html#scipy.optimize.NoConvergence">NoConvergence</a>
+</li>
       <li><a href="reference/generated/scipy.optimize.NonlinearConstraint.html#scipy.optimize.NonlinearConstraint">NonlinearConstraint (class in scipy.optimize)</a>
 </li>
       <li><a href="reference/generated/scipy.sparse.bsr_array.nonzero.html#scipy.sparse.bsr_array.nonzero">nonzero() (scipy.sparse.bsr_array method)</a>
@@ -6584,10 +6462,10 @@ document.write(`
 </li>
       <li><a href="reference/generated/scipy.stats.poisson_means_test.html#scipy.stats.poisson_means_test">poisson_means_test() (in module scipy.stats)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/scipy.stats.qmc.PoissonDisk.html#scipy.stats.qmc.PoissonDisk">PoissonDisk (class in scipy.stats.qmc)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/scipy.linalg.polar.html#scipy.linalg.polar">polar() (in module scipy.linalg)</a>
 </li>
       <li><a href="reference/generated/scipy.signal.dlti.poles.html#scipy.signal.dlti.poles">poles (scipy.signal.dlti property)</a>
@@ -6611,6 +6489,8 @@ document.write(`
       <ul>
         <li><a href="reference/generated/scipy.optimize.RootResults.pop.html#scipy.optimize.RootResults.pop">(scipy.optimize.RootResults method)</a>
 </li>
+        <li><a href="reference/generated/scipy.sparse.dok_array.pop.html#scipy.sparse.dok_array.pop">(scipy.sparse.dok_array method)</a>
+</li>
         <li><a href="reference/generated/scipy.sparse.dok_matrix.pop.html#scipy.sparse.dok_matrix.pop">(scipy.sparse.dok_matrix method)</a>
 </li>
       </ul></li>
@@ -6624,9 +6504,11 @@ document.write(`
         <li><a href="reference/generated/scipy.sparse.dok_matrix.popitem.html#scipy.sparse.dok_matrix.popitem">(scipy.sparse.dok_matrix method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/scipy.sparse.bsr_array.power.html#scipy.sparse.bsr_array.power">power() (scipy.sparse.bsr_array method)</a>
+      <li><a href="reference/generated/scipy.stats.power.html#scipy.stats.power">power() (in module scipy.stats)</a>
 
       <ul>
+        <li><a href="reference/generated/scipy.sparse.bsr_array.power.html#scipy.sparse.bsr_array.power">(scipy.sparse.bsr_array method)</a>
+</li>
         <li><a href="reference/generated/scipy.sparse.bsr_matrix.power.html#scipy.sparse.bsr_matrix.power">(scipy.sparse.bsr_matrix method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.coo_array.power.html#scipy.sparse.coo_array.power">(scipy.sparse.coo_array method)</a>
@@ -7728,32 +7610,18 @@ document.write(`
         <li><a href="reference/generated/scipy.stats.sampling.TransformedDensityRejection.set_random_state.html#scipy.stats.sampling.TransformedDensityRejection.set_random_state">(scipy.stats.sampling.TransformedDensityRejection method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/scipy.sparse.bsr_array.set_shape.html#scipy.sparse.bsr_array.set_shape">set_shape() (scipy.sparse.bsr_array method)</a>
+      <li><a href="reference/generated/scipy.sparse.bsr_matrix.set_shape.html#scipy.sparse.bsr_matrix.set_shape">set_shape() (scipy.sparse.bsr_matrix method)</a>
 
       <ul>
-        <li><a href="reference/generated/scipy.sparse.bsr_matrix.set_shape.html#scipy.sparse.bsr_matrix.set_shape">(scipy.sparse.bsr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.coo_array.set_shape.html#scipy.sparse.coo_array.set_shape">(scipy.sparse.coo_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.coo_matrix.set_shape.html#scipy.sparse.coo_matrix.set_shape">(scipy.sparse.coo_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.csc_array.set_shape.html#scipy.sparse.csc_array.set_shape">(scipy.sparse.csc_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.csc_matrix.set_shape.html#scipy.sparse.csc_matrix.set_shape">(scipy.sparse.csc_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.csr_array.set_shape.html#scipy.sparse.csr_array.set_shape">(scipy.sparse.csr_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.csr_matrix.set_shape.html#scipy.sparse.csr_matrix.set_shape">(scipy.sparse.csr_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.dia_array.set_shape.html#scipy.sparse.dia_array.set_shape">(scipy.sparse.dia_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.dia_matrix.set_shape.html#scipy.sparse.dia_matrix.set_shape">(scipy.sparse.dia_matrix method)</a>
 </li>
-        <li><a href="reference/generated/scipy.sparse.dok_array.set_shape.html#scipy.sparse.dok_array.set_shape">(scipy.sparse.dok_array method)</a>
-</li>
         <li><a href="reference/generated/scipy.sparse.dok_matrix.set_shape.html#scipy.sparse.dok_matrix.set_shape">(scipy.sparse.dok_matrix method)</a>
-</li>
-        <li><a href="reference/generated/scipy.sparse.lil_array.set_shape.html#scipy.sparse.lil_array.set_shape">(scipy.sparse.lil_array method)</a>
 </li>
         <li><a href="reference/generated/scipy.sparse.lil_matrix.set_shape.html#scipy.sparse.lil_matrix.set_shape">(scipy.sparse.lil_matrix method)</a>
 </li>
@@ -8880,7 +8748,7 @@ document.write(`
         <li><a href="reference/generated/scipy.sparse.linalg.LinearOperator.T.html#scipy.sparse.linalg.LinearOperator.T">(scipy.sparse.linalg.LinearOperator property)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/scipy.signal.ShortTimeFFT.t.html#scipy.signal.ShortTimeFFT.t">t() (scipy.signal.ShortTimeFFT method)</a>
+      <li><a href="reference/generated/scipy.signal.ShortTimeFFT.t.lower.html#scipy.signal.ShortTimeFFT.t">t() (scipy.signal.ShortTimeFFT method)</a>
 </li>
       <li><a href="reference/generated/scipy.sparse.bsr_array.tan.html#scipy.sparse.bsr_array.tan">tan() (scipy.sparse.bsr_array method)</a>
 
@@ -9662,6 +9530,8 @@ document.write(`
 </li>
       <li><a href="reference/generated/scipy.stats.wasserstein_distance.html#scipy.stats.wasserstein_distance">wasserstein_distance() (in module scipy.stats)</a>
 </li>
+      <li><a href="reference/generated/scipy.stats.wasserstein_distance_nd.html#scipy.stats.wasserstein_distance_nd">wasserstein_distance_nd() (in module scipy.stats)</a>
+</li>
       <li><a href="reference/generated/scipy.ndimage.watershed_ift.html#scipy.ndimage.watershed_ift">watershed_ift() (in module scipy.ndimage)</a>
 </li>
       <li><a href="reference/generated/scipy.io.wavfile.WavFileWarning.html#scipy.io.wavfile.WavFileWarning">WavFileWarning</a>
@@ -9736,6 +9606,8 @@ document.write(`
         <li><a href="reference/generated/scipy.odr.OdrStop.html#scipy.odr.OdrStop.with_traceback">(scipy.odr.OdrStop method)</a>
 </li>
         <li><a href="reference/generated/scipy.odr.OdrWarning.html#scipy.odr.OdrWarning.with_traceback">(scipy.odr.OdrWarning method)</a>
+</li>
+        <li><a href="reference/generated/scipy.optimize.NoConvergence.html#scipy.optimize.NoConvergence.with_traceback">(scipy.optimize.NoConvergence method)</a>
 </li>
         <li><a href="reference/generated/scipy.optimize.OptimizeWarning.html#scipy.optimize.OptimizeWarning.with_traceback">(scipy.optimize.OptimizeWarning method)</a>
 </li>
@@ -9831,6 +9703,8 @@ document.write(`
       <li><a href="reference/generated/scipy.special.y1_zeros.html#scipy.special.y1_zeros">y1_zeros() (in module scipy.special)</a>
 </li>
       <li><a href="reference/generated/scipy.special.y1p_zeros.html#scipy.special.y1p_zeros">y1p_zeros() (in module scipy.special)</a>
+</li>
+      <li><a href="reference/generated/scipy.sparse.csgraph.yen.html#scipy.sparse.csgraph.yen">yen() (in module scipy.sparse.csgraph)</a>
 </li>
       <li><a href="reference/generated/scipy.stats.yeojohnson.html#scipy.stats.yeojohnson">yeojohnson() (in module scipy.stats)</a>
 </li>
@@ -10329,7 +10203,7 @@ document.write(`
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

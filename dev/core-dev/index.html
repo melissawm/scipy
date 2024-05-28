@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SciPy Core Developer Guide &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>SciPy Core Developer Guide &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,27 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'dev/core-dev/index';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -58,7 +62,7 @@
     <link rel="prev" title="Adding New Methods, Functions, and Classes" href="../contributor/adding_new.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -505,7 +535,7 @@ with full consensus).</p>
 commit) has to go in through a pull request (PR).  It has to be reviewed by
 another developer.  In case review doesn’t happen quickly enough and it is
 important that the PR is merged quickly, the submitter of the PR should send a
-message to mailing list saying he/she intends to merge that PR without review
+message to mailing list saying they intend to merge that PR without review
 at time X for reason Y unless someone reviews it before then.</p>
 <p>Changes and new additions should be tested. Untested code is broken code.</p>
 </section>
@@ -574,7 +604,7 @@ topic or component (<code class="docutils literal notranslate"><span class="pre"
 nature of the issue or pull request (<code class="docutils literal notranslate"><span class="pre">enhancement</span></code>, <code class="docutils literal notranslate"><span class="pre">maintenance</span></code>,
 <code class="docutils literal notranslate"><span class="pre">defect</span></code>, etc.).  Other labels that may be added depending on the situation:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">easy-fix</span></code>: for issues suitable to be tackled by new contributors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">good-first-issue</span></code>: for issues suitable to be tackled by new contributors.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">needs-work</span></code>: for pull requests that have review comments that haven’t been
 addressed.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">needs-decision</span></code>: for issues or pull requests that need a decision.</p></li>
@@ -599,13 +629,12 @@ features, see <a class="reference internal" href="../contributor/reviewing_prs.h
 <h3>Dealing with pull requests<a class="headerlink" href="#dealing-with-pull-requests" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>When merging contributions, a committer is responsible for ensuring that
-those meet the requirements outlined in <a class="reference external" href="https://github.com/scipy/scipy/blob/main/doc/source/dev/hacking.rst">Contributing to SciPy</a>.
-Also check
-that new features and backwards compatibility breaks were discussed on the
-scipy-dev mailing list.</p></li>
+those meet the requirements outlined in <a class="reference internal" href="../hacking.html#hacking"><span class="std std-ref">Contributing to SciPy</span></a>.
+Also check that new features and backwards compatibility breaks were discussed
+on the scipy-dev mailing list.</p></li>
 <li><p>New code goes in via a pull request (PR).</p></li>
 <li><p>Merge new code with the green button.  In case of merge conflicts, ask the PR
-submitter to rebase (this may require providing some git instructions).</p></li>
+submitter to rebase (this may require providing some <code class="docutils literal notranslate"><span class="pre">git</span></code> instructions).</p></li>
 <li><p>Backports and trivial additions to finish a PR (really trivial, like a typo
 or PEP8 fix) can be pushed directly.</p></li>
 <li><p>For PRs that add new features or are in some way complex, wait at least a day
@@ -613,11 +642,12 @@ or two before merging it.  That way, others get a chance to comment before
 the code goes in.</p></li>
 <li><p>Squashing commits or cleaning up commit messages of a PR that you consider
 too messy is OK. Make sure though to retain the original author name when
-doing this.</p></li>
+doing this. Squashing is highly recommended whenever commit messages do not
+(roughly) follow the guidelines in <a class="reference internal" href="../contributor/development_workflow.html#writing-the-commit-message"><span class="std std-ref">Writing the commit message</span></a>.</p></li>
 <li><p>Make sure that the labels and milestone on a merged PR are set correctly.</p></li>
-<li><p>When you want to reject a PR: if it’s very obvious you can just close it and
-explain why, if not obvious then it’s a good idea to first explain why you
-think the PR is not suitable for inclusion in SciPy and then let a second
+<li><p>When you want to reject a PR: if it’s very obvious, you can just close it and
+explain why. If it’s not obvious, then it’s a good idea to first explain why you
+think the PR is not suitable for inclusion in SciPy, then let a second
 committer comment or close.</p></li>
 </ul>
 </section>
@@ -645,9 +675,9 @@ and can be reverted in a straightforward manner if needed.</p>
 release notes.  What needs mentioning: new features, backwards incompatible
 changes, deprecations, and “other changes” (anything else noteworthy enough,
 see older release notes for the kinds of things worth mentioning).</p>
-<p>Release note entries are maintained on the wiki, (e.g.
-<a class="github reference external" href="https://github.com/scipy/scipy/wiki/Release-note-entries-for-SciPy-1.2.0">scipy/scipy</a>).  The
-release manager will gather content from there and integrate it into the html
+<p>Release note entries are maintained on
+<a class="reference external" href="https://github.com/scipy/scipy/wiki">the wiki</a>.
+The release manager will gather content from there and integrate it into the html
 docs.  We use this mechanism to avoid merge conflicts that would happen if
 every PR touched the same file under <code class="docutils literal notranslate"><span class="pre">doc/release/</span></code> directly.</p>
 <p>Changes can be monitored (<a class="reference external" href="https://github.com/scipy/scipy/wiki.atom">Atom feed</a>)
@@ -655,10 +685,6 @@ and pulled (the wiki is a git repo: <code class="docutils literal notranslate"><
 </section>
 <section id="other">
 <h3>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h3>
-<p><em>PR status page:</em> When new commits get added to a pull request, GitHub doesn’t send out any
-notifications.  The <code class="docutils literal notranslate"><span class="pre">needs-work</span></code> label may not be justified anymore though.
-<a class="reference external" href="https://pav.iki.fi/scipy-needs-work/">This page</a> gives an overview of PRs
-that were updated, need review, need a decision, etc.</p>
 <p><em>Cross-referencing:</em> Cross-referencing issues and pull requests on GitHub is
 often useful.  GitHub allows doing that by using <code class="docutils literal notranslate"><span class="pre">gh-xxxx</span></code> or <code class="docutils literal notranslate"><span class="pre">#xxxx</span></code> with
 <code class="docutils literal notranslate"><span class="pre">xxxx</span></code> the issue/PR number.  The <code class="docutils literal notranslate"><span class="pre">gh-xxxx</span></code> format is strongly preferred,
@@ -667,7 +693,7 @@ which is about Trac (what we used pre-GitHub) tickets.</p>
 <p><em>PR naming convention:</em> Pull requests, issues and commit messages usually start
 with a three-letter abbreviation like <code class="docutils literal notranslate"><span class="pre">ENH:</span></code> or <code class="docutils literal notranslate"><span class="pre">BUG:</span></code>.  This is useful to
 quickly see what the nature of the commit/PR/issue is.  For the full list of
-abbreviations, see <a class="reference external" href="https://numpy.org/devdocs/dev/development_workflow.html#writing-the-commit-message" title="(in NumPy v2.0.dev0)"><span class="xref std std-ref">writing the commit message</span></a>.</p>
+abbreviations, see <a class="reference external" href="https://numpy.org/devdocs/dev/development_workflow.html#writing-the-commit-message" title="(in NumPy v2.1.dev0)"><span class="xref std std-ref">writing the commit message</span></a>.</p>
 </section>
 </section>
 <section id="licensing">
@@ -686,7 +712,7 @@ code from a default license that is not compatible with SciPy’s license.
 For instance, code published on StackOverflow is covered by a CC-BY-SA license,
 which is not compatible due to the share-alike clause.
 These contributions cannot be accepted for inclusion in SciPy unless the
-original code author is willing to (re)license his/her code under the
+original code author is willing to (re)license their code under the
 modified BSD (or compatible) license.  If the original author agrees,
 add a comment saying so to the source files and forward the relevant
 communication to the scipy-dev mailing list.</p>
@@ -698,7 +724,7 @@ at the original incompatibly-licensed source code.</p>
 </section>
 <section id="version-numbering">
 <span id="id4"></span><h2>Version numbering<a class="headerlink" href="#version-numbering" title="Link to this heading">#</a></h2>
-<p>SciPy version numbering complies to <a class="reference external" href="https://www.python.org/dev/peps/pep-0440">PEP 440</a>.  Released final versions, which
+<p>SciPy version numbering complies with <a class="reference external" href="https://www.python.org/dev/peps/pep-0440">PEP 440</a>.  Released final versions, which
 are the only versions appearing on <a class="reference external" href="https://pypi.org/">PyPI</a>, are numbered <code class="docutils literal notranslate"><span class="pre">MAJOR.MINOR.MICRO</span></code>
 where:</p>
 <ul class="simple">
@@ -739,8 +765,8 @@ with <code class="docutils literal notranslate"><span class="pre">#</span></code
 <p>There are various reasons for wanting to remove existing functionality: it’s
 buggy, the API isn’t understandable, it’s superseded by functionality with
 better performance, it needs to be moved to another SciPy submodule, etc.</p>
-<p>In general it’s not a good idea to remove something without warning users about
-that removal first.  Therefore this is what should be done before removing
+<p>In general, it’s not a good idea to remove something without warning users about
+that removal first.  Therefore, this is what should be done before removing
 something from the public API:</p>
 <ol class="arabic simple">
 <li><p>Propose to deprecate the functionality on the scipy-dev mailing list and get
@@ -760,6 +786,25 @@ when running the test suite so they don’t pollute the output.</p>
 for a particular deprecation; this can always be discussed on the scipy-dev
 mailing list.</p>
 </section>
+<section id="vendored-code">
+<span id="id6"></span><h2>Vendored Code<a class="headerlink" href="#vendored-code" title="Link to this heading">#</a></h2>
+<p>Many parts of the SciPy codebase are maintained elsewhere, and vendored in SciPy.
+Some of these parts are vendored as git submodules, for example, <code class="docutils literal notranslate"><span class="pre">boost_math</span></code>.</p>
+<p>Other parts are not vendored as git submodules, despite having a maintained upstream.
+This is mainly for historical reasons, and it is possible that some of these parts
+will see patches contributed upstream and become git submodules in the future.</p>
+<p>Maintainers should be careful to <em>not</em> accept contributions
+(especially trivial changes) into parts of SciPy where the code is actively maintained
+upstream. Instead, they should direct contributors to the upstream repo.
+Currently, this includes the following parts of the codebase:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/opencollab/arpack-ng">ARPACK</a>, at <code class="docutils literal notranslate"><span class="pre">scipy/sparse/linalg/_eigen/arpack/ARPACK</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/xiaoyeli/superlu">SuperLU</a>, at <code class="docutils literal notranslate"><span class="pre">scipy/sparse/linalg/_dsolve/SuperLU</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/qhull/qhull">QHull</a>, at <code class="docutils literal notranslate"><span class="pre">scipy/spatial/qhull</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/felixlen/trlib">trlib</a>, at <code class="docutils literal notranslate"><span class="pre">scipy/optimize/_trlib</span></code></p></li>
+<li><p><a class="reference external" href="https://statmath.wu.ac.at/unuran/">UNU.RAN</a>, at <code class="docutils literal notranslate"><span class="pre">scipy/stats/_unuran</span></code></p></li>
+</ul>
+</section>
 <section id="distributing">
 <span id="distributing-a-release"></span><h2>Distributing<a class="headerlink" href="#distributing" title="Link to this heading">#</a></h2>
 <p>Distributing Python packages is nontrivial - especially for a package with
@@ -771,53 +816,16 @@ SciPy.</p>
 <h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">#</a></h3>
 <p>Dependencies are things that a user has to install in order to use (or
 build/test) a package.  They usually cause trouble, especially if they’re not
-optional.  SciPy tries to keep its dependencies to a minimum; currently they
-are:</p>
-<p><em>Unconditional run-time dependencies:</em></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org">Numpy</a></p></li>
-</ul>
-<p><em>Conditional run-time dependencies:</em></p>
-<ul class="simple">
-<li><p>pytest (to run the test suite)</p></li>
-<li><p><a class="reference external" href="https://asv.readthedocs.org">asv</a> (to run the benchmarks)</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org">matplotlib</a> (for some functions that can produce plots)</p></li>
-<li><p><a class="reference external" href="https://www.fatiando.org/pooch/latest/">pooch</a> (for the scipy.datasets module)</p></li>
-<li><p><a class="reference external" href="https://pillow.readthedocs.org">Pillow</a> (for image loading/saving)</p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/scikit-umfpack">scikits.umfpack</a> (optionally used in <code class="docutils literal notranslate"><span class="pre">sparse.linalg</span></code>)</p></li>
-<li><p><a class="reference external" href="http://mpmath.org">mpmath</a> (for more extended tests in <code class="docutils literal notranslate"><span class="pre">special</span></code>)</p></li>
-<li><p>pydata/sparse (compatibility support in <code class="docutils literal notranslate"><span class="pre">scipy.sparse</span></code>)</p></li>
-<li><p><a class="reference external" href="https://github.com/joblib/threadpoolctl">threadpoolctl</a> (to control BLAS/LAPACK threading in test suite)</p></li>
-<li><p><a class="reference external" href="https://hypothesis.readthedocs.io/en/latest/index.html">Hypothesis</a> (to run certain unit tests)</p></li>
-</ul>
-<p><em>Unconditional build-time dependencies:</em></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org">Numpy</a></p></li>
-<li><p>A BLAS and LAPACK implementation (reference BLAS/LAPACK, ATLAS, OpenBLAS,
-MKL are all known to work)</p></li>
-<li><p><a class="reference external" href="https://cython.org">Cython</a></p></li>
-<li><p><a class="reference external" href="https://github.com/pypa/setuptools">setuptools</a></p></li>
-<li><p><a class="reference external" href="https://github.com/pybind/pybind11">pybind11</a></p></li>
-</ul>
-<p><em>Conditional build-time dependencies:</em></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://wheel.readthedocs.io/">wheel</a> (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">bdist_wheel</span></code>)</p></li>
-<li><p><a class="reference external" href="http://www.sphinx-doc.org/">Sphinx</a> (docs)</p></li>
-<li><p><a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/en/latest/">PyData Sphinx theme</a> (docs)</p></li>
-<li><p><a class="reference external" href="https://sphinx-design.readthedocs.io">Sphinx-Design</a>  (docs)</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org">matplotlib</a> (docs)</p></li>
-<li><p><a class="reference external" href="https://myst-nb.readthedocs.io/">MyST-NB</a> (docs)</p></li>
-</ul>
-<p>Furthermore of course one needs C, C++ and Fortran compilers to build SciPy,
-but those we don’t consider to be dependencies and are therefore not discussed
-here.  For details, see <a class="reference external" href="https://scipy.github.io/devdocs/dev/contributor/building.html">https://scipy.github.io/devdocs/dev/contributor/building.html</a>.</p>
+optional.  SciPy tries to keep its dependencies to a minimum; the current required
+and optional build time dependencies can be seen in <a class="reference external" href="https://github.com/scipy/scipy/blob/main/pyproject.toml">SciPy’s configuration file</a>,
+<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>. The only non-optional runtime dependency is <a class="reference external" href="https://numpy.org">NumPy</a>.</p>
+<p>Furthermore, of course one needs C, C++ and Fortran compilers to build SciPy,
+but we don’t consider those to be dependencies, and therefore they are not discussed
+here.  For details, see <a class="reference internal" href="../../building/index.html#building-from-source"><span class="std std-ref">Building from source</span></a>.</p>
 <p>When a package provides useful functionality and it’s proposed as a new
 dependency, consider also if it makes sense to vendor (i.e. ship a copy of it with
-scipy) the package instead.  For example, <a class="reference external" href="https://github.com/micheles/decorator">decorator</a> is vendored in
+SciPy) the package instead.  For example, <a class="reference external" href="https://github.com/micheles/decorator">decorator</a> is vendored in
 <code class="docutils literal notranslate"><span class="pre">scipy._lib</span></code>.</p>
-<p>The only dependency that is reported to <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a>  is <a class="reference external" href="https://numpy.org">Numpy</a>, see
-<code class="docutils literal notranslate"><span class="pre">install_requires</span></code> in SciPy’s main <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>.  The other dependencies
-aren’t needed for SciPy to function correctly</p>
 <section id="issues-with-dependency-handling">
 <h4>Issues with dependency handling<a class="headerlink" href="#issues-with-dependency-handling" title="Link to this heading">#</a></h4>
 <p>There are some issues with how Python packaging tools handle
@@ -861,7 +869,7 @@ is the minor version of the latest already-released NumPy.</p>
 classifiers in <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, and mentioned in the release notes for each
 release.  All newly released Python versions will be supported as soon as
 possible.  For the general policy on dropping support for a Python or NumPy
-version, see <a class="reference external" href="https://numpy.org/neps/nep-0029-deprecation_policy.html#nep29" title="(in NumPy Enhancement Proposals)"><span class="xref std std-ref">NEP 29</span></a>.  The final decision on dropping support is
+version, see <a class="reference internal" href="../toolchain.html#nep29"><span class="std std-ref">NEP 29</span></a>.  The final decision on dropping support is
 always taken on the scipy-dev mailing list.</p>
 <p>The lowest supported <a class="reference external" href="https://numpy.org">Numpy</a> version for a SciPy version is mentioned in the
 release notes and is encoded in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy/__init__.py</span></code> and the
@@ -935,7 +943,7 @@ would need to be distributed via custom channels, e.g. in a
 <p>At the highest level, this is what the release manager does to release a new
 SciPy version:</p>
 <ol class="arabic simple">
-<li><p>Propose a release schedule on the scipy-dev mailing list.</p></li>
+<li><p>Propose a release schedule in the SciPy forum at <a class="reference external" href="https://discuss.scientific-python.org/">https://discuss.scientific-python.org/</a>.</p></li>
 <li><p>Create the maintenance branch for the release.</p></li>
 <li><p>Tag the release.</p></li>
 <li><p>Build all release artifacts (sources, installers, docs).</p></li>
@@ -974,7 +982,8 @@ Typically, if compiled code or complex pure Python code changes then a new RC
 is needed, while a simple bug-fix that’s backported from main doesn’t require
 a new RC.</p>
 <p>To propose a schedule, send a list with estimated dates for branching and
-beta/rc/final releases to scipy-dev. In the same email, ask everyone to check
+beta/rc/final releases to the SciPy forum at
+<a class="reference external" href="https://discuss.scientific-python.org/">https://discuss.scientific-python.org/</a>. In the same message, ask everyone to check
 if there are important issues/PRs that need to be included and aren’t tagged
 with the Milestone for the release or the “backport-candidate” label.</p>
 </section>
@@ -987,15 +996,17 @@ release notes.</p>
 To create one, simply push a branch with the correct name to the scipy repo.
 Immediately after, push a commit where you increment the version number on the
 main branch and add release notes for that new version.  Send an email to
-scipy-dev to let people know that you’ve done this.</p>
+the SciPy forum at <a class="reference external" href="https://discuss.scientific-python.org/">https://discuss.scientific-python.org/</a> to let people know
+that you’ve done this.</p>
 </section>
 <section id="updating-the-version-switcher">
 <h3>Updating the version switcher<a class="headerlink" href="#updating-the-version-switcher" title="Link to this heading">#</a></h3>
 <p>The version switcher dropdown needs to be updated with the new release
-information.</p>
+information on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch only.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">doc/source/_static/version_switcher.json</span></code>: add the new release as well
-as the new development version.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doc/source/_static/version_switcher.json</span></code>: add the new release,
+the new development version, and transfer <code class="docutils literal notranslate"><span class="pre">&quot;preferred&quot;:</span> <span class="pre">true</span></code> from the old release
+to the new release.</p></li>
 </ul>
 </section>
 <section id="updating-upper-bounds-of-dependencies">
@@ -1011,7 +1022,6 @@ creating a maintenance branch:</p>
 </dd>
 </dl>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">setup.py</span></code>: supported Python and NumPy versions</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scipy/__init__.py</span></code>: for NumPy version check</p></li>
 </ul>
 <p>Each file has comments describing how to set the correct upper bounds.</p>
@@ -1136,14 +1146,10 @@ not release candidates.</p>
 </section>
 <section id="wrapping-up">
 <h3>Wrapping up<a class="headerlink" href="#wrapping-up" title="Link to this heading">#</a></h3>
-<p>Send an email announcing the release to the following mailing lists:</p>
-<ul class="simple">
-<li><p>scipy-dev</p></li>
-<li><p>numpy-discussion</p></li>
-<li><p>python-announce (not for beta/rc releases)</p></li>
-</ul>
-<p>For beta and rc versions, ask people in the email to test (run the scipy tests
-and test against their own code) and report issues on Github or scipy-dev.</p>
+<p>Send a message announcing the release to
+<a class="reference external" href="https://discuss.scientific-python.org/c/announcements/">https://discuss.scientific-python.org/c/announcements/</a>.</p>
+<p>For beta and rc versions, ask people to test (run the scipy tests
+and test against their own code) and report issues on Github or Discourse.</p>
 <p>After the final release is done, port relevant changes to release notes, build
 scripts, author name mapping in <code class="docutils literal notranslate"><span class="pre">tools/authors.py</span></code> and any other changes that
 were only made on the maintenance branch to main.</p>
@@ -1215,6 +1221,7 @@ were only made on the maintenance branch to main.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licensing">Licensing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-numbering">Version numbering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecations">Deprecations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vendored-code">Vendored Code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributing">Distributing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-dependency-handling">Issues with dependency handling</a></li>
@@ -1273,7 +1280,7 @@ were only made on the maintenance branch to main.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

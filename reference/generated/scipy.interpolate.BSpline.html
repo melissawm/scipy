@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.interpolate.BSpline &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.interpolate.BSpline &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,37 +29,41 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="../../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.interpolate.BSpline';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="scipy.interpolate.BSpline.__call__" href="scipy.interpolate.BSpline.__call__.html" />
-    <link rel="prev" title="scipy.interpolate.NdBSpline.__call__" href="scipy.interpolate.NdBSpline.__call__.html" />
+    <link rel="prev" title="scipy.interpolate.NdBSpline.design_matrix" href="scipy.interpolate.NdBSpline.design_matrix.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -134,35 +138,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -223,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -347,6 +353,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -493,7 +523,7 @@ document.write(`
 <h1>scipy.interpolate.BSpline<a class="headerlink" href="#scipy-interpolate-bspline" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="scipy.interpolate.BSpline">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scipy.interpolate.</span></span><span class="sig-name descname"><span class="pre">BSpline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extrapolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/interpolate/_bsplines.py#L68-L831"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.interpolate.BSpline" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scipy.interpolate.</span></span><span class="sig-name descname"><span class="pre">BSpline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extrapolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/interpolate/_bsplines.py#L68-L920"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.interpolate.BSpline" title="Link to this definition">#</a></dt>
 <dd><p>Univariate spline in the B-spline basis.</p>
 <div class="math notranslate nohighlight">
 \[S(x) = \sum_{j=0}^{n-1} c_j  B_{j, k; t}(x)\]</div>
@@ -546,6 +576,8 @@ so that <code class="docutils literal notranslate"><span class="pre">n</span> <s
 </div>
 </div>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="6ebfc4ce-ef2e-41f6-b231-0f43ae3238b1">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('6ebfc4ce-ef2e-41f6-b231-0f43ae3238b1','b9f2f899-679f-4140-b172-e56c49fa1bd2','40287276-a6d2-405c-81d9-fcefe8efd46f','../../lite/tree/../notebooks/?path=73c52ffc_97ed_469c_a4c2_6b0c5b715cbd.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <p>Translating the recursive definition of B-splines into Python code, we have:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">B</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -600,7 +632,9 @@ functions active on the base interval.</p>
 <figure class="align-default">
 <img alt="../../_images/scipy-interpolate-BSpline-1.png" class="plot-directive" src="../../_images/scipy-interpolate-BSpline-1.png" />
 </figure>
-<dl class="field-list simple">
+</div>
+</div>
+<div id="40287276-a6d2-405c-81d9-fcefe8efd46f" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('6ebfc4ce-ef2e-41f6-b231-0f43ae3238b1','40287276-a6d2-405c-81d9-fcefe8efd46f')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('6ebfc4ce-ef2e-41f6-b231-0f43ae3238b1','40287276-a6d2-405c-81d9-fcefe8efd46f')">Open In Tab</button></div><div id="b9f2f899-679f-4140-b172-e56c49fa1bd2" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script><dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>t</strong><span class="classifier">ndarray</span></dt><dd><p>knot vector</p>
@@ -637,13 +671,16 @@ functions active on the base interval.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="scipy.interpolate.BSpline.integrate.html#scipy.interpolate.BSpline.integrate" title="scipy.interpolate.BSpline.integrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integrate</span></code></a>(a, b[, extrapolate])</p></td>
 <td><p>Compute a definite integral of the spline.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="scipy.interpolate.BSpline.construct_fast.html#scipy.interpolate.BSpline.construct_fast" title="scipy.interpolate.BSpline.construct_fast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_fast</span></code></a>(t, c, k[, extrapolate, axis])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="scipy.interpolate.BSpline.insert_knot.html#scipy.interpolate.BSpline.insert_knot" title="scipy.interpolate.BSpline.insert_knot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert_knot</span></code></a>(x[, m])</p></td>
+<td><p>Insert a new knot at <em class="xref py py-obj">x</em> of multiplicity <em class="xref py py-obj">m</em>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="scipy.interpolate.BSpline.construct_fast.html#scipy.interpolate.BSpline.construct_fast" title="scipy.interpolate.BSpline.construct_fast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_fast</span></code></a>(t, c, k[, extrapolate, axis])</p></td>
 <td><p>Construct a spline without making checks.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="scipy.interpolate.BSpline.design_matrix.html#scipy.interpolate.BSpline.design_matrix" title="scipy.interpolate.BSpline.design_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">design_matrix</span></code></a>(x, t, k[, extrapolate])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="scipy.interpolate.BSpline.design_matrix.html#scipy.interpolate.BSpline.design_matrix" title="scipy.interpolate.BSpline.design_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">design_matrix</span></code></a>(x, t, k[, extrapolate])</p></td>
 <td><p>Returns a design matrix as a CSR format sparse array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="scipy.interpolate.BSpline.from_power_basis.html#scipy.interpolate.BSpline.from_power_basis" title="scipy.interpolate.BSpline.from_power_basis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_power_basis</span></code></a>(pp[, bc_type])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="scipy.interpolate.BSpline.from_power_basis.html#scipy.interpolate.BSpline.from_power_basis" title="scipy.interpolate.BSpline.from_power_basis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_power_basis</span></code></a>(pp[, bc_type])</p></td>
 <td><p>Construct a polynomial in the B-spline basis from a piecewise polynomial in the power basis.</p></td>
 </tr>
 </tbody>
@@ -663,12 +700,12 @@ functions active on the base interval.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="scipy.interpolate.NdBSpline.__call__.html"
+       href="scipy.interpolate.NdBSpline.design_matrix.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">scipy.interpolate.NdBSpline.__call__</p>
+        <p class="prev-next-title">scipy.interpolate.NdBSpline.design_matrix</p>
       </div>
     </a>
     <a class="right-next"
@@ -736,7 +773,7 @@ functions active on the base interval.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

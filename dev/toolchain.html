@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Toolchain Roadmap &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>Toolchain Roadmap &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,27 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'dev/toolchain';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,7 +62,7 @@
     <link rel="prev" title="Detailed SciPy Roadmap" href="roadmap-detailed.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -494,7 +524,7 @@ to build the library or to build the documentation.</p>
 This document aims to provide a guide as to how SciPy’s use of
 these dynamic dependencies will proceed over time.</p>
 <p>SciPy aims to be compatible with a number of releases of its dependent
-libraries and tools. Forcing the user base to other components for upgrade
+libraries and tools. Forcing the user base to upgrade other components
 for every release would greatly diminish the value of SciPy. However,
 maintaining backwards compatibility with very old tooling/libraries
 imposes limitations on which newer functionalities and capabilities
@@ -507,7 +537,7 @@ section for an example.)</p>
 <li><p>First and foremost, SciPy is a Python project, hence it requires a Python environment.</p></li>
 <li><p>BLAS and LAPACK numerical libraries need to be installed.</p></li>
 <li><p>Compilers for C, C++, Fortran code are needed, as well as for Cython &amp; Pythran (the latter is opt-out currently)</p></li>
-<li><p>The Python environment needs the <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> package to be installed.</p></li>
+<li><p>The Python environment needs the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package to be installed.</p></li>
 <li><p>Testing requires the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> and <code class="docutils literal notranslate"><span class="pre">hypothesis</span></code> Python packages.</p></li>
 <li><p>Building the documentation requires the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, Sphinx and <a class="reference external" href="https://myst-nb.readthedocs.io/">MyST-NB</a> packages along with PyData theme.</p></li>
 </ul>
@@ -521,101 +551,124 @@ as these examples can only use functionality present in all supported configurat
 <section id="python-versions">
 <h3>Python Versions<a class="headerlink" href="#python-versions" title="Link to this heading">#</a></h3>
 <p>SciPy is compatible with several versions of Python.  When dropping support for
-older Python versions, SciPy takes guidance from NEP 29 <a class="footnote-reference brackets" href="#id33" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.  Python 2.7
-support was dropped starting from SciPy 1.3.</p>
+older Python versions, SciPy takes guidance from <a class="reference internal" href="#nep29" id="id2"><span>[NEP29]</span></a>. Generally, support for
+the oldest Python version is dropped 42 months after the original release. Following
+the acceptance of PEP 602, this mostly happens in April, and gets picked up by the
+mid-year release of SciPy.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Python version support over time<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Python 2.7 support was dropped starting from SciPy 1.3.</p>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Date</p></th>
-<th class="head"><p>Pythons supported</p></th>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Date</p></th>
+<th class="head"><p class="sd-card-text">Pythons supported</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>2018</p></td>
-<td><p>Py2.7, Py3.4+ (SciPy 1.2.x is the last release to support Python 2.7)</p></td>
+<tr class="row-even"><td><p class="sd-card-text">2024</p></td>
+<td><p class="sd-card-text">Py3.10+</p></td>
 </tr>
-<tr class="row-odd"><td><p>2019</p></td>
-<td><p>Py3.5+ (but Py2.7-specific code not removed)</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">2023</p></td>
+<td><p class="sd-card-text">Py3.9+</p></td>
 </tr>
-<tr class="row-even"><td><p>2020</p></td>
-<td><p>Py3.6+ (removal of Py2.7-specific code permitted)</p></td>
+<tr class="row-even"><td><p class="sd-card-text">2022</p></td>
+<td><p class="sd-card-text">Py3.8+</p></td>
 </tr>
-<tr class="row-odd"><td><p>2021</p></td>
-<td><p>Py3.7+</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">2021</p></td>
+<td><p class="sd-card-text">Py3.7+</p></td>
 </tr>
-<tr class="row-even"><td><p>2022</p></td>
-<td><p>Py3.8+</p></td>
+<tr class="row-even"><td><p class="sd-card-text">2020</p></td>
+<td><p class="sd-card-text">Py3.6+</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">2019</p></td>
+<td><p class="sd-card-text">Py3.5+</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">2018</p></td>
+<td><p class="sd-card-text">Py2.7, Py3.4+</p></td>
 </tr>
 </tbody>
 </table>
-</section>
+</div>
+</details></section>
 <section id="numpy">
 <h3>NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h3>
 <p>SciPy depends on NumPy but releases of SciPy are not tied to releases of NumPy.
 SciPy attempts to be compatible with at least the 4 previous releases of NumPy.
 In particular, SciPy cannot rely on features of just the latest NumPy, but
-needs to be written using what is common in all of those 4 releases <a class="footnote-reference brackets" href="#id34" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
-<p>The table shows the NumPy versions suitable for each major Python version.</p>
+needs to be written using what is common in all of those 4 <a class="reference external" href="https://numpy.org/doc/stable/release.html">NumPy releases</a>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Python and NumPy version support per SciPy version<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The table shows the NumPy versions suitable for each major Python version.
+This table does not distinguish SciPy patch versions (e.g. when a new Python
+version is released, SciPy will generally issue a compatible patch version).</p>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>SciPy version</p></th>
-<th class="head"><p>Python versions</p></th>
-<th class="head"><p>NumPy versions</p></th>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">SciPy version</p></th>
+<th class="head"><p class="sd-card-text">Python versions</p></th>
+<th class="head"><p class="sd-card-text">NumPy versions</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>1.2</p></td>
-<td><p>2.7, &gt;=3.4, &lt;=3.7</p></td>
-<td><p>&gt;=1.8.2, &lt;= 1.16.x</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1.13</p></td>
+<td><p class="sd-card-text">&gt;=3.9, &lt;3.13</p></td>
+<td><p class="sd-card-text">&gt;=1.22.4, &lt;2.3.0</p></td>
 </tr>
-<tr class="row-odd"><td><p>1.4</p></td>
-<td><p>&gt;=3.5, &lt;=3.8</p></td>
-<td><p>&gt;=1.13.3, &lt;= 1.17.3</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1.12</p></td>
+<td><p class="sd-card-text">&gt;=3.9, &lt;3.13</p></td>
+<td><p class="sd-card-text">&gt;=1.22.4, &lt;2.0.0</p></td>
 </tr>
-<tr class="row-even"><td><p>1.5</p></td>
-<td><p>&gt;=3.6, &lt;=3.9</p></td>
-<td><p>&gt;=1.14.5, &lt;= 1.19.3</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1.11</p></td>
+<td><p class="sd-card-text">&gt;=3.9, &lt;3.13</p></td>
+<td><p class="sd-card-text">&gt;=1.21.6, &lt;1.27.0</p></td>
 </tr>
-<tr class="row-odd"><td><p>1.6</p></td>
-<td><p>&gt;=3.7, &lt;=3.9</p></td>
-<td><p>&gt;=1.16.5, &lt;= 1.20.x</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1.10</p></td>
+<td><p class="sd-card-text">&gt;=3.8, &lt;3.12</p></td>
+<td><p class="sd-card-text">&gt;=1.19.5, &lt;1.26.0</p></td>
 </tr>
-<tr class="row-even"><td><p>1.7.0/1</p></td>
-<td><p>&gt;=3.7, &lt;3.10</p></td>
-<td><p>&gt;=1.16.5, &lt;1.23.0</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1.9</p></td>
+<td><p class="sd-card-text">&gt;=3.8, &lt;3.12</p></td>
+<td><p class="sd-card-text">&gt;=1.18.5, &lt;1.26.0</p></td>
 </tr>
-<tr class="row-odd"><td><p>1.7.2/3</p></td>
-<td><p>&gt;=3.7, &lt;3.11</p></td>
-<td><p>&gt;=1.16.5, &lt;1.23.0</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1.8</p></td>
+<td><p class="sd-card-text">&gt;=3.8, &lt;3.11</p></td>
+<td><p class="sd-card-text">&gt;=1.17.3, &lt;1.24.0</p></td>
 </tr>
-<tr class="row-even"><td><p>1.8</p></td>
-<td><p>&gt;=3.8, &lt;3.11</p></td>
-<td><p>&gt;=1.17.3, &lt;1.24.0</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1.7</p></td>
+<td><p class="sd-card-text">&gt;=3.7, &lt;3.11</p></td>
+<td><p class="sd-card-text">&gt;=1.16.5, &lt;1.23.0</p></td>
 </tr>
-<tr class="row-odd"><td><p>1.9.0/1</p></td>
-<td><p>&gt;=3.8, &lt;3.12</p></td>
-<td><p>&gt;=1.18.5, &lt;1.25.0</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1.6</p></td>
+<td><p class="sd-card-text">&gt;=3.7, &lt;3.10</p></td>
+<td><p class="sd-card-text">&gt;=1.16.5, &lt;1.21.0</p></td>
 </tr>
-<tr class="row-even"><td><p>1.9.2</p></td>
-<td><p>&gt;=3.8, &lt;3.12</p></td>
-<td><p>&gt;=1.18.5, &lt;1.26.0</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1.5</p></td>
+<td><p class="sd-card-text">&gt;=3.6, &lt;3.10</p></td>
+<td><p class="sd-card-text">&gt;=1.14.5, &lt;1.20.0</p></td>
 </tr>
-<tr class="row-odd"><td><p>1.10</p></td>
-<td><p>&gt;=3.8, &lt;3.12</p></td>
-<td><p>&gt;=1.19.5, &lt;1.26.0</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1.4</p></td>
+<td><p class="sd-card-text">&gt;=3.5, &lt;3.9</p></td>
+<td><p class="sd-card-text">&gt;=1.13.3, &lt;1.18.0</p></td>
 </tr>
-<tr class="row-even"><td><p>1.11</p></td>
-<td><p>&gt;=3.9, &lt;3.12</p></td>
-<td><p>&gt;=1.21.6, &lt;1.27.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>1.12</p></td>
-<td><p>&gt;=3.9, &lt;3.13</p></td>
-<td><p>&gt;=1.22.4, &lt;2.0.0</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1.2</p></td>
+<td><p class="sd-card-text">2.7, &gt;=3.4, &lt;3.8</p></td>
+<td><p class="sd-card-text">&gt;=1.8.2, &lt;1.17.0</p></td>
 </tr>
 </tbody>
 </table>
-<p>In specific cases, such as a particular architecture, these requirements
-could vary. Please check the release notes <a class="footnote-reference brackets" href="#id35" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> and the meta-package
-<code class="docutils literal notranslate"><span class="pre">oldest-supported-numpy</span></code> for more info <a class="footnote-reference brackets" href="#id36" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
+</div>
+</details><p>In specific cases, such as a particular architecture, these requirements
+could vary. Please check the <a class="reference external" href="https://scipy.github.io/devdocs/release.html">release notes</a> and the meta-package
+<code class="docutils literal notranslate"><span class="pre">oldest-supported-numpy</span></code> for more info <a class="reference internal" href="#osn" id="id3"><span>[OSN]</span></a>.</p>
 </section>
 <section id="compilers">
 <h3>Compilers<a class="headerlink" href="#compilers" title="Link to this heading">#</a></h3>
@@ -639,12 +692,12 @@ compilers, on platforms that have not yet reached their official end-of-life.</p
 <tr class="row-even"><td><p>GCC</p></td>
 <td><p>Linux</p></td>
 <td><p>AIX, Alpine Linux, OSX</p></td>
-<td><p>GCC 8.x</p></td>
+<td><p>GCC 9.x</p></td>
 </tr>
 <tr class="row-odd"><td><p>LLVM</p></td>
 <td><p>OSX</p></td>
 <td><p>Linux, FreeBSD, Windows</p></td>
-<td><p>LLVM 10.x</p></td>
+<td><p>LLVM 12.x</p></td>
 </tr>
 <tr class="row-even"><td><p>MSVC</p></td>
 <td><p>Windows</p></td>
@@ -656,17 +709,17 @@ compilers, on platforms that have not yet reached their official end-of-life.</p
 </tr>
 </tbody>
 </table>
-<p>Note that the lower bound for LLVM is not enforced. Older versions should
-work - as long as they support core (non-stdlib) C++17 -, but no version
-below LLVM 12 is tested regularly during development. Please file an issue
-if you encounter a problem during compilation.</p>
+<p>Note that there is currently no dedicated CI job to test the minimum supported
+LLVM/Clang version. Older versions than used in SciPy CI should work, as long
+as they support core (non-stdlib) C++17. Please file an issue if you encounter
+a problem during compilation.</p>
 <section id="official-builds">
 <h4>Official Builds<a class="headerlink" href="#official-builds" title="Link to this heading">#</a></h4>
 <p>Currently, SciPy wheels are being built as follows:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Platform</p></th>
-<th class="head"><p>CI Base Images <a class="footnote-reference brackets" href="#id37" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id38" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id39" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/actions/runner-images">CI</a> <a class="reference external" href="https://cirrus-ci.org/guide/docker-builder-vm/#under-the-hood">Base</a> <a class="reference external" href="https://github.com/orgs/cirruslabs/packages?tab=packages&amp;q=macos">Images</a></p></th>
 <th class="head"><p>Compilers</p></th>
 <th class="head"><p>Comment</p></th>
 </tr>
@@ -682,19 +735,29 @@ if you encounter a problem during compilation.</p>
 <td><p>GCC 11.3.0</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">cibuildwheel</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>OSX x86</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">macOS-11</span></code></p></td>
-<td><p>clang-13/gfortran 11.3.0</p></td>
+<tr class="row-even"><td><p>OSX x86_64 (OpenBLAS)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">macos-12</span></code></p></td>
+<td><p>Apple clang 13.1.6/gfortran 11.3.0</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">cibuildwheel</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>OSX arm</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">macos-monterey-xcode:14</span></code></p></td>
-<td><p>clang-13.1.6/gfortran 12.1.0</p></td>
+<tr class="row-odd"><td><p>OSX x86_64 (Accelerate)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">macos-13</span></code></p></td>
+<td><p>Apple clang 15.0.0/gfortran 13.2.0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cibuildwheel</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>OSX arm64 (OpenBLAS)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">macos-14</span></code></p></td>
+<td><p>Apple clang 15.0.0/gfortran 12.1.0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cibuildwheel</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>OSX arm64 (Accelerate)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">macos-14</span></code></p></td>
+<td><p>Apple clang 15.0.0/gfortran 13.2.0</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">cibuildwheel</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Windows</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">windows-2019</span></code></p></td>
-<td><p>GCC 10.3 (rtools)</p></td>
+<td><p>GCC 10.3.0 (<a class="reference external" href="https://community.chocolatey.org/packages/rtools#versionhistory">rtools</a>)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">cibuildwheel</span></code></p></td>
 </tr>
 </tbody>
@@ -710,36 +773,44 @@ all relevant compilers, though this is very different from how things used to
 be. The following paragraphs primarily discuss the evolution of these
 constraints; readers who do not care about historical context can skip ahead
 to the table at the end.</p>
-<p>In the past, the most restrictive compiler on relevant platform in terms
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Historical context around ABI vs. compiler support vs. C standards<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In the past, the most restrictive compiler on relevant platforms in terms
 of C support was the Microsoft Visual C++ compiler &amp; toolset (together known
-as MSVC) <a class="footnote-reference brackets" href="#id40" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id41" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>. Up until Visual Studio 2013, each MSVC version came with
+as MSVC; it has a complicated <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering">version scheme</a>) <a class="reference internal" href="#msvc" id="id4"><span>[MSVC]</span></a>.
+Up until Visual Studio 2013, each MSVC version came with
 an updated C Runtime (CRT) library that was incompatible with the previous
 ones.</p>
-<p>This lack of compatibility of the Application Binary Interface (ABI) meant
+<p class="sd-card-text">This lack of compatibility of the Application Binary Interface (ABI) meant
 that all projects wanting to communicate across this interface (e.g. calling a
 function from a shared library) needed to be (re)compiled with the same MSVC
 version. The long support of CPython 2.7 meant that python itself was stuck
 for a long time with VS 2008 (in order not to break the ABI in patch
 releases), and thus SciPy was stuck on that version as well.</p>
-<p>The use of VS 2008 (which doesn’t have support for C99) to compile builds for
+<p class="sd-card-text">The use of VS 2008 (which doesn’t have support for C99) to compile builds for
 CPython 2.7 meant for a long time that C code in SciPy has had to conform
 to the earlier C90 standard for the language and standard library. After
 dropping support for CPython 2.7 in SciPy 1.3.x, that restriction was finally
 lifted (though only gradually at first).</p>
-<p>With the introduction of the “Universal C Runtime” (UCRT) <a class="footnote-reference brackets" href="#id42" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a> since the
+<p class="sd-card-text">With the introduction of the “Universal C Runtime” <a class="reference internal" href="#ucrt" id="id5"><span>[UCRT]</span></a> since the
 release of Visual Studio 2015, the ABI of C Runtime has been stable, which
 means that the restriction of having to use the same compiler version for
 SciPy as for the underlying CPython version is no longer applicable. This
-stability is not indefinite though: Microsoft has been planning <a class="footnote-reference brackets" href="#id43" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> an
+stability is not indefinite though: Microsoft has been planning an
 ABI-breaking release - across the compiler resp. C/C++ standard libraries -
-(tentatively called “vNext”) for quite a while, but so far it is unclear
+(tentatively called “<a class="reference external" href="https://github.com/microsoft/STL/issues/169">vNext</a>”) for quite a while, but so far it is unclear
 when this will arrive. Once that happens, SciPy will again be restricted to
 at most the last ABI-compatible Visual Studio release (currently VS 2022)
 until all CPython versions supported according to NEP29 have been built
 upstream with vNext-compatible compilers.</p>
-<p>More specifically, there is a distinction between the Microsoft Visual
-Studio version and the version of the targeted “toolset”, which is defined
-<a class="footnote-reference brackets" href="#id44" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a> as “The Microsoft C++ compiler, linker, standard libraries, and related
+<p class="sd-card-text">More specifically, there is a distinction between the Microsoft Visual
+Studio version and the version of the targeted “<a class="reference external" href="https://docs.microsoft.com/en-us/cpp/build/projects-and-build-systems-cpp#the-msvc-toolset">toolset</a>”, which is defined
+as “The Microsoft C++ compiler, linker, standard libraries, and related
 utilities”. Each version of Visual Studio comes with a default version of the
 MSVC toolset (for example VS2017 with vc141, VS2019 with vc142), but it is
 possible to target older toolsets even in newer versions of Visual Studio.
@@ -747,7 +818,7 @@ Due to the nature of compilers (i.e. split into frontend and backend), it
 depends whether the limiting factor for supporting a given feature (e.g. in C)
 is due to the version of Visual Studio or the toolset, but in general the
 latter is a harder barrier and thus the effective lower bound.</p>
-<p>This is due to the fact that while the ABI stays compatible between toolset
+<p class="sd-card-text">This is due to the fact that while the ABI stays compatible between toolset
 versions (until vNext), all linking operations must use a toolset at least
 as new as the one used to build any of the involved artefacts, meaning that
 toolset version bumps tend to be “infectious”, as in: requiring all consuming
@@ -755,16 +826,17 @@ libraries to also bump their toolset (and probably compiler) version. This is
 more of an issue for NumPy than SciPy, as the latter has only a small C API
 and is compiled against by far fewer projects than NumPy. Additionally, using
 a newer toolset means that users of libraries that compile C++ code (as SciPy
-does) might also need a newer Microsoft Visual C++ Redistributable, which
-might have to be distributed to them <a class="footnote-reference brackets" href="#id45" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>.</p>
-<p>Summing up, the minimal requirement for the MSVC compiler resp. toolset per
+does) might also need a newer Microsoft Visual C++ <a class="reference external" href="https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist">Redistributable</a>, which
+might have to be distributed to them.</p>
+<p class="sd-card-text">Summing up, the minimal requirement for the MSVC compiler resp. toolset per
 SciPy version was determined predominantly by the oldest supported CPython
 version at the time. The first SciPy version to raise the minimal requirement
 beyond that was SciPy 1.9, due to the inclusion of the HiGHS submodule, which
 does not compile with vc141 (and the aggressive removal of VS2017 in public CI
 making it infeasible to keep ensuring that everything everywhere works with
 non-default toolset versions).</p>
-<table class="table">
+</div>
+</details><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>SciPy version</p></th>
 <th class="head"><p>CPython support</p></th>
@@ -805,19 +877,19 @@ non-default toolset versions).</p>
 </tr>
 </tbody>
 </table>
-<p>In terms of C language standards, it’s relevant to note that C11 has optional
-features <a class="footnote-reference brackets" href="#id46" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a> (e.g. atomics, threading), some of which (VLAs &amp; complex types)
+<p>In terms of C language standards, it’s relevant to note that C11 has <a class="reference external" href="https://en.wikipedia.org/wiki/C11_%28C_standard_revision%29#Optional_features">optional features</a>
+(e.g. atomics, threading), some of which (VLAs &amp; complex types)
 were mandatory in the C99 standard. C17 (occasionally called C18) can be
 considered a bug fix for C11, so generally, C11 may be skipped entirely.</p>
 <p>SciPy has been restricted in the use of more advanced language features by the
 available compiler support, and Microsoft in particular has taken very long to
-achieve conformance to C99/C11/C17, however starting from MS Visual Studio 16.8,
-C11/C17 is supported <a class="footnote-reference brackets" href="#id47" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a> (though without the C11 optional features).
-C99 <code class="docutils literal notranslate"><span class="pre">&lt;complex.h&gt;</span></code> would be particularly interesting for SciPy;
-MSVC conformance for this and <code class="docutils literal notranslate"><span class="pre">&lt;stdatomic.h&gt;</span></code> is being tracked here <a class="footnote-reference brackets" href="#id48" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id49" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>.
+achieve conformance to C99/C11/C17, however starting from <a class="reference external" href="https://docs.microsoft.com/en-us/cpp/overview/visual-cpp-language-conformance#c-standard-library-features-1">Visual Studio 16.8</a>,
+C11/C17 is supported (though without the C11 optional features).
+C99 <code class="docutils literal notranslate"><span class="pre">&lt;complex.h&gt;</span></code> <a class="reference external" href="https://developercommunity.visualstudio.com/t/714008">support</a>
+would be particularly interesting for SciPy.
 However, it’s still possible to use complex types on windows, provided that
-windows-specific types are used <a class="footnote-reference brackets" href="#id50" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a>.</p>
-<p>Therefore, using C features beyond C90 was only possible insofar there was support on
+<a class="reference external" href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/complex-math-support">windows-specific types</a> are used.</p>
+<p>Therefore, using C features beyond C90 was only possible insofar as there was support on
 Windows; however, as of as of the end of 2021, a sufficiently recent compiler is used.
 This is because GCC &amp; LLVM support all relevant C11 features with the oldest currently
 used versions, and C17 is just a bugfix for C11, as mentioned above. In short:</p>
@@ -871,67 +943,89 @@ attempting to predict adoption timelines for newer standards.</p>
 <td><p>C++17 (core language + universally available stdlib features)</p></td>
 </tr>
 <tr class="row-even"><td><p>?</p></td>
-<td><p>C++17 (with full stdlib), C++20, C++23</p></td>
+<td><p>C++17 (with full stdlib), C++20, C++23, C++26</p></td>
 </tr>
 </tbody>
 </table>
-<p>Since dropping support for Python 2.7, C++11 can be used
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Historical context for compiler constraints due to manylinux<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Since dropping support for Python 2.7, C++11 can be used
 universally, and since dropping Python 3.6, the Visual Studio version
 (that had previously been stuck with 14.0 due to ABI compatibility with
 CPython) has been recent enough to support even C++17.</p>
-<p>Since the official builds (see above) use a pretty recent version of LLVM,
+<p class="sd-card-text">Since the official builds (see above) use a pretty recent version of LLVM,
 the bottleneck for C++ support is therefore the oldest supported GCC version,
 where SciPy has been constrained mainly by the version in the oldest supported
-manylinux versions &amp; images <a class="footnote-reference brackets" href="#id51" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a>.</p>
-<p>At the end of 2021 (with the final removal of <code class="docutils literal notranslate"><span class="pre">manylinux1</span></code> wheels), the
-minimal requirement of GCC moved to 6.3, which has full C++14 support <a class="footnote-reference brackets" href="#id52" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a>.
+manylinux versions &amp; images <a class="reference internal" href="#many" id="id6"><span>[MANY]</span></a>.</p>
+<p class="sd-card-text">At the end of 2021 (with the final removal of <code class="docutils literal notranslate"><span class="pre">manylinux1</span></code> wheels), the
+minimal requirement of GCC moved to 6.3, which has full C++14 support <a class="reference internal" href="#cpp" id="id7"><span>[CPP]</span></a>.
 This corresponded to the lowest-present GCC version in relevant manylinux
 versions, though this was still considering the Debian-based “outlier”
 <code class="docutils literal notranslate"><span class="pre">manylinux_2_24</span></code>, which - in contrast to previous manylinux images based on
 RHEL-derivative CentOS that could benefit from the ABI-compatible GCC backports
 in the “RHEL Dev Toolset” - was stuck with GCC 6.3. That image failed to take
-off not least due to those outdated compilers <a class="footnote-reference brackets" href="#id53" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></a> and reached its EOL in
-mid-2022 <a class="footnote-reference brackets" href="#id54" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></a>. For different reasons, <code class="docutils literal notranslate"><span class="pre">manylinux2010</span></code> also reached its EOL
-around the same time <a class="footnote-reference brackets" href="#id55" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></a>.</p>
-<p>The remaining images <code class="docutils literal notranslate"><span class="pre">manylinux2014</span></code> and <code class="docutils literal notranslate"><span class="pre">manylinux_2_28</span></code> currently support
-GCC 10 and 11, respectively. The latter will continue to receive updates as new
+off not least due to those <a class="reference external" href="https://github.com/pypa/manylinux/issues/1012">outdated compilers</a> and reached its EOL in
+mid-2022. For different reasons, <code class="docutils literal notranslate"><span class="pre">manylinux2010</span></code> also reached its EOL
+around the <a class="reference external" href="https://github.com/pypa/manylinux/issues/1281">same time</a>.</p>
+<p class="sd-card-text">The remaining images <code class="docutils literal notranslate"><span class="pre">manylinux2014</span></code> and <code class="docutils literal notranslate"><span class="pre">manylinux_2_28</span></code> currently support
+GCC 10 and 12, respectively. The latter will continue to receive updates as new
 GCC versions become available as backports, but the former will likely not
 change since the CentOS project is not responsive anymore about publishing
-aarch64 backports of GCC 11 <a class="footnote-reference brackets" href="#id56" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a>.</p>
-<p>This leaves all the main platforms and their compilers with comparatively
+aarch64 <a class="reference external" href="https://github.com/pypa/manylinux/issues/1266">backports</a> of GCC 11.</p>
+</div>
+</details><p>This leaves all the main platforms and their compilers with comparatively
 recent versions. However, SciPy has historically also endeavored to support
 less common platforms as well - if not with binary artefacts (i.e. wheels),
 then at least by remaining compilable from source - which includes for example
 AIX, Alpine Linux and FreeBSD.</p>
-<p>For AIX 7.1 &amp; 7.2 the default compiler is GCC 8 (AIX 6.1 had its EOL in 2017),
-but GCC 10 is installable (side-by-side) <a class="footnote-reference brackets" href="#id57" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></a>.
-The oldest currently-supported Alpine Linux release is 3.12 <a class="footnote-reference brackets" href="#id58" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></a>, and already
-comes with GCC 10.
-For FreeBSD, the oldest currently-supported 12.x release <a class="footnote-reference brackets" href="#id59" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a> comes with
-LLVM 10 (and GCC 10 is available as a freebsd-port <a class="footnote-reference brackets" href="#id60" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a>).</p>
-<p>Finally there is the question of which machines are widely used by people
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Platform support and other constraints on compiler<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">For AIX 7.2 &amp; 7.3 the default compiler is GCC 10 (AIX 7.1 had its EOL in 2023),
+but GCC 11/12 is installable <a class="reference external" href="https://www.ibm.com/support/pages/aix-toolbox-open-source-software-downloads-alpha#G">side-by-side</a>, and similarly, there is the
+LLVM 17-based <a class="reference external" href="https://www.ibm.com/docs/en/openxl-c-and-cpp-aix/17.1.2?topic=new-enhanced-llvm-clang-support">Open XL</a> for AIX.</p>
+<p class="sd-card-text">The oldest currently-supported <a class="reference external" href="https://alpinelinux.org/releases/">Alpine Linux</a> release is 3.16, and already
+<a class="reference external" href="https://distrowatch.com/table.php?distribution=alpine">comes with</a> GCC 11.
+For <a class="reference external" href="https://www.freebsd.org/releases/">FreeBSD</a>, the oldest currently-supported <a class="reference external" href="https://www.freebsd.org/releases/13.2R/relnotes/">13.x release</a> comes with
+LLVM 14 (and GCC 13 is available as a <a class="reference external" href="https://ports.freebsd.org/cgi/ports.cgi?query=gcc">freebsd-port</a>).</p>
+<p class="sd-card-text">Finally there is the question of which machines are widely used by people
 needing to compile SciPy from source for other reasons (e.g. SciPy developers,
 or people wanting to compile for themselves for performance reasons).
 The oldest relevant distributions (without RHEL-style backports) are Ubuntu
-18.04 LTS (which has GCC 7 but also has a backport of GCC 8; Ubuntu 20.04 LTS
-has GCC 9) and Debian Buster (with GCC 8; Bullseye has GCC 10).
+20.04 LTS (which has GCC 9 but also has a backport of GCC 10; Ubuntu 22.04 LTS
+has GCC 11) and Debian Bullseye (with GCC 10; Bookworm has GCC 12).
 This is the weakest restriction for determining the lower bounds of compiler
 support (power users and developers can be expected to keep their systems at
 least somewhat up-to-date, or use backports where available), and gradually
 becomes less important as usage numbers of old distributions dwindle.</p>
-<p>All the currently lowest-supported compiler versions (GCC 8, LLVM 12,
+</div>
+</details><p>All the currently lowest-supported compiler versions (GCC 9, LLVM 14,
 VS2019 with vc142) have full support for the C++17 <em>core language</em>,
 which can therefore be used unconditionally.
-However, as of mid-2022, support for the entirety of the C++17 standard library
-has not yet been completed across all compilers <a class="footnote-reference brackets" href="#id52" id="id30" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a>, particularly LLVM.
+However, as of mid-2024, support for the entirety of the C++17 standard library
+has not yet been completed across all compilers <a class="reference internal" href="#cpp" id="id8"><span>[CPP]</span></a>, particularly LLVM.
 It is therefore necessary to check if a given stdlib-feature is supported by
-all compilers before it can be used in SciPy.
-Compiler support for C++20 and C++23 is still under heavy development <a class="footnote-reference brackets" href="#id52" id="id31" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a>.</p>
+all compilers before it can be used in SciPy.</p>
+<p>C++20 support is stabilizing very slowly, even aside from modules, coroutines
+and several not-yet-universally-supported stdlib features. Given how big of a
+release the C++20 standard was, it is expected that it will take a <a class="reference external" href="https://discourse.llvm.org/t/rfc-clang-17-0-6-would-be-minimum-version-to-build-llvm-in-c-20/75345/8">while yet</a>
+before we can start considering moving our baseline.
+Compiler support for C++23 and C++26 is still under heavy development <a class="reference internal" href="#cpp" id="id9"><span>[CPP]</span></a>.</p>
 </section>
 <section id="fortran-compilers">
 <h4>Fortran Compilers<a class="headerlink" href="#fortran-compilers" title="Link to this heading">#</a></h4>
 <p>Generally, any well-maintained compiler is likely suitable and can be
-used to build SciPy.</p>
+used to build SciPy. That said, we do not test with old <code class="docutils literal notranslate"><span class="pre">gfortran</span></code> versions,
+which is why we are matching the lower bound with the one for GCC above.</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Tool</p></th>
@@ -940,13 +1034,13 @@ used to build SciPy.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>gfortran</p></td>
-<td><p>&gt;= 4.8.0</p></td>
+<td><p>&gt;= 9.x</p></td>
 </tr>
-<tr class="row-odd"><td><p>ifort</p></td>
-<td><p>A recent version</p></td>
+<tr class="row-odd"><td><p>ifort/ifx</p></td>
+<td><p>A recent version (not tested in CI)</p></td>
 </tr>
-<tr class="row-even"><td><p>flang</p></td>
-<td><p>A recent version</p></td>
+<tr class="row-even"><td><p>flang (LLVM)</p></td>
+<td><p>&gt;= 17.x</p></td>
 </tr>
 </tbody>
 </table>
@@ -959,7 +1053,7 @@ is a build dependency (currently with the possibility to opt out).</p>
 </section>
 <section id="openmp-support">
 <h3>OpenMP support<a class="headerlink" href="#openmp-support" title="Link to this heading">#</a></h3>
-<p>For various reasons <a class="footnote-reference brackets" href="#id61" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a>, SciPy cannot be distributed with built-in OpenMP support.
+<p>For <a class="reference external" href="https://github.com/scipy/scipy/issues/10239">various reasons</a>, SciPy cannot be distributed with built-in OpenMP support.
 When using the optional Pythran support, OpenMP-enabled parallel code can be
 generated when building from source.</p>
 </section>
@@ -1077,6 +1171,12 @@ has additional compatibility tests that are run when these are installed:</p>
 <tr class="row-odd"><td><p>MyST-NB</p></td>
 <td><p>Whatever recent versions work. &gt;= 0.17.1</p></td>
 </tr>
+<tr class="row-even"><td><p>jupyterlite-sphinx</p></td>
+<td><p>Whatever recent versions work. &gt;= 0.13.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>jupyterlite-pyodide-kernel</p></td>
+<td><p>Whatever recent versions work. &gt;= 0.1.0</p></td>
+</tr>
 </tbody>
 </table>
 <div class="admonition note">
@@ -1119,125 +1219,33 @@ making and distributing a SciPy release.</p>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id33" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://numpy.org/neps/nep-0029-deprecation_policy.html">https://numpy.org/neps/nep-0029-deprecation_policy.html</a></p>
-</aside>
-<aside class="footnote brackets" id="id34" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://numpy.org/doc/stable/release.html">https://numpy.org/doc/stable/release.html</a></p>
-</aside>
-<aside class="footnote brackets" id="id35" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://scipy.github.io/devdocs/release.html">https://scipy.github.io/devdocs/release.html</a></p>
-</aside>
-<aside class="footnote brackets" id="id36" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">4</a><span class="fn-bracket">]</span></span>
-<p><a class="github reference external" href="https://github.com/scipy/oldest-supported-numpy">scipy/oldest-supported-numpy</a></p>
-</aside>
-<aside class="footnote brackets" id="id37" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">5</a><span class="fn-bracket">]</span></span>
-<p><a class="github reference external" href="https://github.com/actions/runner-images">actions/runner-images</a></p>
-</aside>
-<aside class="footnote brackets" id="id38" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">6</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://cirrus-ci.org/guide/docker-builder-vm/#under-the-hood">https://cirrus-ci.org/guide/docker-builder-vm/#under-the-hood</a></p>
-</aside>
-<aside class="footnote brackets" id="id39" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">7</a><span class="fn-bracket">]</span></span>
-<p><a class="github reference external" href="https://github.com/orgs/cirruslabs/packages?tab=packages&amp;q=macos">orgs/cirruslabs</a></p>
-</aside>
-<aside class="footnote brackets" id="id40" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">8</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://docs.microsoft.com/en-us/cpp/overview/visual-cpp-in-visual-studio">https://docs.microsoft.com/en-us/cpp/overview/visual-cpp-in-visual-studio</a></p>
-</aside>
-<aside class="footnote brackets" id="id41" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">9</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering">https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering</a></p>
-</aside>
-<aside class="footnote brackets" id="id42" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">10</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://docs.microsoft.com/en-gb/cpp/windows/universal-crt-deployment">https://docs.microsoft.com/en-gb/cpp/windows/universal-crt-deployment</a></p>
-</aside>
-<aside class="footnote brackets" id="id43" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">11</a><span class="fn-bracket">]</span></span>
-<p><a class="github reference external" href="https://github.com/microsoft/STL/issues/169">microsoft/STL#169</a></p>
-</aside>
-<aside class="footnote brackets" id="id44" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">12</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://docs.microsoft.com/en-us/cpp/build/projects-and-build-systems-cpp#the-msvc-toolset">https://docs.microsoft.com/en-us/cpp/build/projects-and-build-systems-cpp#the-msvc-toolset</a></p>
-</aside>
-<aside class="footnote brackets" id="id45" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">13</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist">https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist</a></p>
-</aside>
-<aside class="footnote brackets" id="id46" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">14</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/C11_%28C_standard_revision%29#Optional_features">https://en.wikipedia.org/wiki/C11_%28C_standard_revision%29#Optional_features</a></p>
-</aside>
-<aside class="footnote brackets" id="id47" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">15</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://docs.microsoft.com/en-us/cpp/overview/visual-cpp-language-conformance#c-standard-library-features-1">https://docs.microsoft.com/en-us/cpp/overview/visual-cpp-language-conformance#c-standard-library-features-1</a></p>
-</aside>
-<aside class="footnote brackets" id="id48" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">16</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://developercommunity.visualstudio.com/t/714008">https://developercommunity.visualstudio.com/t/714008</a></p>
-</aside>
-<aside class="footnote brackets" id="id49" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">17</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://developercommunity.visualstudio.com/t/1204057">https://developercommunity.visualstudio.com/t/1204057</a></p>
-</aside>
-<aside class="footnote brackets" id="id50" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">18</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/complex-math-support">https://docs.microsoft.com/en-us/cpp/c-runtime-library/complex-math-support</a></p>
-</aside>
-<aside class="footnote brackets" id="id51" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">19</a><span class="fn-bracket">]</span></span>
-<p><a class="github reference external" href="https://github.com/mayeut/pep600_compliance">mayeut/pep600_compliance</a></p>
-</aside>
-<aside class="footnote brackets" id="id52" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id21">1</a>,<a role="doc-backlink" href="#id30">2</a>,<a role="doc-backlink" href="#id31">3</a>)</span>
+<div role="list" class="citation-list">
+<div class="citation" id="cpp" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>CPP<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id7">1</a>,<a role="doc-backlink" href="#id8">2</a>,<a role="doc-backlink" href="#id9">3</a>)</span>
 <p><a class="reference external" href="https://en.cppreference.com/w/cpp/compiler_support">https://en.cppreference.com/w/cpp/compiler_support</a></p>
-</aside>
-<aside class="footnote brackets" id="id53" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">21</a><span class="fn-bracket">]</span></span>
-<p><a class="github reference external" href="https://github.com/pypa/manylinux/issues/1012">pypa/manylinux#1012</a></p>
-</aside>
-<aside class="footnote brackets" id="id54" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">22</a><span class="fn-bracket">]</span></span>
-<p><a class="github reference external" href="https://github.com/pypa/manylinux/issues/1332">pypa/manylinux#1332</a></p>
-</aside>
-<aside class="footnote brackets" id="id55" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">23</a><span class="fn-bracket">]</span></span>
-<p><a class="github reference external" href="https://github.com/pypa/manylinux/issues/1281">pypa/manylinux#1281</a></p>
-</aside>
-<aside class="footnote brackets" id="id56" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id25">24</a><span class="fn-bracket">]</span></span>
-<p><a class="github reference external" href="https://github.com/pypa/manylinux/issues/1266">pypa/manylinux#1266</a></p>
-</aside>
-<aside class="footnote brackets" id="id57" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">25</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://www.ibm.com/support/pages/aix-toolbox-open-source-software-downloads-alpha#G">https://www.ibm.com/support/pages/aix-toolbox-open-source-software-downloads-alpha#G</a></p>
-</aside>
-<aside class="footnote brackets" id="id58" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">26</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://alpinelinux.org/releases/">https://alpinelinux.org/releases/</a></p>
-</aside>
-<aside class="footnote brackets" id="id59" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id28">27</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://www.freebsd.org/releases/">https://www.freebsd.org/releases/</a></p>
-</aside>
-<aside class="footnote brackets" id="id60" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id29">28</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://www.freebsd.org/status/report-2021-04-2021-06/gcc/">https://www.freebsd.org/status/report-2021-04-2021-06/gcc/</a></p>
-</aside>
-<aside class="footnote brackets" id="id61" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id32">29</a><span class="fn-bracket">]</span></span>
-<p><a class="github reference external" href="https://github.com/scipy/scipy/issues/10239">scipy/scipy#10239</a></p>
-</aside>
-</aside>
+</div>
+<div class="citation" id="many" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">MANY</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/mayeut/pep600_compliance">mayeut/pep600_compliance</a></p>
+</div>
+<div class="citation" id="msvc" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">MSVC</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://docs.microsoft.com/en-us/cpp/overview/visual-cpp-in-visual-studio">https://docs.microsoft.com/en-us/cpp/overview/visual-cpp-in-visual-studio</a></p>
+</div>
+<div class="citation" id="nep29" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">NEP29</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://numpy.org/neps/nep-0029-deprecation_policy.html">https://numpy.org/neps/nep-0029-deprecation_policy.html</a></p>
+</div>
+<div class="citation" id="osn" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">OSN</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/scipy/oldest-supported-numpy">scipy/oldest-supported-numpy</a></p>
+</div>
+<div class="citation" id="ucrt" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">UCRT</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://docs.microsoft.com/en-gb/cpp/windows/universal-crt-deployment">https://docs.microsoft.com/en-gb/cpp/windows/universal-crt-deployment</a></p>
+</div>
+</div>
 </section>
 </section>
 
@@ -1343,7 +1351,7 @@ making and distributing a SciPy release.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

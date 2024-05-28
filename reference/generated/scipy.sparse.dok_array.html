@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.sparse.dok_array &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.sparse.dok_array &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,36 +29,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.sparse.dok_array';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="scipy.sparse.dok_array.asformat" href="scipy.sparse.dok_array.asformat.html" />
+    <link rel="next" title="scipy.sparse.dok_array.__getitem__" href="scipy.sparse.dok_array.__getitem__.html" />
     <link rel="prev" title="scipy.sparse.dia_array.trunc" href="scipy.sparse.dia_array.trunc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -492,7 +522,7 @@ document.write(`
 <h1>scipy.sparse.dok_array<a class="headerlink" href="#scipy-sparse-dok-array" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="scipy.sparse.dok_array">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scipy.sparse.</span></span><span class="sig-name descname"><span class="pre">dok_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/sparse/_dok.py#L416-L466"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.sparse.dok_array" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scipy.sparse.</span></span><span class="sig-name descname"><span class="pre">dok_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/sparse/_dok.py#L551-L601"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.sparse.dok_array" title="Link to this definition">#</a></dt>
 <dd><p>Dictionary Of Keys based sparse array.</p>
 <p>This is an efficient structure for constructing sparse
 arrays incrementally.</p>
@@ -517,6 +547,8 @@ addition, subtraction, multiplication, division, and matrix power.</p>
 <li><p>Can be efficiently converted to a coo_array once constructed.</p></li>
 </ul>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="00e7fe77-acd9-4bc8-90a4-bea4dbd82356">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('00e7fe77-acd9-4bc8-90a4-bea4dbd82356','bdcbcfe4-a1aa-4aab-9226-10f2ccb23d0d','47bae0f6-f94d-45d1-99fe-03165fcbf831','../../lite/tree/../notebooks/?path=224892a4_a04f_45db_b0b2_aeb55d4c26c6.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">dok_array</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="n">dok_array</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -525,12 +557,14 @@ addition, subtraction, multiplication, division, and matrix power.</p>
 <span class="gp">... </span>        <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span>    <span class="c1"># Update element</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
+</div>
+</div>
+<div id="47bae0f6-f94d-45d1-99fe-03165fcbf831" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('00e7fe77-acd9-4bc8-90a4-bea4dbd82356','47bae0f6-f94d-45d1-99fe-03165fcbf831')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('00e7fe77-acd9-4bc8-90a4-bea4dbd82356','47bae0f6-f94d-45d1-99fe-03165fcbf831')">Open In Tab</button></div><div id="bdcbcfe4-a1aa-4aab-9226-10f2ccb23d0d" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script><dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>dtype</strong><span class="classifier">dtype</span></dt><dd><p>Data type of the array</p>
 </dd>
-<dt><a class="reference internal" href="scipy.sparse.dok_array.shape.html#scipy.sparse.dok_array.shape" title="scipy.sparse.dok_array.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a><span class="classifier">2-tuple</span></dt><dd><p>The shape of the array.</p>
+<dt><strong>shape</strong><span class="classifier">2-tuple</span></dt><dd><p>Shape of the array</p>
 </dd>
 <dt><strong>ndim</strong><span class="classifier">int</span></dt><dd><p>Number of dimensions (this is always 2)</p>
 </dd>
@@ -546,20 +580,26 @@ addition, subtraction, multiplication, division, and matrix power.</p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.__getitem__.html#scipy.sparse.dok_array.__getitem__" title="scipy.sparse.dok_array.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code></a>(key)</p></td>
+<td><p>x.__getitem__(y) &lt;==&gt; x[y]</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.__len__.html#scipy.sparse.dok_array.__len__" title="scipy.sparse.dok_array.__len__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__len__</span></code></a>()</p></td>
+<td><p>Return len(self).</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.asformat.html#scipy.sparse.dok_array.asformat" title="scipy.sparse.dok_array.asformat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asformat</span></code></a>(format[, copy])</p></td>
 <td><p>Return this array/matrix in the passed format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.asfptype.html#scipy.sparse.dok_array.asfptype" title="scipy.sparse.dok_array.asfptype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asfptype</span></code></a>()</p></td>
-<td><p>Upcast array/matrix to a floating point format (if necessary)</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.astype.html#scipy.sparse.dok_array.astype" title="scipy.sparse.dok_array.astype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astype</span></code></a>(dtype[, casting, copy])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.astype.html#scipy.sparse.dok_array.astype" title="scipy.sparse.dok_array.astype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astype</span></code></a>(dtype[, casting, copy])</p></td>
 <td><p>Cast the array/matrix elements to a specified type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.clear.html#scipy.sparse.dok_array.clear" title="scipy.sparse.dok_array.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.conj.html#scipy.sparse.dok_array.conj" title="scipy.sparse.dok_array.conj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conj</span></code></a>([copy])</p></td>
 <td><p>Element-wise complex conjugation.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.conjtransp.html#scipy.sparse.dok_array.conjtransp" title="scipy.sparse.dok_array.conjtransp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conjtransp</span></code></a>()</p></td>
-<td><p>Return the conjugate transpose.</p></td>
+<td><p>DEPRECATED: Return the conjugate transpose.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.conjugate.html#scipy.sparse.dok_array.conjugate" title="scipy.sparse.dok_array.conjugate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conjugate</span></code></a>([copy])</p></td>
 <td><p>Element-wise complex conjugation.</p></td>
@@ -576,29 +616,17 @@ addition, subtraction, multiplication, division, and matrix power.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.dot.html#scipy.sparse.dok_array.dot" title="scipy.sparse.dok_array.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a>(other)</p></td>
 <td><p>Ordinary dot product</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.get.html#scipy.sparse.dok_array.get" title="scipy.sparse.dok_array.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(key[, default])</p></td>
-<td><p>This overrides the dict.get method, providing type checking but otherwise equivalent functionality.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.fromkeys.html#scipy.sparse.dok_array.fromkeys" title="scipy.sparse.dok_array.fromkeys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromkeys</span></code></a>(iterable[, value])</p></td>
+<td><p>Create a new dictionary with keys from iterable and values set to value.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.getH.html#scipy.sparse.dok_array.getH" title="scipy.sparse.dok_array.getH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getH</span></code></a>()</p></td>
-<td><p>Return the Hermitian transpose of this array/matrix.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.get.html#scipy.sparse.dok_array.get" title="scipy.sparse.dok_array.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(key[, default])</p></td>
+<td><p>This provides dict.get method functionality with type checking</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.get_shape.html#scipy.sparse.dok_array.get_shape" title="scipy.sparse.dok_array.get_shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_shape</span></code></a>()</p></td>
-<td><p>Get shape of a sparse array/matrix.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.items.html#scipy.sparse.dok_array.items" title="scipy.sparse.dok_array.items"><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code></a>()</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.getcol.html#scipy.sparse.dok_array.getcol" title="scipy.sparse.dok_array.getcol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getcol</span></code></a>(j)</p></td>
-<td><p>Returns a copy of column j of the array/matrix, as an (m x 1) sparse array/matrix (column vector).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.getformat.html#scipy.sparse.dok_array.getformat" title="scipy.sparse.dok_array.getformat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getformat</span></code></a>()</p></td>
-<td><p>Sparse array/matrix storage format.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.getmaxprint.html#scipy.sparse.dok_array.getmaxprint" title="scipy.sparse.dok_array.getmaxprint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getmaxprint</span></code></a>()</p></td>
-<td><p>Maximum number of elements to display when printed.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.getnnz.html#scipy.sparse.dok_array.getnnz" title="scipy.sparse.dok_array.getnnz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getnnz</span></code></a>([axis])</p></td>
-<td><p>Number of stored values, including explicit zeros.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.getrow.html#scipy.sparse.dok_array.getrow" title="scipy.sparse.dok_array.getrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getrow</span></code></a>(i)</p></td>
-<td><p>Returns a copy of row i of the array/matrix, as a (1 x n) sparse array/matrix (row vector).</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.keys.html#scipy.sparse.dok_array.keys" title="scipy.sparse.dok_array.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>()</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.maximum.html#scipy.sparse.dok_array.maximum" title="scipy.sparse.dok_array.maximum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximum</span></code></a>(other)</p></td>
 <td><p>Element-wise maximum between this and another array/matrix.</p></td>
@@ -615,6 +643,12 @@ addition, subtraction, multiplication, division, and matrix power.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.nonzero.html#scipy.sparse.dok_array.nonzero" title="scipy.sparse.dok_array.nonzero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nonzero</span></code></a>()</p></td>
 <td><p>Nonzero indices of the array/matrix.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.pop.html#scipy.sparse.dok_array.pop" title="scipy.sparse.dok_array.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(k[,d])</p></td>
+<td><p>If the key is not found, return the default if given; otherwise, raise a KeyError.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.popitem.html#scipy.sparse.dok_array.popitem" title="scipy.sparse.dok_array.popitem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">popitem</span></code></a>()</p></td>
+<td><p>Remove and return a (key, value) pair as a 2-tuple.</p></td>
+</tr>
 <tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.power.html#scipy.sparse.dok_array.power" title="scipy.sparse.dok_array.power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power</span></code></a>(n[, dtype])</p></td>
 <td><p>Element-wise power.</p></td>
 </tr>
@@ -624,8 +658,8 @@ addition, subtraction, multiplication, division, and matrix power.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.resize.html#scipy.sparse.dok_array.resize" title="scipy.sparse.dok_array.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize</span></code></a>(*shape)</p></td>
 <td><p>Resize the array/matrix in-place to dimensions given by <code class="docutils literal notranslate"><span class="pre">shape</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.set_shape.html#scipy.sparse.dok_array.set_shape" title="scipy.sparse.dok_array.set_shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_shape</span></code></a>(shape)</p></td>
-<td><p>See <a class="reference internal" href="scipy.sparse.dok_array.reshape.html#scipy.sparse.dok_array.reshape" title="scipy.sparse.dok_array.reshape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape</span></code></a>.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.setdefault.html#scipy.sparse.dok_array.setdefault" title="scipy.sparse.dok_array.setdefault"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setdefault</span></code></a>(key[, default])</p></td>
+<td><p>Insert key with a value of default if key is not in the dictionary.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.setdiag.html#scipy.sparse.dok_array.setdiag" title="scipy.sparse.dok_array.setdiag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setdiag</span></code></a>(values[, k])</p></td>
 <td><p>Set diagonal or off-diagonal elements of the array/matrix.</p></td>
@@ -666,38 +700,17 @@ addition, subtraction, multiplication, division, and matrix power.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.transpose.html#scipy.sparse.dok_array.transpose" title="scipy.sparse.dok_array.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>([axes, copy])</p></td>
 <td><p>Reverses the dimensions of the sparse array/matrix.</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="scipy.sparse.dok_array.update.html#scipy.sparse.dok_array.update" title="scipy.sparse.dok_array.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>([E, ]**F)</p></td>
+<td><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v In either case, this is followed by: for k in F:  D[k] = F[k]</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="scipy.sparse.dok_array.values.html#scipy.sparse.dok_array.values" title="scipy.sparse.dok_array.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
 <table class="table">
 <tbody>
-<tr class="row-odd"><td><p><strong>__getitem__</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>__len__</strong></p></td>
-<td></td>
-</tr>
 <tr class="row-odd"><td><p><strong>__mul__</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>clear</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>items</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>keys</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>popitem</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>setdefault</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>update</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>values</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -726,11 +739,11 @@ addition, subtraction, multiplication, division, and matrix power.</p>
       </div>
     </a>
     <a class="right-next"
-       href="scipy.sparse.dok_array.asformat.html"
+       href="scipy.sparse.dok_array.__getitem__.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">scipy.sparse.dok_array.asformat</p>
+        <p class="prev-next-title">scipy.sparse.dok_array.__getitem__</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -790,7 +803,7 @@ addition, subtraction, multiplication, division, and matrix power.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

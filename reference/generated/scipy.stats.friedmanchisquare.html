@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.stats.friedmanchisquare &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.stats.friedmanchisquare &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,28 +29,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="../../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.stats.friedmanchisquare';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -59,7 +63,7 @@
     <link rel="prev" title="scipy.stats.median_test" href="scipy.stats.median_test.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -134,35 +138,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -223,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -347,6 +353,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -493,7 +523,7 @@ document.write(`
 <h1>scipy.stats.friedmanchisquare<a class="headerlink" href="#scipy-stats-friedmanchisquare" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="scipy.stats.friedmanchisquare">
-<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">friedmanchisquare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">samples</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_stats_py.py#L9316-L9407"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.friedmanchisquare" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">friedmanchisquare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'propagate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_stats_py.py#L8919-L9013"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.friedmanchisquare" title="Link to this definition">#</a></dt>
 <dd><p>Compute the Friedman test for repeated samples.</p>
 <p>The Friedman test tests the null hypothesis that repeated samples of
 the same individuals have the same distribution.  It is often used
@@ -506,6 +536,27 @@ sampling techniques are consistent.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>sample1, sample2, sample3…</strong><span class="classifier">array_like</span></dt><dd><p>Arrays of observations.  All of the arrays must have the same number
 of elements.  At least three samples must be given.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">int or None, default: 0</span></dt><dd><p>If an int, the axis of the input along which to compute the statistic.
+The statistic of each axis-slice (e.g. row) of the input will appear in a
+corresponding element of the output.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the input will be raveled before computing the statistic.</p>
+</dd>
+<dt><strong>nan_policy</strong><span class="classifier">{‘propagate’, ‘omit’, ‘raise’}</span></dt><dd><p>Defines how to handle input NaNs.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">propagate</span></code>: if a NaN is present in the axis slice (e.g. row) along
+which the  statistic is computed, the corresponding entry of the output
+will be NaN.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">omit</span></code>: NaNs will be omitted when performing the calculation.
+If insufficient data remains in the axis slice along which the
+statistic is computed, the corresponding entry of the output will be
+NaN.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raise</span></code>: if a NaN is present, a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> will be raised.</p></li>
+</ul>
+</dd>
+<dt><strong>keepdims</strong><span class="classifier">bool, default: False</span></dt><dd><p>If this is set to True, the axes which are reduced are left
+in the result as dimensions with size one. With this option,
+the result will broadcast correctly against the input array.</p>
 </dd>
 </dl>
 </dd>
@@ -523,6 +574,12 @@ squared distribution.</p>
 <p>Due to the assumption that the test statistic has a chi squared
 distribution, the p-value is only reliable for n &gt; 10 and more than
 6 repeated samples.</p>
+<p>Beginning in SciPy 1.9, <code class="docutils literal notranslate"><span class="pre">np.matrix</span></code> inputs (not recommended for new
+code) are converted to <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> before the calculation is performed. In
+this case, the output will be a scalar or <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> of appropriate shape
+rather than a 2D <code class="docutils literal notranslate"><span class="pre">np.matrix</span></code>. Similarly, while masked elements of masked
+arrays are ignored, the output will be a scalar or <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> rather than a
+masked array with <code class="docutils literal notranslate"><span class="pre">mask=False</span></code>.</p>
 <p class="rubric">References</p>
 <div role="list" class="citation-list">
 <div class="citation" id="r0143c258793d-1" role="doc-biblioentry">
@@ -536,6 +593,8 @@ Methods, Third Edition”. Chapter 6, Section 6.3.2.</p>
 </div>
 </div>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="7a7ff5b1-793c-4e84-a3bf-8adb39d3977d">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('7a7ff5b1-793c-4e84-a3bf-8adb39d3977d','806f949d-f844-490b-b235-19f70dceb18f','33ef1ab4-563a-469c-95a7-1fefb985bde2','../../lite/tree/../notebooks/?path=58adc1d1_d02f_4919_a8cf_459af0301c4c.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <p>In <a class="reference internal" href="#r0143c258793d-2" id="id3">[2]</a>, the pulse rate (per minute) of a group of seven students was
 measured before exercise, immediately after exercise and 5 minutes
 after exercise. Is there evidence to suggest that the pulse rates on
@@ -559,7 +618,9 @@ these three occasions are similar?</p>
 <p>Using a significance level of 5%, we would reject the null hypothesis in
 favor of the alternative hypothesis: “the pulse rates are different on
 these three occasions”.</p>
-</dd></dl>
+</div>
+</div>
+<div id="33ef1ab4-563a-469c-95a7-1fefb985bde2" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('7a7ff5b1-793c-4e84-a3bf-8adb39d3977d','33ef1ab4-563a-469c-95a7-1fefb985bde2')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('7a7ff5b1-793c-4e84-a3bf-8adb39d3977d','33ef1ab4-563a-469c-95a7-1fefb985bde2')">Open In Tab</button></div><div id="806f949d-f844-490b-b235-19f70dceb18f" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
@@ -647,7 +708,7 @@ these three occasions”.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

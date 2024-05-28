@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Statistical functions (scipy.stats) &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>Statistical functions (scipy.stats) &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,28 +29,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=41e5ba13"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/stats';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -59,7 +63,7 @@
     <link rel="prev" title="scipy.special.sinc" href="generated/scipy.special.sinc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -134,35 +138,13 @@
       
     
     
-    <img src="../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -223,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -347,6 +353,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -676,175 +706,178 @@ model selection.</p></li>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.invweibull.html#scipy.stats.invweibull" title="scipy.stats.invweibull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invweibull</span></code></a></p></td>
 <td><p>An inverted Weibull continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.jf_skew_t.html#scipy.stats.jf_skew_t" title="scipy.stats.jf_skew_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jf_skew_t</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.irwinhall.html#scipy.stats.irwinhall" title="scipy.stats.irwinhall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">irwinhall</span></code></a></p></td>
+<td><p>An Irwin-Hall (Uniform Sum) continuous random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.jf_skew_t.html#scipy.stats.jf_skew_t" title="scipy.stats.jf_skew_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jf_skew_t</span></code></a></p></td>
 <td><p>Jones and Faddy skew-t distribution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.johnsonsb.html#scipy.stats.johnsonsb" title="scipy.stats.johnsonsb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">johnsonsb</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.johnsonsb.html#scipy.stats.johnsonsb" title="scipy.stats.johnsonsb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">johnsonsb</span></code></a></p></td>
 <td><p>A Johnson SB continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.johnsonsu.html#scipy.stats.johnsonsu" title="scipy.stats.johnsonsu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">johnsonsu</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.johnsonsu.html#scipy.stats.johnsonsu" title="scipy.stats.johnsonsu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">johnsonsu</span></code></a></p></td>
 <td><p>A Johnson SU continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.kappa4.html#scipy.stats.kappa4" title="scipy.stats.kappa4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kappa4</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.kappa4.html#scipy.stats.kappa4" title="scipy.stats.kappa4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kappa4</span></code></a></p></td>
 <td><p>Kappa 4 parameter distribution.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.kappa3.html#scipy.stats.kappa3" title="scipy.stats.kappa3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kappa3</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.kappa3.html#scipy.stats.kappa3" title="scipy.stats.kappa3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kappa3</span></code></a></p></td>
 <td><p>Kappa 3 parameter distribution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.ksone.html#scipy.stats.ksone" title="scipy.stats.ksone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ksone</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.ksone.html#scipy.stats.ksone" title="scipy.stats.ksone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ksone</span></code></a></p></td>
 <td><p>Kolmogorov-Smirnov one-sided test statistic distribution.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.kstwo.html#scipy.stats.kstwo" title="scipy.stats.kstwo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kstwo</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.kstwo.html#scipy.stats.kstwo" title="scipy.stats.kstwo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kstwo</span></code></a></p></td>
 <td><p>Kolmogorov-Smirnov two-sided test statistic distribution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.kstwobign.html#scipy.stats.kstwobign" title="scipy.stats.kstwobign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kstwobign</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.kstwobign.html#scipy.stats.kstwobign" title="scipy.stats.kstwobign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kstwobign</span></code></a></p></td>
 <td><p>Limiting distribution of scaled Kolmogorov-Smirnov two-sided test statistic.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.laplace.html#scipy.stats.laplace" title="scipy.stats.laplace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laplace</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.laplace.html#scipy.stats.laplace" title="scipy.stats.laplace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laplace</span></code></a></p></td>
 <td><p>A Laplace continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.laplace_asymmetric.html#scipy.stats.laplace_asymmetric" title="scipy.stats.laplace_asymmetric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laplace_asymmetric</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.laplace_asymmetric.html#scipy.stats.laplace_asymmetric" title="scipy.stats.laplace_asymmetric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laplace_asymmetric</span></code></a></p></td>
 <td><p>An asymmetric Laplace continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.levy.html#scipy.stats.levy" title="scipy.stats.levy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">levy</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.levy.html#scipy.stats.levy" title="scipy.stats.levy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">levy</span></code></a></p></td>
 <td><p>A Levy continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.levy_l.html#scipy.stats.levy_l" title="scipy.stats.levy_l"><code class="xref py py-obj docutils literal notranslate"><span class="pre">levy_l</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.levy_l.html#scipy.stats.levy_l" title="scipy.stats.levy_l"><code class="xref py py-obj docutils literal notranslate"><span class="pre">levy_l</span></code></a></p></td>
 <td><p>A left-skewed Levy continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.levy_stable.html#scipy.stats.levy_stable" title="scipy.stats.levy_stable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">levy_stable</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.levy_stable.html#scipy.stats.levy_stable" title="scipy.stats.levy_stable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">levy_stable</span></code></a></p></td>
 <td><p>A Levy-stable continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.logistic.html#scipy.stats.logistic" title="scipy.stats.logistic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logistic</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.logistic.html#scipy.stats.logistic" title="scipy.stats.logistic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logistic</span></code></a></p></td>
 <td><p>A logistic (or Sech-squared) continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.loggamma.html#scipy.stats.loggamma" title="scipy.stats.loggamma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loggamma</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.loggamma.html#scipy.stats.loggamma" title="scipy.stats.loggamma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loggamma</span></code></a></p></td>
 <td><p>A log gamma continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.loglaplace.html#scipy.stats.loglaplace" title="scipy.stats.loglaplace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loglaplace</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.loglaplace.html#scipy.stats.loglaplace" title="scipy.stats.loglaplace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loglaplace</span></code></a></p></td>
 <td><p>A log-Laplace continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.lognorm.html#scipy.stats.lognorm" title="scipy.stats.lognorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lognorm</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.lognorm.html#scipy.stats.lognorm" title="scipy.stats.lognorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lognorm</span></code></a></p></td>
 <td><p>A lognormal continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.loguniform.html#scipy.stats.loguniform" title="scipy.stats.loguniform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loguniform</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.loguniform.html#scipy.stats.loguniform" title="scipy.stats.loguniform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loguniform</span></code></a></p></td>
 <td><p>A loguniform or reciprocal continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.lomax.html#scipy.stats.lomax" title="scipy.stats.lomax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lomax</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.lomax.html#scipy.stats.lomax" title="scipy.stats.lomax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lomax</span></code></a></p></td>
 <td><p>A Lomax (Pareto of the second kind) continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.maxwell.html#scipy.stats.maxwell" title="scipy.stats.maxwell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maxwell</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.maxwell.html#scipy.stats.maxwell" title="scipy.stats.maxwell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maxwell</span></code></a></p></td>
 <td><p>A Maxwell continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.mielke.html#scipy.stats.mielke" title="scipy.stats.mielke"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mielke</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.mielke.html#scipy.stats.mielke" title="scipy.stats.mielke"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mielke</span></code></a></p></td>
 <td><p>A Mielke Beta-Kappa / Dagum continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.moyal.html#scipy.stats.moyal" title="scipy.stats.moyal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moyal</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.moyal.html#scipy.stats.moyal" title="scipy.stats.moyal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moyal</span></code></a></p></td>
 <td><p>A Moyal continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.nakagami.html#scipy.stats.nakagami" title="scipy.stats.nakagami"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nakagami</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.nakagami.html#scipy.stats.nakagami" title="scipy.stats.nakagami"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nakagami</span></code></a></p></td>
 <td><p>A Nakagami continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.ncx2.html#scipy.stats.ncx2" title="scipy.stats.ncx2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ncx2</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.ncx2.html#scipy.stats.ncx2" title="scipy.stats.ncx2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ncx2</span></code></a></p></td>
 <td><p>A non-central chi-squared continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.ncf.html#scipy.stats.ncf" title="scipy.stats.ncf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ncf</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.ncf.html#scipy.stats.ncf" title="scipy.stats.ncf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ncf</span></code></a></p></td>
 <td><p>A non-central F distribution continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.nct.html#scipy.stats.nct" title="scipy.stats.nct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nct</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.nct.html#scipy.stats.nct" title="scipy.stats.nct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nct</span></code></a></p></td>
 <td><p>A non-central Student's t continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.norm.html#scipy.stats.norm" title="scipy.stats.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.norm.html#scipy.stats.norm" title="scipy.stats.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a></p></td>
 <td><p>A normal continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.norminvgauss.html#scipy.stats.norminvgauss" title="scipy.stats.norminvgauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norminvgauss</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.norminvgauss.html#scipy.stats.norminvgauss" title="scipy.stats.norminvgauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norminvgauss</span></code></a></p></td>
 <td><p>A Normal Inverse Gaussian continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.pareto.html#scipy.stats.pareto" title="scipy.stats.pareto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pareto</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.pareto.html#scipy.stats.pareto" title="scipy.stats.pareto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pareto</span></code></a></p></td>
 <td><p>A Pareto continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.pearson3.html#scipy.stats.pearson3" title="scipy.stats.pearson3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pearson3</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.pearson3.html#scipy.stats.pearson3" title="scipy.stats.pearson3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pearson3</span></code></a></p></td>
 <td><p>A pearson type III continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.powerlaw.html#scipy.stats.powerlaw" title="scipy.stats.powerlaw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">powerlaw</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.powerlaw.html#scipy.stats.powerlaw" title="scipy.stats.powerlaw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">powerlaw</span></code></a></p></td>
 <td><p>A power-function continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.powerlognorm.html#scipy.stats.powerlognorm" title="scipy.stats.powerlognorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">powerlognorm</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.powerlognorm.html#scipy.stats.powerlognorm" title="scipy.stats.powerlognorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">powerlognorm</span></code></a></p></td>
 <td><p>A power log-normal continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.powernorm.html#scipy.stats.powernorm" title="scipy.stats.powernorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">powernorm</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.powernorm.html#scipy.stats.powernorm" title="scipy.stats.powernorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">powernorm</span></code></a></p></td>
 <td><p>A power normal continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.rdist.html#scipy.stats.rdist" title="scipy.stats.rdist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rdist</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.rdist.html#scipy.stats.rdist" title="scipy.stats.rdist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rdist</span></code></a></p></td>
 <td><p>An R-distributed (symmetric beta) continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.rayleigh.html#scipy.stats.rayleigh" title="scipy.stats.rayleigh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rayleigh</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.rayleigh.html#scipy.stats.rayleigh" title="scipy.stats.rayleigh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rayleigh</span></code></a></p></td>
 <td><p>A Rayleigh continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.rel_breitwigner.html#scipy.stats.rel_breitwigner" title="scipy.stats.rel_breitwigner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rel_breitwigner</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.rel_breitwigner.html#scipy.stats.rel_breitwigner" title="scipy.stats.rel_breitwigner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rel_breitwigner</span></code></a></p></td>
 <td><p>A relativistic Breit-Wigner random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.rice.html#scipy.stats.rice" title="scipy.stats.rice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rice</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.rice.html#scipy.stats.rice" title="scipy.stats.rice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rice</span></code></a></p></td>
 <td><p>A Rice continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.recipinvgauss.html#scipy.stats.recipinvgauss" title="scipy.stats.recipinvgauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recipinvgauss</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.recipinvgauss.html#scipy.stats.recipinvgauss" title="scipy.stats.recipinvgauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recipinvgauss</span></code></a></p></td>
 <td><p>A reciprocal inverse Gaussian continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.semicircular.html#scipy.stats.semicircular" title="scipy.stats.semicircular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">semicircular</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.semicircular.html#scipy.stats.semicircular" title="scipy.stats.semicircular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">semicircular</span></code></a></p></td>
 <td><p>A semicircular continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.skewcauchy.html#scipy.stats.skewcauchy" title="scipy.stats.skewcauchy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">skewcauchy</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.skewcauchy.html#scipy.stats.skewcauchy" title="scipy.stats.skewcauchy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">skewcauchy</span></code></a></p></td>
 <td><p>A skewed Cauchy random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.skewnorm.html#scipy.stats.skewnorm" title="scipy.stats.skewnorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">skewnorm</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.skewnorm.html#scipy.stats.skewnorm" title="scipy.stats.skewnorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">skewnorm</span></code></a></p></td>
 <td><p>A skew-normal random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.studentized_range.html#scipy.stats.studentized_range" title="scipy.stats.studentized_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">studentized_range</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.studentized_range.html#scipy.stats.studentized_range" title="scipy.stats.studentized_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">studentized_range</span></code></a></p></td>
 <td><p>A studentized range continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.t.html#scipy.stats.t" title="scipy.stats.t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">t</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.t.html#scipy.stats.t" title="scipy.stats.t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">t</span></code></a></p></td>
 <td><p>A Student's t continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.trapezoid.html#scipy.stats.trapezoid" title="scipy.stats.trapezoid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trapezoid</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.trapezoid.html#scipy.stats.trapezoid" title="scipy.stats.trapezoid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trapezoid</span></code></a></p></td>
 <td><p>A trapezoidal continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.triang.html#scipy.stats.triang" title="scipy.stats.triang"><code class="xref py py-obj docutils literal notranslate"><span class="pre">triang</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.triang.html#scipy.stats.triang" title="scipy.stats.triang"><code class="xref py py-obj docutils literal notranslate"><span class="pre">triang</span></code></a></p></td>
 <td><p>A triangular continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.truncexpon.html#scipy.stats.truncexpon" title="scipy.stats.truncexpon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncexpon</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.truncexpon.html#scipy.stats.truncexpon" title="scipy.stats.truncexpon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncexpon</span></code></a></p></td>
 <td><p>A truncated exponential continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.truncnorm.html#scipy.stats.truncnorm" title="scipy.stats.truncnorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncnorm</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.truncnorm.html#scipy.stats.truncnorm" title="scipy.stats.truncnorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncnorm</span></code></a></p></td>
 <td><p>A truncated normal continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.truncpareto.html#scipy.stats.truncpareto" title="scipy.stats.truncpareto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncpareto</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.truncpareto.html#scipy.stats.truncpareto" title="scipy.stats.truncpareto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncpareto</span></code></a></p></td>
 <td><p>An upper truncated Pareto continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.truncweibull_min.html#scipy.stats.truncweibull_min" title="scipy.stats.truncweibull_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncweibull_min</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.truncweibull_min.html#scipy.stats.truncweibull_min" title="scipy.stats.truncweibull_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncweibull_min</span></code></a></p></td>
 <td><p>A doubly truncated Weibull minimum continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.tukeylambda.html#scipy.stats.tukeylambda" title="scipy.stats.tukeylambda"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tukeylambda</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.tukeylambda.html#scipy.stats.tukeylambda" title="scipy.stats.tukeylambda"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tukeylambda</span></code></a></p></td>
 <td><p>A Tukey-Lamdba continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.uniform.html#scipy.stats.uniform" title="scipy.stats.uniform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">uniform</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.uniform.html#scipy.stats.uniform" title="scipy.stats.uniform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">uniform</span></code></a></p></td>
 <td><p>A uniform continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.vonmises.html#scipy.stats.vonmises" title="scipy.stats.vonmises"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vonmises</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.vonmises.html#scipy.stats.vonmises" title="scipy.stats.vonmises"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vonmises</span></code></a></p></td>
 <td><p>A Von Mises continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.vonmises_line.html#scipy.stats.vonmises_line" title="scipy.stats.vonmises_line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vonmises_line</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.vonmises_line.html#scipy.stats.vonmises_line" title="scipy.stats.vonmises_line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vonmises_line</span></code></a></p></td>
 <td><p>A Von Mises continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.wald.html#scipy.stats.wald" title="scipy.stats.wald"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wald</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.wald.html#scipy.stats.wald" title="scipy.stats.wald"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wald</span></code></a></p></td>
 <td><p>A Wald continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.weibull_min.html#scipy.stats.weibull_min" title="scipy.stats.weibull_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weibull_min</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.weibull_min.html#scipy.stats.weibull_min" title="scipy.stats.weibull_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weibull_min</span></code></a></p></td>
 <td><p>Weibull minimum continuous random variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.weibull_max.html#scipy.stats.weibull_max" title="scipy.stats.weibull_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weibull_max</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.weibull_max.html#scipy.stats.weibull_max" title="scipy.stats.weibull_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weibull_max</span></code></a></p></td>
 <td><p>Weibull maximum continuous random variable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.wrapcauchy.html#scipy.stats.wrapcauchy" title="scipy.stats.wrapcauchy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wrapcauchy</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.wrapcauchy.html#scipy.stats.wrapcauchy" title="scipy.stats.wrapcauchy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wrapcauchy</span></code></a></p></td>
 <td><p>A wrapped Cauchy continuous random variable.</p></td>
 </tr>
 </tbody>
@@ -1028,7 +1061,7 @@ have a similar version in <a class="reference internal" href="stats.mstats.html#
 <td><p>Compute the sample skewness of a data set.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.kstat.html#scipy.stats.kstat" title="scipy.stats.kstat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kstat</span></code></a>(data[, n, axis, nan_policy, keepdims])</p></td>
-<td><p>Return the nth k-statistic (1&lt;=n&lt;=4 so far).</p></td>
+<td><p>Return the <em class="xref py py-obj">n</em> th k-statistic ( <code class="docutils literal notranslate"><span class="pre">1&lt;=n&lt;=4</span></code> so far).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.kstatvar.html#scipy.stats.kstatvar" title="scipy.stats.kstatvar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kstatvar</span></code></a>(data[, n, axis, nan_policy, keepdims])</p></td>
 <td><p>Return an unbiased estimator of the variance of the k-statistic.</p></td>
@@ -1126,7 +1159,7 @@ have a similar version in <a class="reference internal" href="stats.mstats.html#
 </table>
 </section>
 <section id="hypothesis-tests-and-related-functions">
-<h2>Hypothesis Tests and related functions<a class="headerlink" href="#hypothesis-tests-and-related-functions" title="Link to this heading">#</a></h2>
+<span id="hypotests"></span><h2>Hypothesis Tests and related functions<a class="headerlink" href="#hypothesis-tests-and-related-functions" title="Link to this heading">#</a></h2>
 <p>SciPy has many functions for performing hypothesis tests that return a
 test statistic and a p-value, and several of them return confidence intervals
 and/or other related information.</p>
@@ -1214,7 +1247,7 @@ coordinates of multivariate observations.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.linregress.html#scipy.stats.linregress" title="scipy.stats.linregress"><code class="xref py py-obj docutils literal notranslate"><span class="pre">linregress</span></code></a>(x[, y, alternative])</p></td>
 <td><p>Calculate a linear least-squares regression for two sets of measurements.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.pearsonr.html#scipy.stats.pearsonr" title="scipy.stats.pearsonr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pearsonr</span></code></a>(x, y, *[, alternative, method])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.pearsonr.html#scipy.stats.pearsonr" title="scipy.stats.pearsonr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pearsonr</span></code></a>(x, y, *[, alternative, method, axis])</p></td>
 <td><p>Pearson correlation coefficient and p-value for testing non-correlation.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.spearmanr.html#scipy.stats.spearmanr" title="scipy.stats.spearmanr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spearmanr</span></code></a>(a[, b, axis, nan_policy, alternative])</p></td>
@@ -1223,7 +1256,7 @@ coordinates of multivariate observations.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.pointbiserialr.html#scipy.stats.pointbiserialr" title="scipy.stats.pointbiserialr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pointbiserialr</span></code></a>(x, y)</p></td>
 <td><p>Calculate a point biserial correlation coefficient and its p-value.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.kendalltau.html#scipy.stats.kendalltau" title="scipy.stats.kendalltau"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kendalltau</span></code></a>(x, y, *[, initial_lexsort, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.kendalltau.html#scipy.stats.kendalltau" title="scipy.stats.kendalltau"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kendalltau</span></code></a>(x, y, *[, nan_policy, method, ...])</p></td>
 <td><p>Calculate Kendall's tau, a correlation measure for ordinal data.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.weightedtau.html#scipy.stats.weightedtau" title="scipy.stats.weightedtau"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weightedtau</span></code></a>(x, y[, rank, weigher, additive])</p></td>
@@ -1317,7 +1350,7 @@ with a shared property (e.g. equal means).</p>
 <p>Others are generalized to multiple samples.</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.f_oneway.html#scipy.stats.f_oneway" title="scipy.stats.f_oneway"><code class="xref py py-obj docutils literal notranslate"><span class="pre">f_oneway</span></code></a>(*samples[, axis])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.f_oneway.html#scipy.stats.f_oneway" title="scipy.stats.f_oneway"><code class="xref py py-obj docutils literal notranslate"><span class="pre">f_oneway</span></code></a>(*samples[, axis, nan_policy, keepdims])</p></td>
 <td><p>Perform one-way ANOVA.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.tukey_hsd.html#scipy.stats.tukey_hsd" title="scipy.stats.tukey_hsd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tukey_hsd</span></code></a>(*args)</p></td>
@@ -1329,7 +1362,7 @@ with a shared property (e.g. equal means).</p>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.kruskal.html#scipy.stats.kruskal" title="scipy.stats.kruskal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kruskal</span></code></a>(*samples[, nan_policy, axis, keepdims])</p></td>
 <td><p>Compute the Kruskal-Wallis H-test for independent samples.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.alexandergovern.html#scipy.stats.alexandergovern" title="scipy.stats.alexandergovern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alexandergovern</span></code></a>(*samples[, nan_policy])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.alexandergovern.html#scipy.stats.alexandergovern" title="scipy.stats.alexandergovern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alexandergovern</span></code></a>(*samples[, nan_policy, ...])</p></td>
 <td><p>Performs the Alexander Govern test.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.fligner.html#scipy.stats.fligner" title="scipy.stats.fligner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fligner</span></code></a>(*samples[, center, proportiontocut, ...])</p></td>
@@ -1344,7 +1377,7 @@ with a shared property (e.g. equal means).</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.median_test.html#scipy.stats.median_test" title="scipy.stats.median_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median_test</span></code></a>(*samples[, ties, correction, ...])</p></td>
 <td><p>Perform a Mood's median test.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.friedmanchisquare.html#scipy.stats.friedmanchisquare" title="scipy.stats.friedmanchisquare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">friedmanchisquare</span></code></a>(*samples)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.friedmanchisquare.html#scipy.stats.friedmanchisquare" title="scipy.stats.friedmanchisquare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">friedmanchisquare</span></code></a>(*samples[, axis, ...])</p></td>
 <td><p>Compute the Friedman test for repeated samples.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.anderson_ksamp.html#scipy.stats.anderson_ksamp" title="scipy.stats.anderson_ksamp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">anderson_ksamp</span></code></a>(samples[, midrank, method])</p></td>
@@ -1370,6 +1403,9 @@ at the cost of greater computational requirements and stochastic results.</p>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.bootstrap.html#scipy.stats.bootstrap" title="scipy.stats.bootstrap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bootstrap</span></code></a>(data, statistic, *[, n_resamples, ...])</p></td>
 <td><p>Compute a two-sided bootstrap confidence interval of a statistic.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.power.html#scipy.stats.power" title="scipy.stats.power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power</span></code></a>(test, rvs, n_observations, *[, ...])</p></td>
+<td><p>Simulate the power of a hypothesis test under an alternative hypothesis.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1397,7 +1433,7 @@ Functions for performing specific multiple hypothesis tests (e.g. post hoc
 tests) are listed above.</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.combine_pvalues.html#scipy.stats.combine_pvalues" title="scipy.stats.combine_pvalues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine_pvalues</span></code></a>(pvalues[, method, weights])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.combine_pvalues.html#scipy.stats.combine_pvalues" title="scipy.stats.combine_pvalues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine_pvalues</span></code></a>(pvalues[, method, weights, ...])</p></td>
 <td><p>Combine p-values from independent tests that bear upon the same hypothesis.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.false_discovery_control.html#scipy.stats.false_discovery_control" title="scipy.stats.false_discovery_control"><code class="xref py py-obj docutils literal notranslate"><span class="pre">false_discovery_control</span></code></a>(ps, *[, axis, method])</p></td>
@@ -1854,9 +1890,12 @@ above categories.</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.wasserstein_distance.html#scipy.stats.wasserstein_distance" title="scipy.stats.wasserstein_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wasserstein_distance</span></code></a>(u_values, v_values[, ...])</p></td>
-<td><p>Compute the first Wasserstein distance between two 1D distributions.</p></td>
+<td><p>Compute the Wasserstein-1 distance between two 1D discrete distributions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.energy_distance.html#scipy.stats.energy_distance" title="scipy.stats.energy_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">energy_distance</span></code></a>(u_values, v_values[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.wasserstein_distance_nd.html#scipy.stats.wasserstein_distance_nd" title="scipy.stats.wasserstein_distance_nd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wasserstein_distance_nd</span></code></a>(u_values, v_values)</p></td>
+<td><p>Compute the Wasserstein-1 distance between two N-D discrete distributions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.energy_distance.html#scipy.stats.energy_distance" title="scipy.stats.energy_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">energy_distance</span></code></a>(u_values, v_values[, ...])</p></td>
 <td><p>Compute the energy distance between two 1D distributions.</p></td>
 </tr>
 </tbody>
@@ -1938,13 +1977,13 @@ above categories.</p>
 <td><p>Computes sample statistics for directional data.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.circmean.html#scipy.stats.circmean" title="scipy.stats.circmean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circmean</span></code></a>(samples[, high, low, axis, ...])</p></td>
-<td><p>Compute the circular mean for samples in a range.</p></td>
+<td><p>Compute the circular mean of a sample of angle observations.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/scipy.stats.circvar.html#scipy.stats.circvar" title="scipy.stats.circvar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circvar</span></code></a>(samples[, high, low, axis, ...])</p></td>
-<td><p>Compute the circular variance for samples assumed to be in a range.</p></td>
+<td><p>Compute the circular variance of a sample of angle observations.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/scipy.stats.circstd.html#scipy.stats.circstd" title="scipy.stats.circstd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circstd</span></code></a>(samples[, high, low, axis, ...])</p></td>
-<td><p>Compute the circular standard deviation for samples assumed to be in the range [low to high].</p></td>
+<td><p>Compute the circular standard deviation of a sample of angle observations.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2169,7 +2208,7 @@ instantiation is not supported.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

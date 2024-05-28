@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.stats.gstd &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.stats.gstd &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,27 +29,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+    <script async="async" src="../../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.stats.gstd';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -58,7 +63,7 @@
     <link rel="prev" title="scipy.stats.trim_mean" href="scipy.stats.trim_mean.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -133,35 +138,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +353,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -492,24 +523,21 @@ document.write(`
 <h1>scipy.stats.gstd<a class="headerlink" href="#scipy-stats-gstd" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="scipy.stats.gstd">
-<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">gstd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_stats_py.py#L3101-L3242"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.gstd" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">gstd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_stats_py.py#L3170-L3275"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.gstd" title="Link to this definition">#</a></dt>
 <dd><p>Calculate the geometric standard deviation of an array.</p>
 <p>The geometric standard deviation describes the spread of a set of numbers
 where the geometric mean is preferred. It is a multiplicative factor, and
 so a dimensionless quantity.</p>
-<p>It is defined as the exponent of the standard deviation of <code class="docutils literal notranslate"><span class="pre">log(a)</span></code>.
-Mathematically the population geometric standard deviation can be
-evaluated as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gstd</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">std</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
-</pre></div>
-</div>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 1.3.0.</span></p>
-</div>
-<dl class="field-list simple">
+<p>It is defined as the exponential of the standard deviation of the
+natural logarithms of the observations.</p>
+<dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>An array like object containing the sample data.</p>
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>An array containing finite, strictly positive, real numbers.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.14.0: </span>Support for masked array input was deprecated in
+SciPy 1.14.0 and will be removed in version 1.16.0.</p>
+</div>
 </dd>
 <dt><strong>axis</strong><span class="classifier">int, tuple or None, optional</span></dt><dd><p>Axis along which to operate. Default is 0. If None, compute over
 the whole array <em class="xref py py-obj">a</em>.</p>
@@ -532,21 +560,29 @@ is a 1d array a float is returned.</p>
 <dl class="simple">
 <dt><a class="reference internal" href="scipy.stats.gmean.html#scipy.stats.gmean" title="scipy.stats.gmean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gmean</span></code></a></dt><dd><p>Geometric mean</p>
 </dd>
-<dt><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v2.0.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.std</span></code></a></dt><dd><p>Standard deviation</p>
+<dt><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.std</span></code></a></dt><dd><p>Standard deviation</p>
 </dd>
 <dt><a class="reference internal" href="scipy.stats.gzscore.html#scipy.stats.gzscore" title="scipy.stats.gzscore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gzscore</span></code></a></dt><dd><p>Geometric standard score</p>
 </dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>As the calculation requires the use of logarithms the geometric standard
-deviation only supports strictly positive values. Any non-positive or
-infinite values will raise a <em class="xref py py-obj">ValueError</em>.
-The geometric standard deviation is sometimes confused with the exponent of
-the standard deviation, <code class="docutils literal notranslate"><span class="pre">exp(std(a))</span></code>. Instead the geometric standard
-deviation is <code class="docutils literal notranslate"><span class="pre">exp(std(log(a)))</span></code>.
-The default value for <em class="xref py py-obj">ddof</em> is different to the default value (0) used
-by other ddof containing functions, such as <code class="docutils literal notranslate"><span class="pre">np.std</span></code> and <code class="docutils literal notranslate"><span class="pre">np.nanstd</span></code>.</p>
+<p>Mathematically, the sample geometric standard deviation <span class="math notranslate nohighlight">\(s_G\)</span> can be
+defined in terms of the natural logarithms of the observations
+<span class="math notranslate nohighlight">\(y_i = \log(x_i)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[s_G = \exp(s), \quad s = \sqrt{\frac{1}{n - d} \sum_{i=1}^n (y_i - \bar y)^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the number of observations, <span class="math notranslate nohighlight">\(d\)</span> is the adjustment <em class="xref py py-obj">ddof</em>
+to the degrees of freedom, and <span class="math notranslate nohighlight">\(\bar y\)</span> denotes the mean of the natural
+logarithms of the observations. Note that the default <code class="docutils literal notranslate"><span class="pre">ddof=1</span></code> is different from
+the default value used by similar functions, such as <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.std</span></code></a> and <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.var.html#numpy.var" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.var</span></code></a>.</p>
+<p>When an observation is infinite, the geometric standard deviation is
+NaN (undefined). Non-positive observations will also produce NaNs in the
+output because the <em>natural</em> logarithm (as opposed to the <em>complex</em>
+logarithm) is defined only for positive reals.
+The geometric standard deviation is sometimes confused with the exponential
+of the standard deviation, <code class="docutils literal notranslate"><span class="pre">exp(std(a))</span></code>. Instead, the geometric standard
+deviation is <code class="docutils literal notranslate"><span class="pre">exp(std(log(a)))</span></code>.</p>
 <p class="rubric">References</p>
 <div role="list" class="citation-list">
 <div class="citation" id="r8649aa9f0b83-1" role="doc-biblioentry">
@@ -561,8 +597,10 @@ Biometrics, vol. 35, pp. 908-909, 1979</p>
 </div>
 </div>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="62df002d-0cc4-4cc3-a85b-acd3e9108dff">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('62df002d-0cc4-4cc3-a85b-acd3e9108dff','c631f0c9-658b-451a-9021-a673f14b87f3','6a528742-6274-4ca3-8139-20de2317587e','../../lite/tree/../notebooks/?path=558cf6f6_4852_4df8_957a_cecc15ad22d9.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <p>Find the geometric standard deviation of a log-normally distributed sample.
-Note that the standard deviation of the distribution is one, on a
+Note that the standard deviation of the distribution is one; on a
 log scale this evaluates to approximately <code class="docutils literal notranslate"><span class="pre">exp(1)</span></code>.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gstd</span>
@@ -584,34 +622,9 @@ of a given axis.</p>
 <span class="go">array([2.12939215, 1.22120169])</span>
 </pre></div>
 </div>
-<p>The geometric standard deviation further handles masked arrays.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">16</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ma</span>
-<span class="go">masked_array(</span>
-<span class="go">  data=[[[1, 2, 3, 4],</span>
-<span class="go">         [5, 6, 7, 8],</span>
-<span class="go">         [9, 10, 11, 12]],</span>
-<span class="go">        [[13, 14, 15, 16],</span>
-<span class="go">         [--, --, --, --],</span>
-<span class="go">         [--, --, --, --]]],</span>
-<span class="go">  mask=[[[False, False, False, False],</span>
-<span class="go">         [False, False, False, False],</span>
-<span class="go">         [False, False, False, False]],</span>
-<span class="go">        [[False, False, False, False],</span>
-<span class="go">         [ True,  True,  True,  True],</span>
-<span class="go">         [ True,  True,  True,  True]]],</span>
-<span class="go">  fill_value=999999)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gstd</span><span class="p">(</span><span class="n">ma</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="go">masked_array(</span>
-<span class="go">  data=[[1.8242475707663655, 1.2243686572447428, 1.1318311657788478],</span>
-<span class="go">        [1.0934830582350938, --, --]],</span>
-<span class="go">  mask=[[False, False, False],</span>
-<span class="go">        [False,  True,  True]],</span>
-<span class="go">  fill_value=999999)</span>
-</pre></div>
 </div>
-</dd></dl>
+</div>
+<div id="6a528742-6274-4ca3-8139-20de2317587e" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('62df002d-0cc4-4cc3-a85b-acd3e9108dff','6a528742-6274-4ca3-8139-20de2317587e')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('62df002d-0cc4-4cc3-a85b-acd3e9108dff','6a528742-6274-4ca3-8139-20de2317587e')">Open In Tab</button></div><div id="c631f0c9-658b-451a-9021-a673f14b87f3" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
@@ -699,7 +712,7 @@ of a given axis.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

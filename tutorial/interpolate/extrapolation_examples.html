@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Extrapolation tips and tricks &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>Extrapolation tips and tricks &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,37 +29,41 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="../../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/interpolate/extrapolation_examples';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Fourier Transforms (scipy.fft)" href="../fft.html" />
+    <link rel="next" title="Interpolate transition guide" href="interp_transition_guide.html" />
     <link rel="prev" title="Scattered data interpolation (griddata)" href="ND_unstructured.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -134,35 +138,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -223,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -349,6 +355,30 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
 
 <script>
 document.write(`
@@ -421,6 +451,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="ND_unstructured.html">Scattered data interpolation (<code class="xref py py-func docutils literal notranslate"><span class="pre">griddata</span></code>)</a></li>
 
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Extrapolation tips and tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interp_transition_guide.html">Interpolate transition guide</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../fft.html">Fourier Transforms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.fft</span></code>)</a></li>
@@ -433,10 +464,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../stats.html">Statistics (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ndimage.html">Multidimensional image processing (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../io.html">File IO (<code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code>)</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Executable tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks/interp_transition_guide.html">Interpolate transition guide</a></li>
 </ul>
 
   </div>
@@ -523,9 +550,9 @@ are deliberately pared down to bare essentials needed to demonstrate the
 main ideas, in a hope that they serve as an inspiration for your
 handling of your particular problem.</p>
 <section id="interp1d-replicate-numpy-interp-left-and-right-fill-values">
-<span id="tutorial-extrapolation-left-right"></span><h2><a class="reference internal" href="../../reference/generated/scipy.interpolate.interp1d.html#scipy.interpolate.interp1d" title="scipy.interpolate.interp1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp1d</span></code></a> : replicate <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.interp.html#numpy.interp" title="(in NumPy v2.0.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.interp</span></code></a> left and right fill values<a class="headerlink" href="#interp1d-replicate-numpy-interp-left-and-right-fill-values" title="Link to this heading">#</a></h2>
+<span id="tutorial-extrapolation-left-right"></span><h2><a class="reference internal" href="../../reference/generated/scipy.interpolate.interp1d.html#scipy.interpolate.interp1d" title="scipy.interpolate.interp1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp1d</span></code></a> : replicate <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.interp.html#numpy.interp" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.interp</span></code></a> left and right fill values<a class="headerlink" href="#interp1d-replicate-numpy-interp-left-and-right-fill-values" title="Link to this heading">#</a></h2>
 <p>TL;DR: Use <code class="docutils literal notranslate"><span class="pre">fill_value=(left,</span> <span class="pre">right)</span></code></p>
-<p><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.interp.html#numpy.interp" title="(in NumPy v2.0.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.interp</span></code></a> uses constant extrapolation, and defaults to extending
+<p><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.interp.html#numpy.interp" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.interp</span></code></a> uses constant extrapolation, and defaults to extending
 the first and last values of the <code class="docutils literal notranslate"><span class="pre">y</span></code> array in the interpolation
 interval: the output of <code class="docutils literal notranslate"><span class="pre">np.interp(xnew,</span> <span class="pre">x,</span> <span class="pre">y)</span></code> is <code class="docutils literal notranslate"><span class="pre">y[0]</span></code> for
 <code class="docutils literal notranslate"><span class="pre">xnew</span> <span class="pre">&lt;</span> <span class="pre">x[0]</span></code> and <code class="docutils literal notranslate"><span class="pre">y[-1]</span></code> for <code class="docutils literal notranslate"><span class="pre">xnew</span> <span class="pre">&gt;</span> <span class="pre">x[-1]</span></code>.</p>
@@ -534,7 +561,7 @@ interval: the output of <code class="docutils literal notranslate"><span class="
 interpolation range. This can be switched off by the
 <code class="docutils literal notranslate"><span class="pre">bounds_error=False</span></code> argument: then <code class="docutils literal notranslate"><span class="pre">interp1d</span></code> sets the out-of-range
 values with the <code class="docutils literal notranslate"><span class="pre">fill_value</span></code>, which is <code class="docutils literal notranslate"><span class="pre">nan</span></code> by default.</p>
-<p>To mimic the behavior of <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.interp.html#numpy.interp" title="(in NumPy v2.0.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.interp</span></code></a> with <a class="reference internal" href="../../reference/generated/scipy.interpolate.interp1d.html#scipy.interpolate.interp1d" title="scipy.interpolate.interp1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp1d</span></code></a>, you can use
+<p>To mimic the behavior of <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.interp.html#numpy.interp" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.interp</span></code></a> with <a class="reference internal" href="../../reference/generated/scipy.interpolate.interp1d.html#scipy.interpolate.interp1d" title="scipy.interpolate.interp1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp1d</span></code></a>, you can use
 the fact that it supports a 2-tuple as the <code class="docutils literal notranslate"><span class="pre">fill_value</span></code>. The tuple
 elements are then used to fill for <code class="docutils literal notranslate"><span class="pre">xnew</span> <span class="pre">&lt;</span> <span class="pre">min(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">max(x)</span></code>,
 respectively. For multidimensional <code class="docutils literal notranslate"><span class="pre">y</span></code>, these elements must have the
@@ -960,11 +987,11 @@ whole dataset using NumPy broadcasting.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../fft.html"
+       href="interp_transition_guide.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Fourier Transforms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.fft</span></code>)</p>
+        <p class="prev-next-title">Interpolate transition guide</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1031,7 +1058,7 @@ whole dataset using NumPy broadcasting.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

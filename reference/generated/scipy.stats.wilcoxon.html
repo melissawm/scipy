@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.stats.wilcoxon &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.stats.wilcoxon &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,27 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.stats.wilcoxon';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -58,7 +62,7 @@
     <link rel="prev" title="scipy.stats.ttest_rel" href="scipy.stats.ttest_rel.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -492,7 +522,7 @@ document.write(`
 <h1>scipy.stats.wilcoxon<a class="headerlink" href="#scipy-stats-wilcoxon" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="scipy.stats.wilcoxon">
-<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">wilcoxon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wilcox'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'two-sided'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'propagate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_morestats.py#L3894-L4248"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.wilcoxon" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">wilcoxon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wilcox'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'two-sided'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'propagate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_morestats.py#L3920-L4139"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.wilcoxon" title="Link to this definition">#</a></dt>
 <dd><p>Calculate the Wilcoxon signed-rank test.</p>
 <p>The Wilcoxon signed-rank test tests the null hypothesis that two
 related paired samples come from the same distribution. In particular,
@@ -549,7 +579,7 @@ than a distribution symmetric about zero.</p></li>
 greater than a distribution symmetric about zero.</p></li>
 </ul>
 </dd>
-<dt><strong>method</strong><span class="classifier">{“auto”, “exact”, “approx”}, optional</span></dt><dd><p>Method to calculate the p-value, see Notes. Default is “auto”.</p>
+<dt><strong>method</strong><span class="classifier">{“auto”, “exact”, “approx”} or <a class="reference internal" href="scipy.stats.PermutationMethod.html#scipy.stats.PermutationMethod" title="scipy.stats.PermutationMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PermutationMethod</span></code></a> instance, optional</span></dt><dd><p>Method to calculate the p-value, see Notes. Default is “auto”.</p>
 </dd>
 <dt><strong>axis</strong><span class="classifier">int or None, default: 0</span></dt><dd><p>If an int, the axis of the input along which to compute the statistic.
 The statistic of each axis-slice (e.g. row) of the input will appear in a
@@ -614,21 +644,19 @@ and <code class="docutils literal notranslate"><span class="pre">method</span> <
 and <code class="docutils literal notranslate"><span class="pre">method='exact'</span></code> is preferred (at the cost of additional
 execution time).</p></li>
 <li><p>The default, <code class="docutils literal notranslate"><span class="pre">method='auto'</span></code>, selects between the two: when
-<code class="docutils literal notranslate"><span class="pre">len(d)</span> <span class="pre">&lt;=</span> <span class="pre">50</span></code>, the exact method is used; otherwise, the approximate
-method is used.</p></li>
+<code class="docutils literal notranslate"><span class="pre">len(d)</span> <span class="pre">&lt;=</span> <span class="pre">50</span></code> and there are no zeros, the exact method is used;
+otherwise, the approximate method is used.</p></li>
 </ul>
-<p>The presence of “ties” (i.e. not all elements of <code class="docutils literal notranslate"><span class="pre">d</span></code> are unique) and
+<p>The presence of “ties” (i.e. not all elements of <code class="docutils literal notranslate"><span class="pre">d</span></code> are unique) or
 “zeros” (i.e. elements of <code class="docutils literal notranslate"><span class="pre">d</span></code> are zero) changes the null distribution
 of the test statistic, and <code class="docutils literal notranslate"><span class="pre">method='exact'</span></code> no longer calculates
 the exact p-value. If <code class="docutils literal notranslate"><span class="pre">method='approx'</span></code>, the z-statistic is adjusted
 for more accurate comparison against the standard normal, but still,
 for finite sample sizes, the standard normal is only an approximation of
-the true null distribution of the z-statistic. There is no clear
-consensus among references on which method most accurately approximates
-the p-value for small samples in the presence of zeros and/or ties. In any
-case, this is the behavior of <a class="reference internal" href="#scipy.stats.wilcoxon" title="scipy.stats.wilcoxon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wilcoxon</span></code></a> when <code class="docutils literal notranslate"><span class="pre">method='auto':</span>
-<span class="pre">``method='exact'</span></code> is used when <code class="docutils literal notranslate"><span class="pre">len(d)</span> <span class="pre">&lt;=</span> <span class="pre">50</span></code> <em>and there are no zeros</em>;
-otherwise, <code class="docutils literal notranslate"><span class="pre">method='approx'</span></code> is used.</p>
+the true null distribution of the z-statistic. For such situations, the
+<em class="xref py py-obj">method</em> parameter also accepts instances <a class="reference internal" href="scipy.stats.PermutationMethod.html#scipy.stats.PermutationMethod" title="scipy.stats.PermutationMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PermutationMethod</span></code></a>. In this
+case, the p-value is computed using <a class="reference internal" href="scipy.stats.permutation_test.html#scipy.stats.permutation_test" title="scipy.stats.permutation_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">permutation_test</span></code></a> with the provided
+configuration options and other appropriate settings.</p>
 <p>Beginning in SciPy 1.9, <code class="docutils literal notranslate"><span class="pre">np.matrix</span></code> inputs (not recommended for new
 code) are converted to <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> before the calculation is performed. In
 this case, the output will be a scalar or <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> of appropriate shape
@@ -666,6 +694,8 @@ pp. 1068-1069. <a class="reference external" href="https://doi.org/10.1080/01621
 </div>
 </div>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="aa9f8cda-145b-448b-a3c8-227d808a68a1">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('aa9f8cda-145b-448b-a3c8-227d808a68a1','6f4f4e78-65e1-4331-8fc4-3b0d98492f60','2d5adc04-9f98-494b-9e27-0fea951452f7','../../lite/tree/../notebooks/?path=6402e029_1954_4053_80ae_5870c7318ba1.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <p>In <a class="reference internal" href="#r996422d5c98f-4" id="id9">[4]</a>, the differences in height between cross- and self-fertilized
 corn plants is given as follows:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="o">-</span><span class="mi">48</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="o">-</span><span class="mi">67</span><span class="p">,</span> <span class="mi">75</span><span class="p">]</span>
@@ -738,7 +768,9 @@ For example:</p>
 <span class="go">WilcoxonResult(statistic=6.0, pvalue=0.4375)</span>
 </pre></div>
 </div>
-</dd></dl>
+</div>
+</div>
+<div id="2d5adc04-9f98-494b-9e27-0fea951452f7" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('aa9f8cda-145b-448b-a3c8-227d808a68a1','2d5adc04-9f98-494b-9e27-0fea951452f7')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('aa9f8cda-145b-448b-a3c8-227d808a68a1','2d5adc04-9f98-494b-9e27-0fea951452f7')">Open In Tab</button></div><div id="6f4f4e78-65e1-4331-8fc4-3b0d98492f60" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
@@ -826,7 +858,7 @@ For example:</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

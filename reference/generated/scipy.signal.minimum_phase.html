@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.signal.minimum_phase &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.signal.minimum_phase &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,27 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.signal.minimum_phase';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -58,7 +62,7 @@
     <link rel="prev" title="scipy.signal.kaiserord" href="scipy.signal.kaiserord.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -492,20 +522,23 @@ document.write(`
 <h1>scipy.signal.minimum_phase<a class="headerlink" href="#scipy-signal-minimum-phase" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="scipy.signal.minimum_phase">
-<span class="sig-prename descclassname"><span class="pre">scipy.signal.</span></span><span class="sig-name descname"><span class="pre">minimum_phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'homomorphic'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_fft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/signal/_fir_filter_design.py#L1123-L1296"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.signal.minimum_phase" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">scipy.signal.</span></span><span class="sig-name descname"><span class="pre">minimum_phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'homomorphic'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_fft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">half</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/signal/_fir_filter_design.py#L1075-L1282"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.signal.minimum_phase" title="Link to this definition">#</a></dt>
 <dd><p>Convert a linear-phase FIR filter to minimum phase</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
 <dt><strong>h</strong><span class="classifier">array</span></dt><dd><p>Linear-phase FIR filter coefficients.</p>
 </dd>
-<dt><strong>method</strong><span class="classifier">{‘hilbert’, ‘homomorphic’}</span></dt><dd><p>The method to use:</p>
+<dt><strong>method</strong><span class="classifier">{‘hilbert’, ‘homomorphic’}</span></dt><dd><p>The provided methods are:</p>
 <blockquote>
 <div><dl class="simple">
 <dt>‘homomorphic’ (default)</dt><dd><p>This method <a class="reference internal" href="#rde52ba5e24c3-4" id="id1">[4]</a> <a class="reference internal" href="#rde52ba5e24c3-5" id="id2">[5]</a> works best with filters with an
 odd number of taps, and the resulting minimum phase filter
 will have a magnitude response that approximates the square
-root of the original filter’s magnitude response.</p>
+root of the original filter’s magnitude response using half
+the number of taps when <code class="docutils literal notranslate"><span class="pre">half=True</span></code> (default), or the
+original magnitude spectrum using the same number of taps
+when <code class="docutils literal notranslate"><span class="pre">half=False</span></code>.</p>
 </dd>
 <dt>‘hilbert’</dt><dd><p>This method <a class="reference internal" href="#rde52ba5e24c3-1" id="id3">[1]</a> is designed to be used with equiripple
 filters (e.g., from <a class="reference internal" href="scipy.signal.remez.html#scipy.signal.remez" title="scipy.signal.remez"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remez</span></code></a>) with unity or zero gain
@@ -517,12 +550,21 @@ regions.</p>
 <dt><strong>n_fft</strong><span class="classifier">int</span></dt><dd><p>The number of points to use for the FFT. Should be at least a
 few times larger than the signal length (see Notes).</p>
 </dd>
+<dt><strong>half</strong><span class="classifier">bool</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, create a filter that is half the length of the original, with a
+magnitude spectrum that is the square root of the original. If <code class="docutils literal notranslate"><span class="pre">False</span></code>,
+create a filter that is the same length as the original, with a magnitude
+spectrum that is designed to match the original (only supported when
+<code class="docutils literal notranslate"><span class="pre">method='homomorphic'</span></code>).</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.14.0.</span></p>
+</div>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>h_minimum</strong><span class="classifier">array</span></dt><dd><p>The minimum-phase version of the filter, with length
-<code class="docutils literal notranslate"><span class="pre">(length(h)</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">//</span> <span class="pre">2</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">(len(h)</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">//</span> <span class="pre">2</span></code> when <code class="docutils literal notranslate"><span class="pre">half</span> <span class="pre">is</span> <span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">len(h)</span></code> otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -555,10 +597,7 @@ length to be the next power of 2 that satisfies <code class="docutils literal no
 methods, and gives the value used when <code class="docutils literal notranslate"><span class="pre">n_fft=None</span></code>.</p>
 <p>Alternative implementations exist for creating minimum-phase filters,
 including zero inversion <a class="reference internal" href="#rde52ba5e24c3-2" id="id7">[2]</a> and spectral factorization <a class="reference internal" href="#rde52ba5e24c3-3" id="id8">[3]</a> <a class="reference internal" href="#rde52ba5e24c3-4" id="id9">[4]</a>.
-For more information, see:</p>
-<blockquote>
-<div><p><a class="reference external" href="http://dspguru.com/dsp/howtos/how-to-design-minimum-phase-fir-filters">http://dspguru.com/dsp/howtos/how-to-design-minimum-phase-fir-filters</a></p>
-</div></blockquote>
+For more information, see <a class="reference external" href="http://dspguru.com/dsp/howtos/how-to-design-minimum-phase-fir-filters">this DSPGuru page</a>.</p>
 <p class="rubric">References</p>
 <div role="list" class="citation-list">
 <div class="citation" id="rde52ba5e24c3-1" role="doc-biblioentry">
@@ -592,53 +631,77 @@ Englewood Cliffs, N.J.: Prentice Hall, 1988.</p>
 <span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id6">2</a>)</span>
 <p>A. V. Oppenheim, R. W. Schafer, and J. R. Buck,
-“Discrete-Time Signal Processing,” 2nd edition.
-Upper Saddle River, N.J.: Prentice Hall, 1999.</p>
+“Discrete-Time Signal Processing,” 3rd edition.
+Upper Saddle River, N.J.: Pearson, 2009.</p>
 </div>
 </div>
 <p class="rubric">Examples</p>
-<p>Create an optimal linear-phase filter, then convert it to minimum phase:</p>
+<div class="try_examples_outer_container docutils container" id="6ca17a08-be52-4d37-a5ef-1403e83b3016">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('6ca17a08-be52-4d37-a5ef-1403e83b3016','cd277356-94ae-484b-866a-ca5f81a51f04','de96e310-b312-4601-93ca-bee3b5932c78','../../lite/tree/../notebooks/?path=1f73d589_9954_4fb0_9d53_74fe3c778900.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
+<p>Create an optimal linear-phase low-pass filter <em class="xref py py-obj">h</em> with a transition band of
+[0.2, 0.3] (assuming a Nyquist frequency of 1):</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">remez</span><span class="p">,</span> <span class="n">minimum_phase</span><span class="p">,</span> <span class="n">freqz</span><span class="p">,</span> <span class="n">group_delay</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">freq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">desired</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">h_linear</span> <span class="o">=</span> <span class="n">remez</span><span class="p">(</span><span class="mi">151</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">desired</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="mf">2.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h_linear</span> <span class="o">=</span> <span class="n">remez</span><span class="p">(</span><span class="mi">151</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">desired</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Convert it to minimum phase:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">h_min_hom</span> <span class="o">=</span> <span class="n">minimum_phase</span><span class="p">(</span><span class="n">h_linear</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;homomorphic&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">h_min_hil</span> <span class="o">=</span> <span class="n">minimum_phase</span><span class="p">(</span><span class="n">h_linear</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;hilbert&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">h_hil</span> <span class="o">=</span> <span class="n">minimum_phase</span><span class="p">(</span><span class="n">h_linear</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;hilbert&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h_hom</span> <span class="o">=</span> <span class="n">minimum_phase</span><span class="p">(</span><span class="n">h_linear</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;homomorphic&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h_hom_full</span> <span class="o">=</span> <span class="n">minimum_phase</span><span class="p">(</span><span class="n">h_linear</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;homomorphic&#39;</span><span class="p">,</span> <span class="n">half</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Compare the three filters:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">style</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">((</span><span class="n">h_linear</span><span class="p">,</span> <span class="n">h_min_hom</span><span class="p">,</span> <span class="n">h_min_hil</span><span class="p">),</span>
-<span class="gp">... </span>                           <span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)):</span>
-<span class="gp">... </span>    <span class="n">w</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">freqz</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="n">w</span><span class="p">,</span> <span class="n">gd</span> <span class="o">=</span> <span class="n">group_delay</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="gp">... </span>    <span class="n">w</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-<span class="gp">... </span>    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">gd</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="o">*</span><span class="n">ax</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#ffeeaa&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">h_linear</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Samples&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span> <span class="s1">&#39;Min-Hom&#39;</span><span class="p">,</span> <span class="s1">&#39;Min-Hil&#39;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Phase&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">ylim</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">150</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">])):</span>
-<span class="gp">... </span>    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Magnitude (dB)&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Group delay&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<p>Compare the impulse and frequency response of the four filters:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig0</span><span class="p">,</span> <span class="n">ax0</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig1</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Impulse response&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax0</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Samples&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">h_linear</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Frequency Response&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.65</span><span class="p">),</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Magnitude / dB&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Phase / rad&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Group Delay / samples&quot;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">31</span><span class="p">,</span> <span class="mi">81</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Normalized Frequency (Nyqist frequency: 1)&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">lb</span> <span class="ow">in</span> <span class="p">((</span><span class="n">h_linear</span><span class="p">,</span>   <span class="sa">f</span><span class="s1">&#39;Linear (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">h_linear</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">),</span>
+<span class="gp">... </span>              <span class="p">(</span><span class="n">h_hil</span><span class="p">,</span>      <span class="sa">f</span><span class="s1">&#39;Min-Hilbert (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">h_hil</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">),</span>
+<span class="gp">... </span>              <span class="p">(</span><span class="n">h_hom</span><span class="p">,</span>      <span class="sa">f</span><span class="s1">&#39;Min-Homomorphic (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">h_hom</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">),</span>
+<span class="gp">... </span>              <span class="p">(</span><span class="n">h_hom_full</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;Min-Homom. Full (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">h_hom_full</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)):</span>
+<span class="gp">... </span>    <span class="n">w_H</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">freqz</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">w_gd</span><span class="p">,</span> <span class="n">gd</span> <span class="o">=</span> <span class="n">group_delay</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">fs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="n">lb</span> <span class="o">==</span> <span class="s1">&#39;linear&#39;</span> <span class="k">else</span> <span class="mf">0.5</span>  <span class="c1"># full opacity for &#39;linear&#39; line</span>
+<span class="gp">... </span>    <span class="n">ax0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">lb</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_H</span><span class="p">,</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H</span><span class="p">)),</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_H</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unwrap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">H</span><span class="p">)),</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">lb</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_gd</span><span class="p">,</span> <span class="n">gd</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax0</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax0</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Filter Phase (Order)&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Filter Phase (Order)&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ax_</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">:</span>  <span class="c1"># shade transition band:</span>
+<span class="gp">... </span>    <span class="n">ax_</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">freq</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.25</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">ax_</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <figure class="align-default">
-<img alt="../../_images/scipy-signal-minimum_phase-1.png" class="plot-directive" src="../../_images/scipy-signal-minimum_phase-1.png" />
+<img alt="../../_images/scipy-signal-minimum_phase-1_00_00.png" class="plot-directive" src="../../_images/scipy-signal-minimum_phase-1_00_00.png" />
 </figure>
-</dd></dl>
+<figure class="align-default">
+<img alt="../../_images/scipy-signal-minimum_phase-1_00_01.png" class="plot-directive" src="../../_images/scipy-signal-minimum_phase-1_00_01.png" />
+</figure>
+<p>The impulse response and group delay plot depict the 75 sample delay of the linear
+phase filter <em class="xref py py-obj">h</em>. The phase should also be linear in the stop band–due to the small
+magnitude, numeric noise dominates there. Furthermore, the plots show that the
+minimum phase filters clearly show a reduced (negative) phase slope in the pass and
+transition band. The plots also illustrate that the filter with parameters
+<code class="docutils literal notranslate"><span class="pre">method='homomorphic',</span> <span class="pre">half=False</span></code> has same order and magnitude response as the
+linear filter <em class="xref py py-obj">h</em> wheras the other minimum phase filters have only half the order
+and the square root  of the magnitude response.</p>
+</div>
+</div>
+<div id="de96e310-b312-4601-93ca-bee3b5932c78" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('6ca17a08-be52-4d37-a5ef-1403e83b3016','de96e310-b312-4601-93ca-bee3b5932c78')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('6ca17a08-be52-4d37-a5ef-1403e83b3016','de96e310-b312-4601-93ca-bee3b5932c78')">Open In Tab</button></div><div id="cd277356-94ae-484b-866a-ca5f81a51f04" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
@@ -726,7 +789,7 @@ Upper Saddle River, N.J.: Prentice Hall, 1999.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

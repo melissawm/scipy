@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Discrete Statistical Distributions &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>Discrete Statistical Distributions &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,37 +29,41 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="../../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/stats/discrete';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Bernoulli Distribution" href="discrete_bernoulli.html" />
-    <link rel="prev" title="Statistics (scipy.stats)" href="../stats.html" />
+    <link rel="prev" title="Wrapped Cauchy Distribution" href="continuous_wrapcauchy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -134,35 +138,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -223,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -349,6 +355,30 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
 
 <script>
 document.write(`
@@ -422,18 +452,16 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../csgraph.html">Compressed Sparse Graph Routines (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse.csgraph</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../spatial.html">Spatial data structures and algorithms (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.spatial</span></code>)</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../stats.html">Statistics (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats</span></code>)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Discrete Statistical Distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="continuous.html">Continuous Statistical Distributions</a></li>
+<li class="toctree-l2 current active"><a class="reference internal" href="probability_distributions.html">Probability distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypothesis_tests.html">Sample statistics and hypothesis tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sampling.html">Universal Non-Uniform Random Number Sampling in SciPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resampling.html">Resampling and Monte Carlo Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kernel_density_estimation.html">Kernel density estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multiscale_graphcorr.html">Multiscale Graph Correlation (MGC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quasi_monte_carlo.html">Quasi-Monte Carlo</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ndimage.html">Multidimensional image processing (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../io.html">File IO (<code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code>)</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Executable tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks/interp_transition_guide.html">Interpolate transition guide</a></li>
 </ul>
 
   </div>
@@ -464,6 +492,8 @@ document.write(`
 
 
 
+
+
 <nav aria-label="Breadcrumb">
   <ul class="bd-breadcrumbs">
     
@@ -476,7 +506,10 @@ document.write(`
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">SciPy User Guide</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../stats.html" class="nav-link">Statistics (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats</span></code>)</a></li>
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="probability_distributions.html" class="nav-link">Probability distributions</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Discrete...</li>
   </ul>
@@ -497,6 +530,8 @@ document.write(`
                   
   <section id="discrete-statistical-distributions">
 <span id="discrete-random-variables"></span><h1>Discrete Statistical Distributions<a class="headerlink" href="#discrete-statistical-distributions" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>Discrete random variables take on only a countable number of values.
 The commonly used distributions are included in SciPy and described in
 this document. Each discrete distribution can take one extra integer
@@ -513,7 +548,7 @@ beginning and ending (integer) values <span class="math notranslate nohighlight"
 integers <span class="math notranslate nohighlight">\(a+mk\leq b\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is a non-negative integer ( <span class="math notranslate nohighlight">\(0,1,2,\ldots\)</span> ) and <span class="math notranslate nohighlight">\(m\)</span> is a positive integer multiplier. Alternatively, the two lists <span class="math notranslate nohighlight">\(x_{k}\)</span> and <span class="math notranslate nohighlight">\(p\left(x_{k}\right)\)</span> can be provided directly in which case a dictionary is set up
 internally to evaluate probabilities and generate random variates.</p>
 <section id="probability-mass-function-pmf">
-<h2>Probability Mass Function (PMF)<a class="headerlink" href="#probability-mass-function-pmf" title="Link to this heading">#</a></h2>
+<h3>Probability Mass Function (PMF)<a class="headerlink" href="#probability-mass-function-pmf" title="Link to this heading">#</a></h3>
 <p>The probability mass function of a random variable X is defined as the
 probability that the random variable takes on a particular value.</p>
 <div class="math notranslate nohighlight">
@@ -532,7 +567,7 @@ XXX: probability). The usage should be obvious from context.</p>
 </aside>
 </section>
 <section id="cumulative-distribution-function-cdf">
-<h2>Cumulative Distribution Function (CDF)<a class="headerlink" href="#cumulative-distribution-function-cdf" title="Link to this heading">#</a></h2>
+<h3>Cumulative Distribution Function (CDF)<a class="headerlink" href="#cumulative-distribution-function-cdf" title="Link to this heading">#</a></h3>
 <p>The cumulative distribution function is</p>
 <div class="math notranslate nohighlight">
 \[F\left(x\right)=P\left[X\leq x\right]=\sum_{x_{k}\leq x}p\left(x_{k}\right)\]</div>
@@ -541,14 +576,14 @@ XXX: probability). The usage should be obvious from context.</p>
 \[F\left(x_{k}\right)-F\left(x_{k-1}\right)=p\left(x_{k}\right)\]</div>
 </section>
 <section id="survival-function">
-<h2>Survival Function<a class="headerlink" href="#survival-function" title="Link to this heading">#</a></h2>
+<h3>Survival Function<a class="headerlink" href="#survival-function" title="Link to this heading">#</a></h3>
 <p>The survival function is just</p>
 <div class="math notranslate nohighlight">
 \[S\left(x\right)=1-F\left(x\right)=P\left[X&gt;k\right]\]</div>
 <p>the probability that the random variable is strictly larger than <span class="math notranslate nohighlight">\(k\)</span> .</p>
 </section>
 <section id="percent-point-function-inverse-cdf">
-<span id="discrete-ppf"></span><h2>Percent Point Function (Inverse CDF)<a class="headerlink" href="#percent-point-function-inverse-cdf" title="Link to this heading">#</a></h2>
+<span id="discrete-ppf"></span><h3>Percent Point Function (Inverse CDF)<a class="headerlink" href="#percent-point-function-inverse-cdf" title="Link to this heading">#</a></h3>
 <p>The percent point function is the inverse of the cumulative
 distribution function and is</p>
 <div class="math notranslate nohighlight">
@@ -559,14 +594,14 @@ as with continuous rv’s using the inverse cdf on a uniform
 distribution to generate random variates.</p>
 </section>
 <section id="inverse-survival-function">
-<h2>Inverse survival function<a class="headerlink" href="#inverse-survival-function" title="Link to this heading">#</a></h2>
+<h3>Inverse survival function<a class="headerlink" href="#inverse-survival-function" title="Link to this heading">#</a></h3>
 <p>The inverse survival function is the inverse of the survival function</p>
 <div class="math notranslate nohighlight">
 \[Z\left(\alpha\right)=S^{-1}\left(\alpha\right)=G\left(1-\alpha\right)\]</div>
 <p>and is thus the smallest non-negative integer <span class="math notranslate nohighlight">\(k\)</span> for which <span class="math notranslate nohighlight">\(F\left(k\right)\geq1-\alpha\)</span> or the smallest non-negative integer <span class="math notranslate nohighlight">\(k\)</span> for which <span class="math notranslate nohighlight">\(S\left(k\right)\leq\alpha.\)</span></p>
 </section>
 <section id="hazard-functions">
-<h2>Hazard functions<a class="headerlink" href="#hazard-functions" title="Link to this heading">#</a></h2>
+<h3>Hazard functions<a class="headerlink" href="#hazard-functions" title="Link to this heading">#</a></h3>
 <p>If desired, the hazard function and the cumulative hazard function
 could be defined as</p>
 <div class="math notranslate nohighlight">
@@ -576,7 +611,7 @@ could be defined as</p>
 \[H\left(x\right)=\sum_{x_{k}\leq x}h\left(x_{k}\right)=\sum_{x_{k}\leq x}\frac{F\left(x_{k}\right)-F\left(x_{k-1}\right)}{1-F\left(x_{k}\right)}.\]</div>
 </section>
 <section id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading">#</a></h2>
+<h3>Moments<a class="headerlink" href="#moments" title="Link to this heading">#</a></h3>
 <p>Non-central moments are defined using the PDF</p>
 <div class="math notranslate nohighlight">
 \[\mu_{m}^{\prime}=E\left[X^{m}\right]=\sum_{k}x_{k}^{m}p\left(x_{k}\right).\]</div>
@@ -597,7 +632,7 @@ could be defined as</p>
 <p>so that a normal distribution has a kurtosis of zero.</p>
 </section>
 <section id="moment-generating-function">
-<h2>Moment generating function<a class="headerlink" href="#moment-generating-function" title="Link to this heading">#</a></h2>
+<h3>Moment generating function<a class="headerlink" href="#moment-generating-function" title="Link to this heading">#</a></h3>
 <p>The moment generating function is defined as</p>
 <div class="math notranslate nohighlight">
 \[M_{X}\left(t\right)=E\left[e^{Xt}\right]=\sum_{x_{k}}e^{x_{k}t}p\left(x_{k}\right)\]</div>
@@ -605,7 +640,7 @@ could be defined as</p>
 evaluated at <span class="math notranslate nohighlight">\(0.\)</span></p>
 </section>
 <section id="fitting-data">
-<h2>Fitting data<a class="headerlink" href="#fitting-data" title="Link to this heading">#</a></h2>
+<h3>Fitting data<a class="headerlink" href="#fitting-data" title="Link to this heading">#</a></h3>
 <p>To fit data to a distribution, maximizing the likelihood function is
 common. Alternatively, some distributions have well-known minimum
 variance unbiased estimators. These will be chosen by default, but the
@@ -620,14 +655,14 @@ random vector <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> i
 <div class="math notranslate nohighlight">
  \begin{eqnarray*} l_{\mathbf{k}}\left(\boldsymbol{\theta}\right) &amp; = &amp; -\sum_{i=1}^{N}\log f\left(k_{i};\boldsymbol{\theta}\right)\\  &amp; = &amp; -N\overline{\log f\left(k_{i};\boldsymbol{\theta}\right)}\end{eqnarray*}</div></section>
 <section id="standard-notation-for-mean">
-<h2>Standard notation for mean<a class="headerlink" href="#standard-notation-for-mean" title="Link to this heading">#</a></h2>
+<h3>Standard notation for mean<a class="headerlink" href="#standard-notation-for-mean" title="Link to this heading">#</a></h3>
 <p>We will use</p>
 <div class="math notranslate nohighlight">
 \[\overline{y\left(\mathbf{x}\right)}=\frac{1}{N}\sum_{i=1}^{N}y\left(x_{i}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> should be clear from context.</p>
 </section>
 <section id="combinations">
-<h2>Combinations<a class="headerlink" href="#combinations" title="Link to this heading">#</a></h2>
+<h3>Combinations<a class="headerlink" href="#combinations" title="Link to this heading">#</a></h3>
 <p>Note that</p>
 <div class="math notranslate nohighlight">
 \[k!=k\cdot\left(k-1\right)\cdot\left(k-2\right)\cdot\cdots\cdot1=\Gamma\left(k+1\right)\]</div>
@@ -637,6 +672,7 @@ random vector <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> i
 <div class="math notranslate nohighlight">
 \[\begin{split}\left(\begin{array}{c} n\\ k\end{array}\right)=\frac{n!}{\left(n-k\right)!k!}.\end{split}\]</div>
 <p>If <span class="math notranslate nohighlight">\(n&lt;0\)</span> or <span class="math notranslate nohighlight">\(k&lt;0\)</span> or <span class="math notranslate nohighlight">\(k&gt;n\)</span> we define <span class="math notranslate nohighlight">\(\left(\begin{array}{c} n\\ k\end{array}\right)=0\)</span></p>
+</section>
 </section>
 <section id="discrete-distributions-in-scipy-stats">
 <h2>Discrete Distributions in <a class="reference internal" href="../../reference/stats.html#module-scipy.stats" title="scipy.stats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats</span></code></a><a class="headerlink" href="#discrete-distributions-in-scipy-stats" title="Link to this heading">#</a></h2>
@@ -677,12 +713,12 @@ random vector <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> i
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../stats.html"
+       href="continuous_wrapcauchy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Statistics (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats</span></code>)</p>
+        <p class="prev-next-title">Wrapped Cauchy Distribution</p>
       </div>
     </a>
     <a class="right-next"
@@ -712,17 +748,20 @@ random vector <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> i
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-mass-function-pmf">Probability Mass Function (PMF)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-distribution-function-cdf">Cumulative Distribution Function (CDF)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survival-function">Survival Function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percent-point-function-inverse-cdf">Percent Point Function (Inverse CDF)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-survival-function">Inverse survival function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard-functions">Hazard functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moments">Moments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moment-generating-function">Moment generating function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-data">Fitting data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-notation-for-mean">Standard notation for mean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinations">Combinations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-mass-function-pmf">Probability Mass Function (PMF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-distribution-function-cdf">Cumulative Distribution Function (CDF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#survival-function">Survival Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#percent-point-function-inverse-cdf">Percent Point Function (Inverse CDF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-survival-function">Inverse survival function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard-functions">Hazard functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moments">Moments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moment-generating-function">Moment generating function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-data">Fitting data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-notation-for-mean">Standard notation for mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinations">Combinations</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-in-scipy-stats">Discrete Distributions in <code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats</span></code></a></li>
 </ul>
   </nav></div>
@@ -761,7 +800,7 @@ random vector <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> i
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

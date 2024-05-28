@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Running SciPy Tests Locally &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>Running SciPy Tests Locally &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,36 +29,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'dev/contributor/devpy_test';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Contributing to the SciPy documentation" href="rendering_documentation.html" />
+    <link rel="next" title="Debugging linear algebra related issues" href="debugging_linalg_issues.html" />
     <link rel="prev" title="Code and Documentation Style Guide - The Missing Bits" href="../missing-bits.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -491,7 +521,7 @@ document.write(`
 <span id="devpy-test"></span><h1>Running SciPy Tests Locally<a class="headerlink" href="#running-scipy-tests-locally" title="Link to this heading">#</a></h1>
 <p>Basic test writing and execution from within the Python interpreter is
 documented in the
-<a class="reference external" href="https://numpy.org/devdocs/reference/testing.html" title="(in NumPy v2.0.dev0)"><span class="xref std std-doc">NumPy/SciPy testing guidelines</span></a>. This page
+<a class="reference external" href="https://numpy.org/devdocs/reference/testing.html" title="(in NumPy v2.1.dev0)"><span class="xref std std-doc">NumPy/SciPy testing guidelines</span></a>. This page
 includes information about running tests from the command line using SciPy’s
 <code class="docutils literal notranslate"><span class="pre">dev.py</span></code> command line tool. <em>Note: Before beginning, ensure that</em> <a class="reference external" href="https://docs.pytest.org/en/latest/"><code class="docutils literal notranslate"><span class="pre">pytest</span></code></a>
 <em>is installed.</em></p>
@@ -559,14 +589,25 @@ before testing</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-j</span></code> or <code class="docutils literal notranslate"><span class="pre">--parallel</span></code> <em>n</em> to engage <em>n</em> cores when building SciPy;
 e.g. <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">dev.py</span> <span class="pre">test</span> <span class="pre">-j</span> <span class="pre">4</span></code> engages four cores. As of <a class="reference external" href="https://github.com/scipy/scipy/pull/10172">#10172</a>
 this also runs the tests on four cores if <a class="reference external" href="https://pypi.org/project/pytest-xdist/"><code class="docutils literal notranslate"><span class="pre">pytest-xdist</span></code></a> is installed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-m</span></code> or <code class="docutils literal notranslate"><span class="pre">--mode</span></code> <code class="docutils literal notranslate"><span class="pre">full</span></code> to run the full test suite, including slow
-tests. For example, <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">dev.py</span> <span class="pre">test</span> <span class="pre">-m</span> <span class="pre">full</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">full</span></code> or <code class="docutils literal notranslate"><span class="pre">--mode</span> <span class="pre">full</span></code> to run the “full” test suite, including
+tests marked <code class="docutils literal notranslate"><span class="pre">slow</span></code> (e.g. with <code class="docutils literal notranslate"><span class="pre">&#64;pytest.mark.slow</span></code>). Note that this
+does not <em>run</em> tests marked <code class="docutils literal notranslate"><span class="pre">xslow</span></code>; see Tips below.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--</span></code> to send remaining command line arguments to <code class="docutils literal notranslate"><span class="pre">pytest</span></code> instead of
 <code class="docutils literal notranslate"><span class="pre">dev.py</span> <span class="pre">test</span></code>. For instance, while <code class="docutils literal notranslate"><span class="pre">-n</span></code> sent to <code class="docutils literal notranslate"><span class="pre">pytest.py</span></code> activates
 the <code class="docutils literal notranslate"><span class="pre">--no-build</span></code> option, <code class="docutils literal notranslate"><span class="pre">-n</span></code> sent to <code class="docutils literal notranslate"><span class="pre">pytest</span></code> runs the tests on
 multiple cores; e.g. <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">dev.py</span> <span class="pre">test</span> <span class="pre">--</span> <span class="pre">-n</span> <span class="pre">4</span></code> runs tests using
 four cores. <em>Note:</em> <a class="reference external" href="https://pypi.org/project/pytest-xdist/"><code class="docutils literal notranslate"><span class="pre">pytest-xdist</span></code></a> <em>must be installed for testing on
-multiple cores.</em></p></li>
+multiple cores.</em> Common command line arguments for <code class="docutils literal notranslate"><span class="pre">pytest</span></code> include:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">--durations=m</span></code> to display durations of the slowest <code class="docutils literal notranslate"><span class="pre">m</span></code> tests. Use
+<code class="docutils literal notranslate"><span class="pre">--durations=0</span></code> together with <code class="docutils literal notranslate"><span class="pre">--durations-min=x</span></code> to display
+durations of all tests with durations that exceed <code class="docutils literal notranslate"><span class="pre">x</span></code> seconds.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--fail-slow=x</span></code> to cause test to fail if they exceed <code class="docutils literal notranslate"><span class="pre">x</span></code> seconds.
+(<em>Note</em>: <a class="reference external" href="https://github.com/jwodder/pytest-fail-slow"><code class="docutils literal notranslate"><span class="pre">pytest-fail-slow</span></code></a> must be installed.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--timeout=x</span></code> to halt all test execution if any test time exceeds
+<code class="docutils literal notranslate"><span class="pre">x</span></code> seconds. (<em>Note</em>: <a class="reference external" href="https://github.com/pytest-dev/pytest-timeout"><code class="docutils literal notranslate"><span class="pre">pytest-timeout</span></code></a> must be installed.)</p></li>
+</ul>
+</li>
 </ul>
 <p>For much more information about <code class="docutils literal notranslate"><span class="pre">pytest</span></code>, see the <code class="docutils literal notranslate"><span class="pre">pytest</span></code>
 <a class="reference external" href="https://docs.pytest.org/en/latest/usage.html">documentation</a>.</p>
@@ -612,11 +653,11 @@ configuration, e.g. adding <code class="docutils literal notranslate"><span clas
       </div>
     </a>
     <a class="right-next"
-       href="rendering_documentation.html"
+       href="debugging_linalg_issues.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Contributing to the SciPy documentation</p>
+        <p class="prev-next-title">Debugging linear algebra related issues</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -676,7 +717,7 @@ configuration, e.g. adding <code class="docutils literal notranslate"><span clas
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

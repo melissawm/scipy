@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Integration (scipy.integrate) &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>Integration (scipy.integrate) &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,28 +29,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/integrate';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -59,7 +63,7 @@
     <link rel="prev" title="Special functions (scipy.special)" href="special.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -134,35 +138,13 @@
       
     
     
-    <img src="../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -223,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -349,6 +355,30 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
 
 <script>
 document.write(`
@@ -424,10 +454,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="stats.html">Statistics (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ndimage.html">Multidimensional image processing (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="io.html">File IO (<code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code>)</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Executable tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/interp_transition_guide.html">Interpolate transition guide</a></li>
 </ul>
 
   </div>
@@ -739,21 +765,12 @@ example from above</p>
 </section>
 <section id="gaussian-quadrature">
 <h2>Gaussian quadrature<a class="headerlink" href="#gaussian-quadrature" title="Link to this heading">#</a></h2>
-<p>A few functions are also provided in order to perform simple Gaussian
-quadrature over a fixed interval. The first is <a class="reference internal" href="../reference/generated/scipy.integrate.fixed_quad.html#scipy.integrate.fixed_quad" title="scipy.integrate.fixed_quad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fixed_quad</span></code></a>, which
-performs fixed-order Gaussian quadrature. The second function is
-<a class="reference internal" href="../reference/generated/scipy.integrate.quadrature.html#scipy.integrate.quadrature" title="scipy.integrate.quadrature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quadrature</span></code></a>, which performs Gaussian quadrature of multiple
-orders until the difference in the integral estimate is beneath some
-tolerance supplied by the user. These functions both use the module
-<code class="docutils literal notranslate"><span class="pre">scipy.special.orthogonal</span></code>, which can calculate the roots and quadrature
-weights of a large variety of orthogonal polynomials (the polynomials
-themselves are available as special functions returning instances of
-the polynomial class — e.g., <a class="reference internal" href="../reference/generated/scipy.special.legendre.html#scipy.special.legendre" title="scipy.special.legendre"><code class="xref py py-obj docutils literal notranslate"><span class="pre">special.legendre</span></code></a>).</p>
-</section>
-<section id="romberg-integration">
-<h2>Romberg Integration<a class="headerlink" href="#romberg-integration" title="Link to this heading">#</a></h2>
-<p>Romberg’s method <a class="reference internal" href="#wpr" id="id1"><span>[WPR]</span></a> is another method for numerically evaluating an
-integral. See the help function for <a class="reference internal" href="../reference/generated/scipy.integrate.romberg.html#scipy.integrate.romberg" title="scipy.integrate.romberg"><code class="xref py py-func docutils literal notranslate"><span class="pre">romberg</span></code></a> for further details.</p>
+<p><a class="reference internal" href="../reference/generated/scipy.integrate.fixed_quad.html#scipy.integrate.fixed_quad" title="scipy.integrate.fixed_quad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fixed_quad</span></code></a> performs fixed-order Gaussian quadrature over a fixed interval. This
+function uses the collection of orthogonal polynomials provided by <code class="docutils literal notranslate"><span class="pre">scipy.special</span></code>,
+which can calculate the roots and quadrature weights of a large variety of orthogonal
+polynomials (the polynomials themselves are available as special functions returning
+instances of the polynomial class — e.g.,
+<a class="reference internal" href="../reference/generated/scipy.special.legendre.html#scipy.special.legendre" title="scipy.special.legendre"><code class="xref py py-obj docutils literal notranslate"><span class="pre">special.legendre</span></code></a>).</p>
 </section>
 <section id="integrating-using-samples">
 <h2>Integrating using Samples<a class="headerlink" href="#integrating-using-samples" title="Link to this heading">#</a></h2>
@@ -784,7 +801,7 @@ of order 2 or less.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y1</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">I1</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I1</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">I1</span><span class="p">)</span>
 <span class="go">21.0</span>
 </pre></div>
@@ -794,7 +811,7 @@ of order 2 or less.</p>
 \[\int_{1}^{4} x^2 \, dx = 21,\]</div>
 <p>whereas integrating the second function</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y2</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">I2</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I2</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">I2</span><span class="p">)</span>
 <span class="go">61.5</span>
 </pre></div>
@@ -971,7 +988,7 @@ example the <a class="reference internal" href="../reference/generated/scipy.int
 system of differential equations that are known to be stiff, this
 can improve performance significantly.</p>
 <p>As an example, we’ll solve the 1-D Gray-Scott partial
-differential equations using the method of lines <a class="reference internal" href="#mol" id="id2"><span>[MOL]</span></a>.  The Gray-Scott equations
+differential equations using the method of lines <a class="reference internal" href="#mol" id="id1"><span>[MOL]</span></a>.  The Gray-Scott equations
 for the functions <span class="math notranslate nohighlight">\(u(x, t)\)</span> and <span class="math notranslate nohighlight">\(v(x, t)\)</span> on the interval
 <span class="math notranslate nohighlight">\(x \in [0, L]\)</span> are</p>
 <div class="math notranslate nohighlight">
@@ -1178,12 +1195,8 @@ is banded:</p>
 <section id="references">
 <h3>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h3>
 <div role="list" class="citation-list">
-<div class="citation" id="wpr" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">WPR</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Romberg's_method">https://en.wikipedia.org/wiki/Romberg’s_method</a></p>
-</div>
 <div class="citation" id="mol" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">MOL</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">MOL</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Method_of_lines">https://en.wikipedia.org/wiki/Method_of_lines</a></p>
 </div>
 </div>
@@ -1240,7 +1253,6 @@ is banded:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-integration-quad">General integration (<code class="xref py py-func docutils literal notranslate"><span class="pre">quad</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-multiple-integration-dblquad-tplquad-nquad">General multiple integration (<code class="xref py py-func docutils literal notranslate"><span class="pre">dblquad</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">tplquad</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">nquad</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-quadrature">Gaussian quadrature</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#romberg-integration">Romberg Integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-using-samples">Integrating using Samples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faster-integration-using-low-level-callback-functions">Faster integration using low-level callback functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-differential-equations-solve-ivp">Ordinary differential equations (<code class="xref py py-func docutils literal notranslate"><span class="pre">solve_ivp</span></code>)</a><ul class="nav section-nav flex-column">
@@ -1285,7 +1297,7 @@ is banded:</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

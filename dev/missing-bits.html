@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Code and Documentation Style Guide - The Missing Bits &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>Code and Documentation Style Guide - The Missing Bits &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,27 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'dev/missing-bits';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,7 +62,7 @@
     <link rel="prev" title="SciPy Core Developer Guide" href="core-dev/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -495,7 +525,7 @@ are not explicitly stated in the existing guidelines and standards, including</p
 <li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP-8</a> Style Guide for Python Code</p></li>
 <li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0257">PEP-257</a> Docstring Conventions</p></li>
 <li><p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">NumPy docstring standard</a></p></li>
-<li><p><a class="reference external" href="https://numpy.org/devdocs/reference/testing.html" title="(in NumPy v2.0.dev0)"><span class="xref std std-doc">NumPy Testing Guidelines</span></a></p></li>
+<li><p><a class="reference external" href="https://numpy.org/devdocs/reference/testing.html" title="(in NumPy v2.1.dev0)"><span class="xref std std-doc">NumPy Testing Guidelines</span></a></p></li>
 </ul>
 <p>Some of these are trivial, and might not seem worth discussing, but in many
 cases, the issue has come up in a pull request review in either the SciPy
@@ -575,10 +605,9 @@ Finally, hide private attributes if any:</p>
 </div>
 </section>
 <section id="test-functions-from-numpy-testing">
-<h3>Test functions from <a class="reference external" href="https://numpy.org/devdocs/reference/routines.testing.html#module-numpy.testing" title="(in NumPy v2.0.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.testing</span></code></a><a class="headerlink" href="#test-functions-from-numpy-testing" title="Link to this heading">#</a></h3>
+<h3>Test functions from <a class="reference external" href="https://numpy.org/devdocs/reference/routines.testing.html#module-numpy.testing" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.testing</span></code></a><a class="headerlink" href="#test-functions-from-numpy-testing" title="Link to this heading">#</a></h3>
 <p>In new code, don’t use <em class="xref py py-obj">assert_almost_equal</em>, <em class="xref py py-obj">assert_approx_equal</em> or
-<em class="xref py py-obj">assert_array_almost_equal</em>. This is from the docstrings of these
-functions:</p>
+<em class="xref py py-obj">assert_array_almost_equal</em>. This is from the docstrings of these functions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>It is recommended to use one of `assert_allclose`,
 `assert_array_almost_equal_nulp` or `assert_array_max_ulp`
 instead of this function for more consistent floating point
@@ -586,16 +615,18 @@ comparisons.
 </pre></div>
 </div>
 <p>For more information about writing unit tests, see the
-<a class="reference external" href="https://numpy.org/devdocs/reference/testing.html" title="(in NumPy v2.0.dev0)"><span class="xref std std-doc">NumPy Testing Guidelines</span></a>.</p>
+<a class="reference external" href="https://numpy.org/devdocs/reference/testing.html" title="(in NumPy v2.1.dev0)"><span class="xref std std-doc">NumPy Testing Guidelines</span></a>.</p>
 </section>
-<section id="testing-that-expected-exceptions-are-raised">
-<h3>Testing that expected exceptions are raised<a class="headerlink" href="#testing-that-expected-exceptions-are-raised" title="Link to this heading">#</a></h3>
-<p>When writing a new test that a function call raises a certain exception,
-the preferred style is to use <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code> as a context manager, with
-the code that is supposed to raise the exception in the code block defined
-by the context manager.  The <em class="xref py py-obj">match</em> keyword argument of <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code>
-is given with enough of the expected error message attached to the exception
-to ensure that the expected exception is raised.</p>
+<section id="testing-expected-exceptions-warnings">
+<h3>Testing expected exceptions/ warnings<a class="headerlink" href="#testing-expected-exceptions-warnings" title="Link to this heading">#</a></h3>
+<p>When writing a new test that a function call raises an exception or emits a
+warning, the preferred style is to use <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code>/<code class="docutils literal notranslate"><span class="pre">pytest.warns</span></code> as
+a context manager, with the code that is supposed to raise the exception in
+the code block defined by the context manager. The <code class="docutils literal notranslate"><span class="pre">match</span></code> keyword argument
+is given with enough of the expected message attached to the exception/warning
+to distinguish it from other exceptions/warnings of the same class. Do not use
+<code class="docutils literal notranslate"><span class="pre">np.testing.assert_raises</span></code> or <code class="docutils literal notranslate"><span class="pre">np.testing.assert_warns</span></code>, as they do not
+support a <code class="docutils literal notranslate"><span class="pre">match</span></code> parameter.</p>
 <p>For example, the function <a class="reference internal" href="../reference/generated/scipy.stats.zmap.html#scipy.stats.zmap" title="scipy.stats.zmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.zmap</span></code></a> is supposed to raise a
 <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> if the input contains <code class="docutils literal notranslate"><span class="pre">nan</span></code> and <code class="docutils literal notranslate"><span class="pre">nan_policy</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;raise&quot;</span></code>.
 A test for this is:</p>
@@ -661,7 +692,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-keyword-names">Required keyword names</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#return-objects">Return Objects</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-functions-from-numpy-testing">Test functions from <code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.testing</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-that-expected-exceptions-are-raised">Testing that expected exceptions are raised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-expected-exceptions-warnings">Testing expected exceptions/ warnings</a></li>
 </ul>
 </li>
 </ul>
@@ -701,7 +732,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

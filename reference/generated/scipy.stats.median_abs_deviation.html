@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>scipy.stats.median_abs_deviation &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>scipy.stats.median_abs_deviation &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,27 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/scipy.stats.median_abs_deviation';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -58,7 +62,7 @@
     <link rel="prev" title="scipy.stats.differential_entropy" href="scipy.stats.differential_entropy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -133,35 +137,13 @@
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -222,6 +204,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -346,6 +352,30 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
           <div class="navbar-item">
 
@@ -492,14 +522,14 @@ document.write(`
 <h1>scipy.stats.median_abs_deviation<a class="headerlink" href="#scipy-stats-median-abs-deviation" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="scipy.stats.median_abs_deviation">
-<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">median_abs_deviation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center=&lt;function</span> <span class="pre">median&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale=1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_policy='propagate'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_stats_py.py#L3423-L3574"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.median_abs_deviation" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">scipy.stats.</span></span><span class="sig-name descname"><span class="pre">median_abs_deviation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center=&lt;function</span> <span class="pre">median&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale=1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_policy='propagate'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/stats/_stats_py.py#L3456-L3607"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.stats.median_abs_deviation" title="Link to this definition">#</a></dt>
 <dd><p>Compute the median absolute deviation of the data along the given axis.</p>
 <p>The median absolute deviation (MAD, <a class="reference internal" href="#r63fe0ba43769-1" id="id1">[1]</a>) computes the median over the
 absolute deviations from the median. It is a measure of dispersion
 similar to the standard deviation but more robust to outliers <a class="reference internal" href="#r63fe0ba43769-2" id="id2">[2]</a>.</p>
 <p>The MAD of an empty array is <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 1.5.0.</span></p>
+<p><span class="versionmodified added">Added in version 1.5.0.</span></p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -545,7 +575,7 @@ the same as that of the input.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v2.0.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.std</span></code></a>, <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.var.html#numpy.var" title="(in NumPy v2.0.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.var</span></code></a>, <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.median.html#numpy.median" title="(in NumPy v2.0.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.median</span></code></a>, <a class="reference internal" href="scipy.stats.iqr.html#scipy.stats.iqr" title="scipy.stats.iqr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.iqr</span></code></a>, <a class="reference internal" href="scipy.stats.tmean.html#scipy.stats.tmean" title="scipy.stats.tmean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.tmean</span></code></a></dt><dd></dd>
+<dt><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.std</span></code></a>, <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.var.html#numpy.var" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.var</span></code></a>, <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.median.html#numpy.median" title="(in NumPy v2.1.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.median</span></code></a>, <a class="reference internal" href="scipy.stats.iqr.html#scipy.stats.iqr" title="scipy.stats.iqr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.iqr</span></code></a>, <a class="reference internal" href="scipy.stats.tmean.html#scipy.stats.tmean" title="scipy.stats.tmean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.tmean</span></code></a></dt><dd></dd>
 <dt><a class="reference internal" href="scipy.stats.tstd.html#scipy.stats.tstd" title="scipy.stats.tstd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.tstd</span></code></a>, <a class="reference internal" href="scipy.stats.tvar.html#scipy.stats.tvar" title="scipy.stats.tvar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.tvar</span></code></a></dt><dd></dd>
 </dl>
 </div>
@@ -570,6 +600,8 @@ corresponding MAD for that data will be <em class="xref py py-obj">nan</em>.</p>
 </div>
 </div>
 <p class="rubric">Examples</p>
+<div class="try_examples_outer_container docutils container" id="7004d444-7293-4a1f-a5dc-d0baf9956315">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('7004d444-7293-4a1f-a5dc-d0baf9956315','6826accc-70da-474e-a489-b3516fcd03bb','e4c22fa9-c026-4421-a692-50a7d4f6f19a','../../lite/tree/../notebooks/?path=929ae6fa_bfe9_4f40_98e3_f20662bd982d.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <p>When comparing the behavior of <a class="reference internal" href="#scipy.stats.median_abs_deviation" title="scipy.stats.median_abs_deviation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median_abs_deviation</span></code></a> with <code class="docutils literal notranslate"><span class="pre">np.std</span></code>,
 the latter is affected when we change a single value of an array to have an
 outlier value while the MAD hardly changes:</p>
@@ -606,7 +638,9 @@ outlier value while the MAD hardly changes:</p>
 <span class="go">1.9996446978061115</span>
 </pre></div>
 </div>
-</dd></dl>
+</div>
+</div>
+<div id="e4c22fa9-c026-4421-a692-50a7d4f6f19a" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('7004d444-7293-4a1f-a5dc-d0baf9956315','e4c22fa9-c026-4421-a692-50a7d4f6f19a')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('7004d444-7293-4a1f-a5dc-d0baf9956315','e4c22fa9-c026-4421-a692-50a7d4f6f19a')">Open In Tab</button></div><div id="6826accc-70da-474e-a489-b3516fcd03bb" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
@@ -694,7 +728,7 @@ outlier value while the MAD hardly changes:</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

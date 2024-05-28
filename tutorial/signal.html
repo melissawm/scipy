@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Signal Processing (scipy.signal) &#8212; SciPy v1.13.0.dev Manual</title>
+    <title>Signal Processing (scipy.signal) &#8212; SciPy v1.14.0.dev Manual</title>
   
   
   
@@ -29,28 +29,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=d80ffc76" />
+    <link rel="stylesheet" type="text/css" href="../_static/scipy.css?v=8a828707" />
+    <link rel="stylesheet" type="text/css" href="../_static/try_examples.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=ecf3e9ff"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script data-domain="docs.scipy.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
     <script async="async" src="../_static/scipy-mathjax/MathJax.js?config=scipy-mathjax"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/signal';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://github.com/melissawm/scipy/blob/add-banner/doc/source/_static/version_switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scipy.github.io/devdocs/_static/version_switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -59,7 +63,7 @@
     <link rel="prev" title="Fourier Transforms (scipy.fft)" href="fft.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 24, 2024"/>
+    <meta name="docbuild:last-update" content="May 27, 2024"/>
   </head>
   
   
@@ -134,35 +138,13 @@
       
     
     
-    <img src="../_static/logo.svg" class="logo__image only-light" alt="SciPy v1.13.0.dev Manual - Home"/>
-    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="SciPy v1.13.0.dev Manual - Home"/>`);</script>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">SciPy</p>
   
 </a></div>
-    
-      <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
     
   </div>
   
@@ -223,6 +205,30 @@ document.write(`
     
     <div class="navbar-header-items__end">
       
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -349,6 +355,30 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
 
 <script>
 document.write(`
@@ -424,10 +454,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="stats.html">Statistics (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ndimage.html">Multidimensional image processing (<code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="io.html">File IO (<code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code>)</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Executable tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/interp_transition_guide.html">Interpolate transition guide</a></li>
 </ul>
 
   </div>
@@ -1401,9 +1427,9 @@ densities the positive values are not doubled but multiplied by <span class="mat
 it is the square root of the PSD. Furthermore, there is no canonical way for naming a
 doubled spectrum.</p>
 <p>The following plot shows three different spectral representations of four sine signals
-<span class="math notranslate nohighlight">\(x(t)\)</span> of Eq. <a class="reference internal" href="#equation-eq-specta-sine">(1)</a> with different amplitudes durations
-<span class="math notranslate nohighlight">\(a\)</span> and durations <span class="math notranslate nohighlight">\(\tau\)</span>. For less clutter, the spectra are centered at
-<span class="math notranslate nohighlight">\(f_z\)</span> and being are plotted next to each other:</p>
+<span class="math notranslate nohighlight">\(x(t)\)</span> of Eq. <a class="reference internal" href="#equation-eq-specta-sine">(1)</a> with different amplitudes <span class="math notranslate nohighlight">\(a\)</span>
+and durations <span class="math notranslate nohighlight">\(\tau\)</span>. For less clutter, the spectra are centered at <span class="math notranslate nohighlight">\(f_z\)</span>
+and being are plotted next to each other:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -1437,7 +1463,7 @@ doubled spectrum.</p>
 </figure>
 <p>Note that depending on the representation, the height of the peaks vary. Only the
 interpretation of the magnitude spectrum is straightforward: The peak at <span class="math notranslate nohighlight">\(f_z\)</span> in
-the  represents half the magnitude <span class="math notranslate nohighlight">\(|a|\)</span> of the sine signal. For all other
+the second plot represents half the magnitude <span class="math notranslate nohighlight">\(|a|\)</span> of the sine signal. For all other
 representations the duration <span class="math notranslate nohighlight">\(\tau\)</span> needs to be taken into account to extract
 information about the signal’s amplitude.</p>
 </section>
@@ -1728,7 +1754,7 @@ used in filter design than in spectral analysis.</p>
 </section>
 <section id="phase-of-spectrum">
 <h3>Phase of Spectrum<a class="headerlink" href="#phase-of-spectrum" title="Link to this heading">#</a></h3>
-<p>The phase (i.e., <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.angle.html#numpy.angle" title="(in NumPy v2.0.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">angle</span></code></a>) of the Fourier transform is typically utilized
+<p>The phase (i.e., <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.angle.html#numpy.angle" title="(in NumPy v2.1.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">angle</span></code></a>) of the Fourier transform is typically utilized
 for investigating the time delay of the spectral components of a signal passing through
 a system like a filter. In the following example the standard test signal, an impulse
 with unit power, is passed through a simple filter, which delays the input by three
@@ -1790,8 +1816,8 @@ Fourier transform, i.e.,</p>
 \[\int_\IR x(t-\Delta t) \e^{-\jj2\pi f t}\dd t =
 X(f)\,  e^{-\jj2\pi \Delta t f}\ .\]</div>
 <p>Note that in the plot the phase is not limited to the interval <span class="math notranslate nohighlight">\((+\pi, \pi]\)</span>
-(output of <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.angle.html#numpy.angle" title="(in NumPy v2.0.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">angle</span></code></a>) and hence does not have any discontinuities. This is
-achieved by utilizing the <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.unwrap.html#numpy.unwrap" title="(in NumPy v2.0.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.unwrap</span></code></a> function. If the transfer function of
+(output of <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.angle.html#numpy.angle" title="(in NumPy v2.1.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">angle</span></code></a>) and hence does not have any discontinuities. This is
+achieved by utilizing the <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.unwrap.html#numpy.unwrap" title="(in NumPy v2.1.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.unwrap</span></code></a> function. If the transfer function of
 the filter is known, <a class="reference internal" href="../reference/generated/scipy.signal.freqz.html#scipy.signal.freqz" title="scipy.signal.freqz"><code class="xref py py-func docutils literal notranslate"><span class="pre">freqz</span></code></a> can be used to determine the spectral
 response of a filter directly.</p>
 </section>
@@ -1801,7 +1827,7 @@ response of a filter directly.</p>
 (<code class="docutils literal notranslate"><span class="pre">scaling='density'</span></code>) or a squared magnitude spectrum (<code class="docutils literal notranslate"><span class="pre">scaling='spectrum'</span></code>). To
 obtain a smoothed periodogram, the <a class="reference internal" href="../reference/generated/scipy.signal.welch.html#scipy.signal.welch" title="scipy.signal.welch"><code class="xref py py-func docutils literal notranslate"><span class="pre">welch</span></code></a> function can be used. It
 does the smoothing by dividing the input signal into overlapping segments, to then
-calculate the windowed DFT of each segment. The result is to the average of thoseDFTs.</p>
+calculate the windowed DFT of each segment. The result is to the average of those DFTs.</p>
 <p>The example below shows the squared magnitude spectrum and the power spectral density
 of a signal made up of a <span class="math notranslate nohighlight">\(1.27\,\text{kHz}\)</span> sine signal with amplitude
 <span class="math notranslate nohighlight">\(\sqrt{2}\,\text{V}\)</span> and additive gaussian noise having a spectral power density
@@ -1928,11 +1954,9 @@ reformulate Eq. <a class="reference internal" href="#equation-eq-dstft">(7)</a> 
 made up of <span class="math notranslate nohighlight">\(M\)</span> samples (see <a class="reference internal" href="../reference/generated/scipy.signal.ShortTimeFFT.m_num.html#scipy.signal.ShortTimeFFT.m_num" title="scipy.signal.ShortTimeFFT.m_num"><code class="xref py py-obj docutils literal notranslate"><span class="pre">m_num</span></code></a>) centered
 at <span class="math notranslate nohighlight">\(t[p] :=  p \Delta t = h T\)</span> (see <a class="reference internal" href="../reference/generated/scipy.signal.ShortTimeFFT.delta_t.html#scipy.signal.ShortTimeFFT.delta_t" title="scipy.signal.ShortTimeFFT.delta_t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delta_t</span></code></a>),
 i.e.,</p>
-<blockquote>
-<div><div class="math notranslate nohighlight" id="equation-eq-stft-windowing">
+<div class="math notranslate nohighlight" id="equation-eq-stft-windowing">
 <span class="eqno">(8)<a class="headerlink" href="#equation-eq-stft-windowing" title="Link to this equation">#</a></span>\[x_p[m] = x\!\big[m - \lfloor M/2\rfloor + h p\big]\, \conj{w[m]}\ ,
          \quad m = 0, \ldots M-1\ ,\]</div>
-</div></blockquote>
 <p>where the integer <span class="math notranslate nohighlight">\(\lfloor M/2\rfloor\)</span> represents <code class="docutils literal notranslate"><span class="pre">M//2</span></code>, i.e, it is
 the mid point of the window (<a class="reference internal" href="../reference/generated/scipy.signal.ShortTimeFFT.m_num_mid.html#scipy.signal.ShortTimeFFT.m_num_mid" title="scipy.signal.ShortTimeFFT.m_num_mid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">m_num_mid</span></code></a>). For notational convenience,
 <span class="math notranslate nohighlight">\(x[k]:=0\)</span> for <span class="math notranslate nohighlight">\(k\not\in\{0, 1, \ldots, N-1\}\)</span> is assumed. In the
@@ -2426,36 +2450,6 @@ a <a class="reference external" href="https://docs.python.org/3/library/exceptio
 real-valued inputs. Consult the <a class="reference internal" href="#tutorial-spectralanalysis"><span class="std std-ref">Spectral Analysis</span></a> section above for a
 discussion on the various spectral representations which are induced by the various
 parameterizations.</p>
-</section>
-</section>
-<section id="detrend">
-<h2>Detrend<a class="headerlink" href="#detrend" title="Link to this heading">#</a></h2>
-<p>SciPy provides the function <a class="reference internal" href="../reference/generated/scipy.signal.detrend.html#scipy.signal.detrend" title="scipy.signal.detrend"><code class="xref py py-func docutils literal notranslate"><span class="pre">detrend</span></code></a> to remove a constant or linear
-trend in a data series in order to see effect of higher order.</p>
-<p>The example below removes the constant and linear trend of a second-order
-polynomial time series and plots the remaining signal components.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">scipy.signal</span> <span class="k">as</span> <span class="nn">signal</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">t</span> <span class="o">+</span> <span class="mf">0.01</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">yconst</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">detrend</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ylin</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">detrend</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;-rx&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">yconst</span><span class="p">,</span> <span class="s1">&#39;-bo&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">ylin</span><span class="p">,</span> <span class="s1">&#39;-k+&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;signal&#39;</span><span class="p">,</span> <span class="s1">&#39;const. detrend&#39;</span><span class="p">,</span> <span class="s1">&#39;linear detrend&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<figure class="align-default">
-<img alt="&quot;This code generates an X-Y plot with no units. A red trace corresponding to the original signal curves from the bottom left to the top right. A blue trace has the constant detrend applied and is below the red trace with zero Y offset. The last black trace has the linear detrend applied and is almost flat from left to right highlighting the curve of the original signal. This last trace has an average slope of zero and looks very different.&quot;" class="plot-directive" src="../_images/signal-9.png" />
-</figure>
 <p class="rubric">References</p>
 <p>Some further reading and related software:</p>
 <aside class="footnote-list brackets">
@@ -2514,6 +2508,7 @@ Birkhäuser Boston 2001, <a class="reference external" href="https://doi.org/10.
 Birkhäuser Boston 2016, <a class="reference external" href="https://doi.org/10.1007/978-3-319-25613-9">DOI:10.1007/978-3-319-25613-9</a></p>
 </aside>
 </aside>
+</section>
 </section>
 </section>
 
@@ -2607,7 +2602,6 @@ Birkhäuser Boston 2016, <a class="reference external" href="https://doi.org/10.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-legacy-implementation">Comparison with Legacy Implementation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detrend">Detrend</a></li>
 </ul>
   </nav></div>
 
@@ -2645,7 +2639,7 @@ Birkhäuser Boston 2016, <a class="reference external" href="https://doi.org/10.
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>
