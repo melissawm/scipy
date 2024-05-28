@@ -29,8 +29,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
@@ -62,7 +62,7 @@
     <link rel="prev" title="scipy.signal.impulse" href="scipy.signal.impulse.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 27, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -561,8 +561,8 @@ the interpretation:</p>
 numerator and denominator should be specified in descending exponent
 order (e.g. <code class="docutils literal notranslate"><span class="pre">s^2</span> <span class="pre">+</span> <span class="pre">3s</span> <span class="pre">+</span> <span class="pre">5</span></code> would be represented as <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">3,</span> <span class="pre">5]</span></code>).</p>
 <p class="rubric">Examples</p>
-<div class="try_examples_outer_container docutils container" id="b3e446d7-dde1-414f-b7d5-d924b3351fcc">
-<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('b3e446d7-dde1-414f-b7d5-d924b3351fcc','e17d4836-0381-49cd-9ea9-0d1a4c4fc258','83b8a6e0-dafb-4de4-94ad-e58bf11d5a9e','../../lite/tree/../notebooks/?path=e0f44250_1c2d_475c_bba3_11a7249bbf0e.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
+<div class="try_examples_outer_container docutils container" id="0ddd21b2-7e37-4adf-a65c-c2ba5012fa5d">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('0ddd21b2-7e37-4adf-a65c-c2ba5012fa5d','453123d6-bf5a-4b40-8aa1-b396dd3d9799','d8e85ddf-74a3-4bee-9c3c-86795c9e3c20','../../lite/tree/../notebooks/?path=ecca4ee2_23d3_4d3d_ad66_2e3170815627.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lti</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">lti</span><span class="p">([</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
@@ -579,7 +579,7 @@ order (e.g. <code class="docutils literal notranslate"><span class="pre">s^2</sp
 </figure>
 </div>
 </div>
-<div id="83b8a6e0-dafb-4de4-94ad-e58bf11d5a9e" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('b3e446d7-dde1-414f-b7d5-d924b3351fcc','83b8a6e0-dafb-4de4-94ad-e58bf11d5a9e')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('b3e446d7-dde1-414f-b7d5-d924b3351fcc','83b8a6e0-dafb-4de4-94ad-e58bf11d5a9e')">Open In Tab</button></div><div id="e17d4836-0381-49cd-9ea9-0d1a4c4fc258" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
+<div id="d8e85ddf-74a3-4bee-9c3c-86795c9e3c20" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('0ddd21b2-7e37-4adf-a65c-c2ba5012fa5d','d8e85ddf-74a3-4bee-9c3c-86795c9e3c20')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('0ddd21b2-7e37-4adf-a65c-c2ba5012fa5d','d8e85ddf-74a3-4bee-9c3c-86795c9e3c20')">Open In Tab</button></div><div id="453123d6-bf5a-4b40-8aa1-b396dd3d9799" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 

@@ -29,8 +29,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
@@ -62,7 +62,7 @@
     <link rel="prev" title="scipy.fft.ifftn" href="scipy.fft.ifftn.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 27, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -604,8 +604,8 @@ the largest positive frequency (fs/2*(n-1)/n), and is complex in the
 general case.</p>
 <p>If the input <em class="xref py py-obj">a</em> contains an imaginary part, it is silently discarded.</p>
 <p class="rubric">Examples</p>
-<div class="try_examples_outer_container docutils container" id="fc1fc060-c471-461e-bae7-67f782a666bd">
-<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('fc1fc060-c471-461e-bae7-67f782a666bd','2a3cf9b7-7cdf-4eb9-b336-f5975ff34545','fd6f4522-0e5e-4bfa-a6e8-9ff315d1a6dd','../../lite/tree/../notebooks/?path=9d4ce458_46a0_4625_86dc_061b1e4689bf.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
+<div class="try_examples_outer_container docutils container" id="d6f81acc-b1ea-4630-8c10-9d0357a5686f">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('d6f81acc-b1ea-4630-8c10-9d0357a5686f','18301b80-1d7a-42f4-9b29-5f167ee14ccd','9fcd8102-3ffe-4692-9e10-38906003f6be','../../lite/tree/../notebooks/?path=79bf164f_42c9_4eba_8519_3d5e04c1c992.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">scipy.fft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">scipy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="go">array([ 1.+0.j,  0.-1.j, -1.+0.j,  0.+1.j]) # may vary</span>
@@ -618,7 +618,7 @@ of the second element, for real input. For <a class="reference internal" href="#
 exploited to compute only the non-negative frequency terms.</p>
 </div>
 </div>
-<div id="fd6f4522-0e5e-4bfa-a6e8-9ff315d1a6dd" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('fc1fc060-c471-461e-bae7-67f782a666bd','fd6f4522-0e5e-4bfa-a6e8-9ff315d1a6dd')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('fc1fc060-c471-461e-bae7-67f782a666bd','fd6f4522-0e5e-4bfa-a6e8-9ff315d1a6dd')">Open In Tab</button></div><div id="2a3cf9b7-7cdf-4eb9-b336-f5975ff34545" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
+<div id="9fcd8102-3ffe-4692-9e10-38906003f6be" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('d6f81acc-b1ea-4630-8c10-9d0357a5686f','9fcd8102-3ffe-4692-9e10-38906003f6be')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('d6f81acc-b1ea-4630-8c10-9d0357a5686f','9fcd8102-3ffe-4692-9e10-38906003f6be')">Open In Tab</button></div><div id="18301b80-1d7a-42f4-9b29-5f167ee14ccd" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 

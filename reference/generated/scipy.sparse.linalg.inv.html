@@ -29,8 +29,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
@@ -62,7 +62,7 @@
     <link rel="prev" title="scipy.sparse.linalg.aslinearoperator" href="scipy.sparse.linalg.aslinearoperator.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 27, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -548,8 +548,8 @@ document.write(`
 to be non-sparse, it will likely be faster to convert <em class="xref py py-obj">A</em> to dense and use
 <a class="reference internal" href="scipy.linalg.inv.html#scipy.linalg.inv" title="scipy.linalg.inv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.inv</span></code></a>.</p>
 <p class="rubric">Examples</p>
-<div class="try_examples_outer_container docutils container" id="832d22a8-ea16-4e2e-a8db-681620af6b1c">
-<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('832d22a8-ea16-4e2e-a8db-681620af6b1c','d1b4f3a9-33ec-4d53-84f4-9550d4ec0003','39698801-bdd2-4511-8cdb-7c3e611b8489','../../lite/tree/../notebooks/?path=b5c9bd5c_1235_4f45_9bcc_61519da68769.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
+<div class="try_examples_outer_container docutils container" id="e44413da-fa33-4c9b-a6ac-0fc4cd87e6bd">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('e44413da-fa33-4c9b-a6ac-0fc4cd87e6bd','2342a153-0c01-4878-8585-98e2b1f9ad00','1a903519-3a33-4c36-881d-24b54d4e51e7','../../lite/tree/../notebooks/?path=74247eec_45a8_44c7_8942_9bddf5acf957.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">csc_matrix</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.sparse.linalg</span> <span class="kn">import</span> <span class="n">inv</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">csc_matrix</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]])</span>
@@ -570,7 +570,7 @@ to be non-sparse, it will likely be faster to convert <em class="xref py py-obj"
 </div>
 </div>
 </div>
-<div id="39698801-bdd2-4511-8cdb-7c3e611b8489" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('832d22a8-ea16-4e2e-a8db-681620af6b1c','39698801-bdd2-4511-8cdb-7c3e611b8489')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('832d22a8-ea16-4e2e-a8db-681620af6b1c','39698801-bdd2-4511-8cdb-7c3e611b8489')">Open In Tab</button></div><div id="d1b4f3a9-33ec-4d53-84f4-9550d4ec0003" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
+<div id="1a903519-3a33-4c36-881d-24b54d4e51e7" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('e44413da-fa33-4c9b-a6ac-0fc4cd87e6bd','1a903519-3a33-4c36-881d-24b54d4e51e7')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('e44413da-fa33-4c9b-a6ac-0fc4cd87e6bd','1a903519-3a33-4c36-881d-24b54d4e51e7')">Open In Tab</button></div><div id="2342a153-0c01-4878-8585-98e2b1f9ad00" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 

@@ -29,8 +29,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
@@ -62,7 +62,7 @@
     <link rel="prev" title="scipy.fft.irfftn" href="scipy.fft.irfftn.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 27, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -594,8 +594,8 @@ which you must supply the length of the result if it is to be odd.
 * even: <code class="docutils literal notranslate"><span class="pre">ihfft(hfft(a,</span> <span class="pre">2*len(a)</span> <span class="pre">-</span> <span class="pre">2)</span> <span class="pre">==</span> <span class="pre">a</span></code>, within roundoff error,
 * odd: <code class="docutils literal notranslate"><span class="pre">ihfft(hfft(a,</span> <span class="pre">2*len(a)</span> <span class="pre">-</span> <span class="pre">1)</span> <span class="pre">==</span> <span class="pre">a</span></code>, within roundoff error.</p>
 <p class="rubric">Examples</p>
-<div class="try_examples_outer_container docutils container" id="6c14b0bf-dc32-4ab5-a60b-f0225e8dbf0b">
-<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('6c14b0bf-dc32-4ab5-a60b-f0225e8dbf0b','e20453f4-cf8e-45ca-a433-d3afce933971','25fbd57c-5eb8-41e3-9f91-c7f65fcf89ae','../../lite/tree/../notebooks/?path=da5e6c13_5c9a_463b_8fb9_24f7b82157fe.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
+<div class="try_examples_outer_container docutils container" id="7ac9303b-c3be-497a-8485-aa254896d02c">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('7ac9303b-c3be-497a-8485-aa254896d02c','460a63a5-ab91-4546-877e-074c788ad0b5','52f7dd7b-8a6a-4451-b221-2481c60341dd','../../lite/tree/../notebooks/?path=841da9cb_6eb7_4dfa_8219_95d017c142b9.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">hfft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span>
@@ -611,7 +611,7 @@ which you must supply the length of the result if it is to be odd.
 </div>
 </div>
 </div>
-<div id="25fbd57c-5eb8-41e3-9f91-c7f65fcf89ae" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('6c14b0bf-dc32-4ab5-a60b-f0225e8dbf0b','25fbd57c-5eb8-41e3-9f91-c7f65fcf89ae')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('6c14b0bf-dc32-4ab5-a60b-f0225e8dbf0b','25fbd57c-5eb8-41e3-9f91-c7f65fcf89ae')">Open In Tab</button></div><div id="e20453f4-cf8e-45ca-a433-d3afce933971" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
+<div id="52f7dd7b-8a6a-4451-b221-2481c60341dd" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('7ac9303b-c3be-497a-8485-aa254896d02c','52f7dd7b-8a6a-4451-b221-2481c60341dd')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('7ac9303b-c3be-497a-8485-aa254896d02c','52f7dd7b-8a6a-4451-b221-2481c60341dd')">Open In Tab</button></div><div id="460a63a5-ab91-4546-877e-074c788ad0b5" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 

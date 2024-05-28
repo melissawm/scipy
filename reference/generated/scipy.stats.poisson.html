@@ -29,8 +29,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="scipy.stats.planck" href="scipy.stats.planck.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 27, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -541,8 +541,8 @@ To shift distribution use the <code class="docutils literal notranslate"><span c
 Specifically, <code class="docutils literal notranslate"><span class="pre">poisson.pmf(k,</span> <span class="pre">mu,</span> <span class="pre">loc)</span></code> is identically
 equivalent to <code class="docutils literal notranslate"><span class="pre">poisson.pmf(k</span> <span class="pre">-</span> <span class="pre">loc,</span> <span class="pre">mu)</span></code>.</p>
 <p class="rubric">Examples</p>
-<div class="try_examples_outer_container docutils container" id="5e80933e-a0ae-42cd-80ca-91d0243ec7b7">
-<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('5e80933e-a0ae-42cd-80ca-91d0243ec7b7','e6d807f7-fb9e-410f-86c6-425a5a0e1b3c','75261a71-744a-45fd-9b49-7913457080fc','../../lite/tree/../notebooks/?path=ff1c62c0_81f3_4200_b242_b830385c0f84.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
+<div class="try_examples_outer_container docutils container" id="c40e8af6-ccaa-463e-8064-e72fa51e2761">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('c40e8af6-ccaa-463e-8064-e72fa51e2761','bbcf9946-f41b-4efb-9a0a-b2a697580a7e','6169469f-32b2-4197-8e97-0f5065ecd311','../../lite/tree/../notebooks/?path=a98914cb_8db1_4a42_9cd1_d1de96fbd4b8.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">poisson</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -587,7 +587,7 @@ the given parameters fixed.</p>
 </div>
 </div>
 </div>
-<div id="75261a71-744a-45fd-9b49-7913457080fc" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('5e80933e-a0ae-42cd-80ca-91d0243ec7b7','75261a71-744a-45fd-9b49-7913457080fc')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('5e80933e-a0ae-42cd-80ca-91d0243ec7b7','75261a71-744a-45fd-9b49-7913457080fc')">Open In Tab</button></div><div id="e6d807f7-fb9e-410f-86c6-425a5a0e1b3c" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script><p class="rubric">Methods</p>
+<div id="6169469f-32b2-4197-8e97-0f5065ecd311" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('c40e8af6-ccaa-463e-8064-e72fa51e2761','6169469f-32b2-4197-8e97-0f5065ecd311')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('c40e8af6-ccaa-463e-8064-e72fa51e2761','6169469f-32b2-4197-8e97-0f5065ecd311')">Open In Tab</button></div><div id="bbcf9946-f41b-4efb-9a0a-b2a697580a7e" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script><p class="rubric">Methods</p>
 <table class="table">
 <tbody>
 <tr class="row-odd"><td><p><strong>rvs(mu, loc=0, size=1, random_state=None)</strong></p></td>

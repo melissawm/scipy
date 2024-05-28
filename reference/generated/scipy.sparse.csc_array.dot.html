@@ -29,8 +29,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
@@ -62,7 +62,7 @@
     <link rel="prev" title="scipy.sparse.csc_array.diagonal" href="scipy.sparse.csc_array.diagonal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 27, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -530,8 +530,8 @@ document.write(`
 <span class="sig-prename descclassname"><span class="pre">csc_array.</span></span><span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scipy/scipy/blob/main/scipy/sparse/_base.py#L434-L450"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scipy.sparse.csc_array.dot" title="Link to this definition">#</a></dt>
 <dd><p>Ordinary dot product</p>
 <p class="rubric">Examples</p>
-<div class="try_examples_outer_container docutils container" id="2e8a8d89-3cef-42cd-a56f-11742624e3c6">
-<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('2e8a8d89-3cef-42cd-a56f-11742624e3c6','9b97f8ec-df3e-4f9d-9de9-4234c6927e6a','224683a1-86fc-49fd-9cf4-7b0dab7bfad9','../../lite/tree/../notebooks/?path=3473694e_c8a6_4010_bc4d_b90393f2e595.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
+<div class="try_examples_outer_container docutils container" id="1727739a-fbd0-4bcd-9c00-5e4392dd0086">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('1727739a-fbd0-4bcd-9c00-5e4392dd0086','4f4a6c02-8b0d-40ee-a70e-f806dbd9fbc7','b5f87df1-fb76-4769-afe1-e4f61e453bfd','../../lite/tree/../notebooks/?path=67d5eaea_33b8_4039_8358_8f2fbbdc9779.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">csr_array</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">csr_array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
@@ -542,7 +542,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div id="224683a1-86fc-49fd-9cf4-7b0dab7bfad9" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('2e8a8d89-3cef-42cd-a56f-11742624e3c6','224683a1-86fc-49fd-9cf4-7b0dab7bfad9')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('2e8a8d89-3cef-42cd-a56f-11742624e3c6','224683a1-86fc-49fd-9cf4-7b0dab7bfad9')">Open In Tab</button></div><div id="9b97f8ec-df3e-4f9d-9de9-4234c6927e6a" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
+<div id="b5f87df1-fb76-4769-afe1-e4f61e453bfd" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('1727739a-fbd0-4bcd-9c00-5e4392dd0086','b5f87df1-fb76-4769-afe1-e4f61e453bfd')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('1727739a-fbd0-4bcd-9c00-5e4392dd0086','b5f87df1-fb76-4769-afe1-e4f61e453bfd')">Open In Tab</button></div><div id="4f4a6c02-8b0d-40ee-a70e-f806dbd9fbc7" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 

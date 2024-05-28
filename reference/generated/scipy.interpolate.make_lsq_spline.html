@@ -29,8 +29,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="scipy.interpolate.make_interp_spline" href="scipy.interpolate.make_interp_spline.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 27, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -582,8 +582,8 @@ Default is True.</p>
 i.e., there must be a subset of data points <code class="docutils literal notranslate"><span class="pre">x[j]</span></code> such that
 <code class="docutils literal notranslate"><span class="pre">t[j]</span> <span class="pre">&lt;</span> <span class="pre">x[j]</span> <span class="pre">&lt;</span> <span class="pre">t[j+k+1]</span></code>, for <code class="docutils literal notranslate"><span class="pre">j=0,</span> <span class="pre">1,...,n-k-2</span></code>.</p>
 <p class="rubric">Examples</p>
-<div class="try_examples_outer_container docutils container" id="bd03d783-bcc0-4238-ab28-32be4efc9e37">
-<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('bd03d783-bcc0-4238-ab28-32be4efc9e37','aba2b584-56b5-4aa1-9d66-ec48b109682e','a944b990-8d8b-4d34-b82e-edaa0f30c43d','../../lite/tree/../notebooks/?path=7eb4f54b_3f5d_4638_84b1_2402a955fa42.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
+<div class="try_examples_outer_container docutils container" id="efe38304-c4aa-4916-9abf-6d7110adedb0">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('efe38304-c4aa-4916-9abf-6d7110adedb0','49240a85-a1b6-44a0-a1a4-b4d022751e6c','56e5c433-8df6-4dc8-8c21-61959960515a','../../lite/tree/../notebooks/?path=0300c13a_a513_4ef0_be2c_85ea9a729765.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <p>Generate some noisy data:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -634,7 +634,7 @@ not useful since the underlying spline fitting routines cannot deal with
 does not matter as long as the corresponding weight is zero.)</p>
 </div>
 </div>
-<div id="a944b990-8d8b-4d34-b82e-edaa0f30c43d" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('bd03d783-bcc0-4238-ab28-32be4efc9e37','a944b990-8d8b-4d34-b82e-edaa0f30c43d')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('bd03d783-bcc0-4238-ab28-32be4efc9e37','a944b990-8d8b-4d34-b82e-edaa0f30c43d')">Open In Tab</button></div><div id="aba2b584-56b5-4aa1-9d66-ec48b109682e" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
+<div id="56e5c433-8df6-4dc8-8c21-61959960515a" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('efe38304-c4aa-4916-9abf-6d7110adedb0','56e5c433-8df6-4dc8-8c21-61959960515a')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('efe38304-c4aa-4916-9abf-6d7110adedb0','56e5c433-8df6-4dc8-8c21-61959960515a')">Open In Tab</button></div><div id="49240a85-a1b6-44a0-a1a4-b4d022751e6c" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 

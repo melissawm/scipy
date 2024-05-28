@@ -29,8 +29,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=ca70e7f1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=a0fe1784"></script>
+    <script src="../../_static/documentation_options.js?v=41e5ba13"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/jupyterlite_sphinx.js?v=d6bdf5f8"></script>
@@ -62,7 +62,7 @@
     <link rel="prev" title="scipy.linalg.cho_solve" href="scipy.linalg.cho_solve.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 27, 2024"/>
+    <meta name="docbuild:last-update" content="May 28, 2024"/>
   </head>
   
   
@@ -560,8 +560,8 @@ Disabling may give a performance gain, but may result in problems
 <p><span class="versionmodified added">Added in version 0.8.0.</span></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="try_examples_outer_container docutils container" id="038579fd-c975-4b0c-8186-525b03fffd5f">
-<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('038579fd-c975-4b0c-8186-525b03fffd5f','d7a79da5-aed3-47da-891c-ed8fecd120a1','ea2a6d55-51ea-49de-918e-470a516f251d','../../lite/tree/../notebooks/?path=d74cbf5e_d774_46ec_ae91_6cb0294eb314.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
+<div class="try_examples_outer_container docutils container" id="b19dcc4b-012e-4df9-9f40-eec3b6b82a0d">
+<div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesShowIframe('b19dcc4b-012e-4df9-9f40-eec3b6b82a0d','fddf6795-b49e-4da4-84e5-573ce5567d91','e113c189-5716-40a9-9caa-182b9aa37bbd','../../lite/tree/../notebooks/?path=2258096d_ceff_4b5d_970f_adfdf0684ffc.ipynb','None')">Try it in your browser!</button></div><div class="try_examples_content docutils container">
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">cholesky_banded</span><span class="p">,</span> <span class="n">cho_solve_banded</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Ab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
@@ -575,7 +575,7 @@ Disabling may give a performance gain, but may result in problems
 </div>
 </div>
 </div>
-<div id="ea2a6d55-51ea-49de-918e-470a516f251d" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('038579fd-c975-4b0c-8186-525b03fffd5f','ea2a6d55-51ea-49de-918e-470a516f251d')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('038579fd-c975-4b0c-8186-525b03fffd5f','ea2a6d55-51ea-49de-918e-470a516f251d')">Open In Tab</button></div><div id="d7a79da5-aed3-47da-891c-ed8fecd120a1" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
+<div id="e113c189-5716-40a9-9caa-182b9aa37bbd" class="try_examples_outer_iframe  hidden"><div class="try_examples_button_container"><button class="try_examples_button" onclick="window.tryExamplesHideIframe('b19dcc4b-012e-4df9-9f40-eec3b6b82a0d','e113c189-5716-40a9-9caa-182b9aa37bbd')">Go Back</button><button class="try_examples_button" onclick="window.openInNewTab('b19dcc4b-012e-4df9-9f40-eec3b6b82a0d','e113c189-5716-40a9-9caa-182b9aa37bbd')">Open In Tab</button></div><div id="fddf6795-b49e-4da4-84e5-573ce5567d91" class="jupyterlite_sphinx_iframe_container"></div></div><script>document.addEventListener("DOMContentLoaded", function() {window.loadTryExamplesConfig("../../try_examples.json");});</script></dd></dl>
 
 </section>
 
