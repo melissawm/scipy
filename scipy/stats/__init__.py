@@ -618,6 +618,12 @@ Result classes used in :mod:`scipy.stats`
 
    stats._result_classes
 
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   stats._infrastructure
+
 """  # noqa: E501
 
 from ._warnings_errors import (ConstantInputWarning, NearConstantInputWarning,

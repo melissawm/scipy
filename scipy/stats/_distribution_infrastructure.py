@@ -30,7 +30,7 @@ def _isnull(x):
     return type(x) is object or x is None
 
 __all__ = ['make_distribution', 'Mixture', 'order_statistic',
-           'truncate', 'abs', 'exp', 'log']
+           'truncate', 'abs', 'exp', 'log', 'ContinuousDistribution']
 
 # Could add other policies for broadcasting and edge/out-of-bounds case handling
 # For instance, when edge case handling is known not to be needed, it's much
@@ -1237,11 +1237,21 @@ def _combine_docs(dist_family, *, include_examples=True):
     fields.remove('index')
     if not include_examples:
         fields.remove('Examples')
-
+    fields.remove('Methods')
+    fields.remove('Parameters')
     doc = ClassDoc(dist_family)
     superdoc = ClassDoc(ContinuousDistribution)
     for field in fields:
-        if field in {"Methods", "Attributes"}:
+        if field in {"Methods"}:
+            # Can we have doc[field] have the full qualified name of the method here?
+            # doc[field] = []
+            # for item in superdoc[field]:
+            #     fullname = f"scipy.stats._distribution_infrastructure.ContinuousDistribution.{item.name}"
+            #     doc[field].append(Parameter(name=fullname, type=item.type, desc=item.desc))
+            #doc[field] = superdoc[field]
+            #methods = superdoc[field]
+            pass
+        elif field in {"Attributes"}:
             doc[field] = superdoc[field]
         elif field in {"Summary"}:
             pass
@@ -1251,6 +1261,13 @@ def _combine_docs(dist_family, *, include_examples=True):
             doc[field] = [_generate_example(dist_family)]
         else:
             doc[field] += superdoc[field]
+    #fields.remove("Methods")
+    #print(f"{doc['Methods']=}")
+    #print(f"{doc['Extended Summary']=}")
+    # superdoc["Methods"] is a list of Parameters.
+    # Extended Summary is a list of strings.
+    #doc["Extended Summary"] = superdoc["Methods"]
+    #print(f"{doc["Methods"]=}")
     return str(doc)
 
 
