@@ -304,6 +304,7 @@ phantom_import_file = 'dump.xml'
 
 # Generate plots for example sections
 numpydoc_use_plots = True
+numpydoc_show_class_members = False
 np_docscrape.ClassDoc.extra_public_methods = [  # should match class.rst
     '__call__', '__mul__', '__getitem__', '__len__',
 ]
