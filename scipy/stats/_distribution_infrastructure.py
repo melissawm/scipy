@@ -1237,11 +1237,12 @@ def _combine_docs(dist_family, *, include_examples=True):
     fields.remove('index')
     if not include_examples:
         fields.remove('Examples')
-    #fields.remove('Methods')
     doc = ClassDoc(dist_family)
     superdoc = ClassDoc(ContinuousDistribution)
     for field in fields:
-        if field in {"Methods", "Attributes"}:
+        if field in {"Methods"}:
+            pass
+        elif field in {"Attributes"}:
             doc[field] = superdoc[field]
         elif field in {"Summary"}:
             pass
